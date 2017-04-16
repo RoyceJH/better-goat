@@ -30,7 +30,7 @@ BetterGoat is a web application inspired by Evernote built using Ruby on Rails a
 - [ ] Production README
 
 ## Design Docs
-- [View Wireframes](wireframes)
+- [View Wireframes](wireframes/)
 - [React Components](component-hierarchy.md)
 - [API endpoints](api-endpoints.md)
 - [DB schema](schema.md)
