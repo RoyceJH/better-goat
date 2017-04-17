@@ -2,20 +2,6 @@
 [Heroku Link](urlgoeshere)
 [Trello Link](urlgoeshere)
 
-//DEVELOPMENT README
-
-
-//show wireframes
-//describe features
-//outline a development timeline for your application
-
-Link to api-endpoints.md
-Link to component-hierarchy.md
-Link to sample-state.md
-Link to schema.md
-
-
-Link to Heroku
 
 ## Minimum Viable Product
 
@@ -30,7 +16,7 @@ BetterGoat is a web application inspired by Evernote built using Ruby on Rails a
 - [ ] Production README
 
 ## Design Docs
-- [View Wireframes](wireframes/)
+- [View Wireframes](/wireframes)
 - [React Components](component-hierarchy.md)
 - [API endpoints](api-endpoints.md)
 - [DB schema](schema.md)
