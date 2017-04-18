@@ -4,7 +4,7 @@
 
 ```js
 {
-  currentUser: {
+  session: {
     id: 1,
     username: "royce"
   },
