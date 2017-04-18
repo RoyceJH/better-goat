@@ -9,11 +9,11 @@
     username: "royce"
   },
 
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    createNote: {errors: ["body can't be blank"]},
-    createNoteBook: {errors: ["title can't be blank"]}
+  errors: {
+    signUp: ["username can't be blank"],
+    logIn: ['password is incorrect'],
+    createNote: ["body can't be blank"],
+    createNoteBook: ["title can't be blank"]
   },
 
   notes: {
