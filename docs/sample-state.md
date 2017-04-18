@@ -10,7 +10,7 @@
   },
 
   errors: {
-    auth:["username can't be blank"]
+    auth: ["username can't be blank"]
     createNote: ["body can't be blank"],
     createNoteBook: ["title can't be blank"]
   },
