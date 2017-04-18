@@ -13,7 +13,6 @@ See the sample project proposal for an example of this.
 - AuthForm
 
 **HomeContainer**
-- ModalFullScreen [active: false, contents: null] - For Signup and Login
 - Home
 - Sidebar
 - ModalSlideOut [active: false, contents: null] - For NotebookContainer and TagContainer
@@ -77,6 +76,9 @@ See the sample project proposal for an example of this.
 
 |Path   | Component   |
 |-------|-------------|
+| "/join" | "SplashContainer" |
+| "/signin" | "AuthFormContainer" |
+| "/login" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/home/note/:noteId" | "NotesContainer" |
 | "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
