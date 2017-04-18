@@ -9,10 +9,9 @@ BetterGoat is a web application inspired by Evernote built using Ruby on Rails a
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Notes
+- [ ] Notes / Rich-text editing
 - [ ] Notebooks
 - [ ] Tags
-- [ ] Rich-text editing
 - [ ] Production README
 
 ## Design Docs
@@ -27,10 +26,10 @@ BetterGoat is a web application inspired by Evernote built using Ruby on Rails a
 ### Phase 1: Backend setup and Front End User Authentication (2 days)
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Notes Model, Allow Complex Styling in Notes, API, and components (3 days)
 
 **Objective:** Notes can be created, read, edited and destroyed through
-the API.
+the API. Allow rich text editing of notes.
 
 ### Phase 3: Notebooks (2 days)
 
@@ -40,15 +39,10 @@ the API.
 
 **Objective:** Notes can be tagged with multiple tags, and tags are searchable.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
 
-**Objective:** Allow rich text editing of notes.
-
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
-
-**Objective:** Add infinite scroll to Notes Index
 
 ### Bonus Features (TBD)
+- [ ] Pagination / Infinite scroll
 - [ ] Search notes by content
 - [ ] Set reminders on notes
 - [ ] Auto save feature
