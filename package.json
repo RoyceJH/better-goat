@@ -8,7 +8,12 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
   },
   "repository": {
     "type": "git",
@@ -33,6 +38,8 @@
     "react-redux": "^5.0.4",
     "react-router": "^3.x.x",
     "redux": "^3.6.0",
+    "redux-logger": "^3.0.1",
+    "redux-thunk": "^2.2.0",
     "webpack": "^2.4.1"
   }
 }
