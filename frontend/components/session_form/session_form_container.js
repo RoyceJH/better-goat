@@ -1,6 +1,7 @@
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
+//Do I need logout? maybe not
 
 const mapStateToProps = (state) => ({
   loggedIn: Boolean(state.currentUser),
@@ -13,7 +14,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
 
   return {
     logout: () => dispatch(logout()),
-    processForm: (user) => dispatch(processForm()),
+    processForm: (user) => dispatch(processForm(user)),
     formType
   };
 };
