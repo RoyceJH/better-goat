@@ -10,8 +10,7 @@
   },
 
   errors: {
-    signUp: ["username can't be blank"],
-    logIn: ['password is incorrect'],
+    auth:["username can't be blank"]
     createNote: ["body can't be blank"],
     createNoteBook: ["title can't be blank"]
   },
