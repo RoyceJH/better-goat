@@ -26,3 +26,11 @@ nav, menu, main, video, Link, button, label, input, form {
   font: inherit;
   background: transparent;
 }
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: rgb(243, 243, 243)
+}

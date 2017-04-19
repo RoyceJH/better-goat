@@ -43,28 +43,35 @@ class SessionForm extends React.Component {
   render() {
     const action = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
     return(
-      <div className='auth-form'>
-        <span>{action}</span>
+      <div className='auth-main'>
         
-        <form onSubmit={this.handleSubmit}>
+        <div className='auth-header'>
+          <label>LOGOHERE</label>
+          <label>{action}</label>
+        </div>
 
-          <input
-            placeholder='Email address or username'
-            onChange={this.handleChange('username')}
-            type='text'
-            value={this.state.username}
-            />
+        <div className='auth-form'>
 
-          <input
-            placeholder='Password'
-            onChange={this.handleChange('password')}
-            type='password'
-            value={this.state.password}
-            />
+          <form onSubmit={this.handleSubmit}>
 
-          <input className='submit' type='submit' value={action}/>
-        </form>
-        {this.navLink()}
+            <input
+              placeholder='Email address or username'
+              onChange={this.handleChange('username')}
+              type='text'
+              value={this.state.username}
+              />
+
+            <input
+              placeholder='Password'
+              onChange={this.handleChange('password')}
+              type='password'
+              value={this.state.password}
+              />
+
+            <input className='submit' type='submit' value={action}/>
+          </form>
+          {this.navLink()}
+        </div>
       </div>
     );
   }

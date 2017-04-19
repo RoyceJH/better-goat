@@ -7,17 +7,22 @@ body {
 .auth-form {
   margin: 0 auto;
   width: 300px;
-  font-family: Sanchez-Regular;
   font-weight: normal;
   font-size: 28px;
   color: #6D6D6D;
   border: 1px solid red;
+  text-align: center;
 }
 
-.auth-form span, .auth-form input, .auth-form a {
-  text-align: center;
+.auth-form span, .auth-form input {
   display: block;
   font-weight: lighter;
+}
+
+
+
+.auth-form a {
+  text-align: center;
 }
 
 .auth-form input, .auth-form a {
@@ -30,8 +35,9 @@ body {
 }
 
 .auth-form form {
-  border-top: 1px solid gray;
-  border-top-style: inset;
+  border-top: 1px solid;
+  border-top-color: rgb(201, 201, 201);
+  background: white;
 }
 
 .auth-form input {
@@ -41,11 +47,17 @@ body {
   padding: 8px;
   margin: 10px auto;
   width: 230px;
-  color: rgb(247, 247, 247);
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(201, 201, 201);
+
 }
 
 .alt-link {
   font-size: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .auth-form .submit {
@@ -54,8 +66,23 @@ body {
   width: 247px;
 }
 
-
 .submit:hover {
     background: rgb(7, 186, 120);
     transition: background-color 0.3s ease;
+}
+
+.auth-form a {
+  color: rgb(10, 204, 136);
+  font-size: 13px;
+}
+
+.auth-header {
+  align-content: center;
+  align-items: center;
+}
+
+.auth-header label {
+  margin: 0 auto;
+  font-family: Sanchez-Regular;
+  display: block;
 }
