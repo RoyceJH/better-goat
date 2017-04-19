@@ -5,13 +5,14 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 import SessionFormContainer from './session_form/session_form_container';
 import SplashContainer from './splash/splash_container';
+import HomeContainer from './home/home_container';
 
 
 const Root = ({store}) => {
 
   const _ensuredLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().currentUser;
-    if(currentUser.username) {
+    const session = store.getState().session.username;
+    if(!session) {
       replace('/login');
     }
   };
@@ -19,11 +20,11 @@ const Root = ({store}) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     const session = store.getState().session.username;
     if(session) {
-      replace('/');
+      replace('/home');
     }
   };
 
-  // <Route path='/' component={App}/ >
+  // add on enter hook down the line
   return(
     <Provider store={store}>
       <Router history={hashHistory} >
@@ -31,6 +32,8 @@ const Root = ({store}) => {
           <IndexRoute component={ SplashContainer } />
           <Route path='/login' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path='/signup' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+
+          <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}/>
         </Route>
       </Router>
 
