@@ -17,7 +17,8 @@
 
 html, body, div, span, h1, h2, h3, h4, p, a, img,
 figure, canvas, aside article, table, section,
-nav, menu, main, video, Link, button, label, input, form {
+nav, menu, main, video, Link, button, label, input, form,
+ul, li {
   margin: 0;
   padding: 0;
   border: 0;
@@ -33,4 +34,8 @@ a {
 
 body {
   background: rgb(243, 243, 243)
+}
+
+ul {
+  list-style: none;
 }

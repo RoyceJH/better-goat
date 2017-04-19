@@ -2,9 +2,7 @@ import { RECEIVE_CURRENT_USER, RECEIVE_AUTH_ERRORS } from '../actions/session_ac
 //RECEIVE_AUTH_ERRORS HANDLED ELSEWHERE?
 import merge from 'lodash/merge';
 
-const _nullUser = ({
-
-});
+const _nullUser = ({});
 
 const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);

@@ -7,7 +7,12 @@ class SessionForm extends React.Component {
     this.state = {username:"", password: ""};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  componentWillReceiveProps(newProps) {
+    if(this.props.errors === newProps.errors) {
+      this.props.clearErrors();
+    }
   }
 
   handleChange(field) {
@@ -20,6 +25,16 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.processForm(this.state);
     this.setState({username:"", password:""});
+  }
+
+  renderErrors() {
+    return(
+      <ul className='auth-errors'>
+        {this.props.errors.map((err, idx) => {
+          return <li key={idx}>{err}.</li>;
+        })}
+      </ul>
+    );
   }
 
   navLink() {
@@ -68,6 +83,8 @@ class SessionForm extends React.Component {
               type='password'
               value={this.state.password}
               />
+
+            {this.renderErrors()}
 
             <input className='submit' type='submit' value={action}/>
           </form>
