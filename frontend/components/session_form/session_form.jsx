@@ -42,9 +42,10 @@ class SessionForm extends React.Component {
 
   render() {
     const action = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
+    const passwordPlaceholder = this.props.formType === 'login' ? 'Password' : 'Create a password';
     return(
       <div className='auth-main'>
-        
+
         <div className='auth-header'>
           <label>LOGOHERE</label>
           <label>{action}</label>
@@ -62,7 +63,7 @@ class SessionForm extends React.Component {
               />
 
             <input
-              placeholder='Password'
+              placeholder={passwordPlaceholder}
               onChange={this.handleChange('password')}
               type='password'
               value={this.state.password}

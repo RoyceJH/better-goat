@@ -6,11 +6,10 @@ body {
 }
 .auth-form {
   margin: 0 auto;
-  width: 300px;
+  width: 384px;
   font-weight: normal;
   font-size: 28px;
   color: #6D6D6D;
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -19,10 +18,15 @@ body {
   font-weight: lighter;
 }
 
-
-
 .auth-form a {
   text-align: center;
+  font-size: 17px;
+  color: #2DBE60;
+}
+
+.auth-form a:hover {
+  color: #28A956;
+  transition: color 0.3s ease;
 }
 
 .auth-form input, .auth-form a {
@@ -30,28 +34,30 @@ body {
 }
 
 .auth-form span {
-  font-family: Sanchez-Regular;
   font-weight: 100;
+  font-size: 13px;
 }
 
 .auth-form form {
-  border-top: 1px solid;
-  border-top-color: rgb(201, 201, 201);
+  border: 1px solid rgb(201, 201, 201);
   background: white;
+  padding-top: 23px;
+  padding-bottom: 23px;
+
 }
 
 .auth-form input {
   font-size: 15px;
   border: 1px solid #E7E7E7;
   border-radius: 7px;
-  padding: 8px;
+  padding: 10px;
   margin: 10px auto;
-  width: 230px;
+  width: 295px;
+
 }
 
 input::-webkit-input-placeholder {
   color: rgb(201, 201, 201);
-
 }
 
 .alt-link {
@@ -60,20 +66,22 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
+.alt-link * {
+  margin: 10px;
+}
+
 .auth-form .submit {
+  margin-top: 30px;
   color: white;
-  background-color: rgb(10, 204, 136);
-  width: 247px;
+  background-color: #2DBE60;
+  padding: 16px;
+  width: 317px;
+  font-size: 17px;
 }
 
-.submit:hover {
-    background: rgb(7, 186, 120);
+.submit:hover,  {
+    background: #28A956;
     transition: background-color 0.3s ease;
-}
-
-.auth-form a {
-  color: rgb(10, 204, 136);
-  font-size: 13px;
 }
 
 .auth-header {
@@ -86,4 +94,10 @@ input::-webkit-input-placeholder {
   margin: 0 auto;
   font-family: Sanchez-Regular;
   display: block;
+  font-size: 26px;
+  padding-bottom: 15px;
+}
+
+.auth-main {
+  border-top: 3px solid #2DBE60;
 }
