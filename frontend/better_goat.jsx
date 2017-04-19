@@ -16,3 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   ReactDOM.render(<Root store={store} />, root);
 });
+
+
+//testing
+import { logout } from './actions/session_actions';
+
+window.logout = () => store.dispatch(logout());
