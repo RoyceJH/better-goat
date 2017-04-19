@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require_sessions
  */
 
 html, body, div, span, h1, h2, h3, h4, p, a, img,
@@ -33,7 +32,7 @@ a {
 }
 
 body {
-  background: rgb(243, 243, 243)
+  background: rgb(243, 243, 243);
 }
 
 ul {
