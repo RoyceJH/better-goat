@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm(this.state).then(this.props.router.push('/'));
     this.setState({username:"", password:""});
   }
 

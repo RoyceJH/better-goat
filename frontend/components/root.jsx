@@ -17,8 +17,8 @@ const Root = ({store}) => {
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().currentUser;
-    if(currentUser) {
+    const session = store.getState().session;
+    if(session) {
       replace('/');
     }
   };
