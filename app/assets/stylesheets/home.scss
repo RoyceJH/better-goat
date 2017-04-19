@@ -1,0 +1,43 @@
+.home-main {
+  min-height: 100%;
+  background: white;
+  display: flex;
+}
+
+.home-side-bar {
+  min-height: 100%;
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  width: 72px;
+  min-height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: stretch;
+  background: rgb(243, 243, 243);
+}
+
+.side-bar-1 {
+  height: 70px;
+}
+
+.side-bar-2, .side-bar-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  height: 182px;
+}
+
+.side-bar-2 {
+  margin-bottom: 65px;
+}
+
+.side-bar-3 {
+  margin-bottom: 150px;
+}
+
+.side-bar-4 {
+  position: absolute;
+  bottom: 20px;
+}
