@@ -1,5 +1,5 @@
 # BetterGoat
-[Heroku Link](urlgoeshere)
+[Heroku Link](https://bettergoat.herokuapp.com)
 [Trello Link](https://trello.com/b/1qQSd52i/better-goat)
 
 
