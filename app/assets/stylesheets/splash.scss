@@ -20,9 +20,22 @@
 }
 
 .splash-nav-links {
+  color: gray;
   width: 25%;
   margin-right: 20px;
   display: flex;
   justify-content: space-between;
   border: 1px solid blue;
+}
+
+.splash-main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.splash-main img {
+  object-fit: contain;
+  width: 80%;
+  height: auto;
 }
