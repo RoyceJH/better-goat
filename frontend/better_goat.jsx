@@ -19,6 +19,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //testing
-import { logout } from './actions/session_actions';
-
-window.logout = () => store.dispatch(logout());
