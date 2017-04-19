@@ -10,9 +10,8 @@
   },
 
   errors: {
-    auth: ["username can't be blank"]
-    createNote: ["body can't be blank"],
-    createNoteBook: ["title can't be blank"]
+    login: ["username can't be blank"]
+    signup: ["username already taken"]
   },
 
   notes: {
