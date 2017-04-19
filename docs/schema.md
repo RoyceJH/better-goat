@@ -22,6 +22,7 @@ body            | text      | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
+author_id       | integer   | not null, foreign key (references users), indexed
 title           | string    | not null, indexed
 
 ## tags
