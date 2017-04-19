@@ -1,0 +1,28 @@
+.splash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+  height: 85px;
+}
+
+.splash-title {
+  margin-left: 20px;
+  display: flex;
+  border: 1px solid orange;
+}
+
+.splash-title h1 {
+  font-family: Helvetica,Arial,sans-serif;
+  color: #28A956;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.splash-nav-links {
+  width: 25%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid blue;
+}
