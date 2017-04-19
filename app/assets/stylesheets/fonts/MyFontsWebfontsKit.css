@@ -1,39 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>BetterGoat</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-
-  <!--
 /**
  * @license
  * MyFonts Webfont Build ID 3376232, 2017-04-18T19:37:17-0400
- *
+ * 
  * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are
+ * Agreement(s) entered into by the website owner. All other parties are 
  * explicitly restricted from using the Licensed Webfonts(s).
- *
+ * 
  * You may obtain a valid license at the URLs below.
- *
+ * 
  * Webfont: Sanchez-Regular by Latinotype
  * URL: http://www.myfonts.com/fonts/latinotype/sanchez/regular/
  * Copyright: Copyright (c) 2011 by Daniel Hern&#x00B7;ndez. All rights reserved.
  * Licensed pageviews: Unlimited
- *
- *
+ * 
+ * 
  * License: http://www.myfonts.com/viewlicense?type=web&buildid=3376232
- *
+ * 
  * © 2017 MyFonts Inc
 */
 
--->
-<link rel="stylesheet/fonts" type="text/css" href="MyFontsWebfontsKit.css">
-</head>
-<body>
 
-<%= yield %>
 
-</body>
-</html>
+
+  
+@font-face {font-family: 'Sanchez-Regular';src: url('webfonts/338468_0_0.eot');src: url('webfonts/338468_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/338468_0_0.woff2') format('woff2'),url('webfonts/338468_0_0.woff') format('woff'),url('webfonts/338468_0_0.ttf') format('truetype');}
+ 

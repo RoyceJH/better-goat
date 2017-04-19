@@ -12,4 +12,17 @@
  *
  *= require_tree .
  *= require_self
+ *= require_sessions
  */
+
+html, body, div, span, h1, h2, h3, h4, p, a, img,
+figure, canvas, aside article, table, section,
+nav, menu, main, video, Link, button, label, input, form {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+  font: inherit;
+  background: transparent;
+}

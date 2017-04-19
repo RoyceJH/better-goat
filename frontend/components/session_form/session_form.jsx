@@ -25,14 +25,14 @@ class SessionForm extends React.Component {
   navLink() {
     if (this.props.formType === 'login') {
       return (
-        <div className='account-create-link'>
+        <div className='alt-link'>
           <span>Don't have an account?</span>
           <Link to="/signup">Create Account</Link>
         </div>
       );
     } else {
       return (
-        <div className='account-login-link'>
+        <div className='alt-link'>
           <span>Already have an account?</span>
           <Link to="/login">{'Sign in'}</Link>
         </div>
@@ -41,26 +41,28 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const button = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
+    const action = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
     return(
-      <div>
-        <form onSubmit={this.handleSubmit} className='auth-form'>
+      <div className='auth-form'>
+        <span>{action}</span>
+        
+        <form onSubmit={this.handleSubmit}>
 
-          <label>Username</label>
           <input
+            placeholder='Email address or username'
             onChange={this.handleChange('username')}
             type='text'
             value={this.state.username}
             />
 
-          <label>Password</label>
           <input
+            placeholder='Password'
             onChange={this.handleChange('password')}
             type='password'
             value={this.state.password}
             />
 
-          <input type='submit' value={button}/>
+          <input className='submit' type='submit' value={action}/>
         </form>
         {this.navLink()}
       </div>

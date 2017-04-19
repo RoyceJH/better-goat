@@ -1,3 +1,61 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+
+}
+.auth-form {
+  margin: 0 auto;
+  width: 300px;
+  font-family: Sanchez-Regular;
+  font-weight: normal;
+  font-size: 28px;
+  color: #6D6D6D;
+  border: 1px solid red;
+}
+
+.auth-form span, .auth-form input, .auth-form a {
+  text-align: center;
+  display: block;
+  font-weight: lighter;
+}
+
+.auth-form input, .auth-form a {
+  font-family: sans-serif;
+}
+
+.auth-form span {
+  font-family: Sanchez-Regular;
+  font-weight: 100;
+}
+
+.auth-form form {
+  border-top: 1px solid gray;
+  border-top-style: inset;
+}
+
+.auth-form input {
+  font-size: 15px;
+  border: 1px solid #E7E7E7;
+  border-radius: 7px;
+  padding: 8px;
+  margin: 10px auto;
+  width: 230px;
+  color: rgb(247, 247, 247);
+}
+
+.alt-link {
+  font-size: 10px;
+}
+
+.auth-form .submit {
+  color: white;
+  background-color: rgb(10, 204, 136);
+  width: 247px;
+}
+
+
+.submit:hover {
+    background: rgb(7, 186, 120);
+    transition: background-color 0.3s ease;
+}
