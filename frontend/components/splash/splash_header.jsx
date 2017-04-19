@@ -14,7 +14,7 @@ const SplashHeader = () => {
       <div className='splash-nav-links'>
         <a href='https://github.com/RoyceJH' >GitHub</a>
         <Link to='/login' >Sign In</Link>
-        <Link to='/login' >Guest User</Link>
+        <Link>Guest User</Link>
       </div>
 
     </div>
