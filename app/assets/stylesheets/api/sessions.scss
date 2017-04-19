@@ -77,8 +77,9 @@ input::-webkit-input-placeholder {
 }
 
 .auth-header {
-  align-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .auth-header label {
