@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import Notebook from './notebook';
+import NotebookIndex from './notebook_index';
+import { selectNotebooks } from '../../reducers/selectors';
 import {
   fetchNotebooks,
   fetchNotebook,
@@ -8,9 +9,9 @@ import {
   deleteNotebook
 } from '../../actions/notebook_actions';
 
-const mapStateToProps = ({ notebooks }) => {
+const mapStateToProps = state => {
   return({
-    notebooks
+    notebooks: selectNotebooks(state)
   });
 };
 
@@ -27,4 +28,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Notebook);
+)(NotebookIndex);

@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeSideBar from './home_side_bar';
-import NotebookContainer from '../notebook/notebook_container';
+import NotebookIndexContainer from '../notebook/notebook_index_container';
 import NewNoteContainer from '../note/new_note_container';
 
 class Home extends React.Component {
@@ -12,7 +12,7 @@ class Home extends React.Component {
     return(
       <div className='home-main'>
         <HomeSideBar logout={this.props.logout}/>
-        <NotebookContainer />
+        <NotebookIndexContainer />
         <NewNoteContainer />
       </div>
     );
