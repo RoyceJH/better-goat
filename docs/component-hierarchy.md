@@ -27,20 +27,25 @@
      - Tag
    * Note
 
-**NotebookContainer** [Modal on HomeContainer]
+**NotebookIndexContainer** [Modal on HomeContainer]
+- NotebookSearch
++ NotebookIndexItem
+
+**NotebookShowContainer**
 - NotebookHeader
- - NotebookSearch
- + NoteIndex
+  + NoteIndex
 
 **SearchResultsContainer**
 - Search
 - NoteIndex
 
-**TagContainer** [Modal on HomeContainer]
-- TagHeader
- - TagSearch
- + TagIndex
+**TagIndexContainer** [Modal on HomeContainer]
+- TagSearch
++ TagIndex
 
+**TagShowContainer**
+- TagHeader
++ NoteIndex
 
 **TagIndex**
 - TagIndexItem
@@ -76,8 +81,12 @@
 | "/login" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
 | "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
+| "/home/notebook" | "NotebookIndexContainer" |
+| "/home/notebook/:notebookId" | "NotebookShowContainer" |
+| "/home/notebook/:notebookId/note/:noteId" | "NotebookShowContainer" |
+| "/home/tag | "TagIndexContainer" |
+| "/home/tag/:tagId" | "TagShowContainer" |
+| "/home/tag/:tagId/note/:notedId" | "TagShowContainer" |
 | "/home/search-results" | "SearchResultsContainer"
 | "/new-note" | "NewNoteContainer" |
 | "/search" | "Search" |
