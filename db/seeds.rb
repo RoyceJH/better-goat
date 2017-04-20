@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Notebook.destroy_all
+
+100.times do
+  Notebook.create({title:Faker::Superhero.power, author_id: 1})
+end
