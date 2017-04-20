@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'faker'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -54,4 +55,5 @@ group :development do
   gem "guard-livereload",  :require => false
   gem "rack-livereload"
   gem "rb-fsevent",        :require => false
+
 end
