@@ -52,7 +52,6 @@
  - Tag
  * NoteIndex
 
-
 **NewNoteContainer**
 - NewNote
  - RTETools
