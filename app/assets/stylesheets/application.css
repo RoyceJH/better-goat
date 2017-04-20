@@ -42,3 +42,7 @@ ul {
 html, body, #root {
   height: 100%;
 }
+
+#root {
+  max-height: 100%;
+}

@@ -1,0 +1,125 @@
+.notebook-index {
+  width: 456px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  height: 100%;
+  color: #878787;
+  border-right: 3px solid #efefef;
+  border-left: 1px solid #efefef;
+  z-index: 10;
+  position: absolute;
+  left: -460px;
+}
+
+.notebook-index-header {
+  height: 122px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.notebook-index-header input {
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  padding: 8px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.notebook-index-header input::placeholder {
+  text-align: center;
+}
+
+.top-line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
+  box-sizing: border-box;
+  padding: 10px 23px;
+}
+
+.notebook-index-list {
+  display: block;
+  height: 100%;
+  border-top: 1px solid #efefef;
+  overflow-y: auto;
+}
+
+.notebook-index-item {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  font-family: Sanchez-regular;
+
+}
+
+.notebook-index-item container {
+  border-top: 1px solid #efefef;
+}
+
+// TRying to set short border?
+// .notebook-index-item:before {
+//   content:"";
+//   background: black;
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   height: 50%;
+//   width: 1px;
+//   border: 1px solid #efefef;
+// }
+
+.notebook-index-item.container:hover {
+  background: #40BC6C;
+  color: white;
+  h4 {
+    color :#c9f2d0;
+  }
+  h3 {
+    color: white;
+  }
+  .utility {
+    display: flex;
+    justify-content: space-around;
+  }
+  transition: 0.2s ease;
+}
+
+.notebook-index-item {
+  .utility {
+    display: none;
+  }
+}
+
+.notebook-index-item > .title {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.notebook-index-item h3 {
+  font-size: 16px;
+  color: #4a4a4a;
+}
+
+.notebook-index-item h4 {
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.utility {
+  width: 20%;
+  padding: 10px;
+}
+
+.utility i:hover {
+  color: yellow;
+}
