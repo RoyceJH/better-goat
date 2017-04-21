@@ -32,7 +32,7 @@
     title: 'First notebook',
     author_id: 1,
     description: 'Planning is hard',
-    id: 5
+    id: 5,
   },
 
   notes: {
