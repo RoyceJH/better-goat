@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeSideBarContainer from './home_side_bar_container';
 import NotebookIndexContainer from '../notebook/notebook_index_container';
-import NewNoteContainer from '../note/new_note_container';
+import NewNoteContainer from '../notes/new_note_container';
 
 class Home extends React.Component {
   constructor(props) {
