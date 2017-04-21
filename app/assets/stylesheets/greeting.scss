@@ -1,0 +1,103 @@
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width: 532px;
+  top: 30%;
+}
+
+.greeting-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 45%;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+//Fontshadow to change with background
+.greeting h1, .greeting p {
+  font-weight: lighter;
+  font-family: serif;
+  text-shadow: -1px 0 #989898, 0 1px #989898, 1px 0 #989898, 0 -1px #989898;
+
+}
+
+.greeting h1 {
+  font-size: 30px;
+}
+
+.greeting p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.greeting-inputs {
+  display: flex;
+  width: 83.3%;
+  justify-content: space-between;
+
+}
+
+.greeting-inputs input {
+  border: 2px solid rgb(243, 243, 243);
+  background: white;
+  width: 238px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.greeting-inputs input::placeholder {
+  color: #706f6f;
+}
+
+.greeting-submit {
+  font-family: sans-serif;
+  padding: 8px;
+  border-radius: 3px;
+  color: white;
+  background: #2DBE60;
+  padding: 16px;
+  width: 317px;
+  height: 45px;
+  font-size: 16px;
+  width: 500px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.greeting-submit:hover {
+  background: #28A956;
+  transition: 0.3s ease;
+}
+
+.underline {
+  border: 0.5px solid #ccc9c9;
+  content: "";
+  width: 450px;
+}
+
+.greeting-form ul {
+  height: 40px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.greeting-form li {
+  font-size: 14px;
+  background: #D91717;
+  color: white;
+  padding: 3px;
+  margin: 2px;
+  width: 230px;
+  text-align: justify;
+}

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
   height: 85px;
   background: white;
   color: gray;
@@ -11,11 +10,10 @@
 .splash-title {
   margin-left: 20px;
   display: flex;
-  border: 1px solid orange;
 }
 
 .splash-title h1 {
-  font-family: serif;
+  // font-family: Georgia, serif;
   color: #28A956;
   font-size: 26px;
   font-weight: 700;
@@ -23,11 +21,18 @@
 
 .splash-nav-links {
   color: gray;
-  width: 17%;
+  width: 225px;
   margin-right: 20px;
   display: flex;
   justify-content: space-between;
-  border: 1px solid blue;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.splash-nav-links a {
+  color: gray;
+  padding: 3px;
+  vertical-align: middle;
 }
 
 .splash-main {
@@ -39,87 +44,6 @@
 
 .splash-main img {
   object-fit: contain;
-  width: 90%;
+  width: 100%;
   height: auto;
-}
-
-.greeting {
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  color: white;
-  justify-content: space-around;
-  align-items: center;
-  height: 300px;
-  width: 45%;
-  top: 30%;
-}
-
-.greeting-form {
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 600px;
-  height: 40%;
-  font-family: sans-serif;
-  font-weight: lighter;
-}
-
-.greeting h1, .greeting p {
-  font-weight: lighter;
-  font-family: serif;
-}
-
-.greeting h1 {
-  font-size: 30px;
-}
-
-.greeting p {
-  font-size: 20px;
-  text-align: center;
-}
-
-.greeting-inputs {
-  display: flex;
-  width: 83.3%;
-  justify-content: space-between;
-
-}
-
-.greeting-inputs input {
-  border: 2px solid rgb(243, 243, 243);
-  background: white;
-  width: 238px;
-  box-sizing: border-box;
-  border-radius: 2px;
-  padding: 10px;
-}
-
-.greeting-inputs input::placeholder {
-  color: #4a4a4a;
-}
-
-.greeting-submit {
-  font-family: sans-serif;
-  padding: 8px;
-  border-radius: 3px;
-  color: white;
-  background: #2DBE60;
-  padding: 16px;
-  width: 317px;
-  height: 45px;
-  font-size: 16px;
-  width: 500px;
-  box-sizing: border-box;
-}
-
-.greeting-submit:hover {
-  background: #28A956;
-  transition: 0.3s ease;
-}
-hr {
-  border: 5px solid
 }
