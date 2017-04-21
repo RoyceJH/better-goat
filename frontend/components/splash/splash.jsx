@@ -1,5 +1,6 @@
 import React from 'react';
 import SplashHeader from './splash_header';
+import Greeting from './greeting';
 
 class Splash extends React.Component {
   render() {
@@ -7,8 +8,8 @@ class Splash extends React.Component {
       <div className='splash'>
         <SplashHeader />
         <div className='splash-main' >
-          <button onClick={this.props.logout}>TEMPLOGOUT</button>
           <img src='https://static.pexels.com/photos/86594/goat-animal-horns-black-and-white-86594.jpeg' />
+          <Greeting signup={this.props.signup}/>
         </div>
       </div>
     );

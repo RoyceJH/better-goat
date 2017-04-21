@@ -1,6 +1,6 @@
 import Splash from './splash';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, signup } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return ({
     logout: () => dispatch(logout()),
+    signup: () => dispatch(signup()),
   });
 };
 

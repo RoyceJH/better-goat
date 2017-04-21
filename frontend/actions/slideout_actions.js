@@ -6,7 +6,7 @@ export const slideoutNotebook = () => ({
   slideout: 'notebook'
 });
 
-export const slideoutTags = () => ({
+export const slideoutTag = () => ({
   type: CHANGE_SLIDEOUT,
   slideout: 'tags'
 });

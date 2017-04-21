@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import HomeSideBar from './home_side_bar';
 
-import { slideoutNotebook, slideoutTags, removeSlideout } from '../../actions/slideout_actions';
+import { slideoutNotebook, slideoutTag, removeSlideout } from '../../actions/slideout_actions';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   slideoutNotebook: () => dispatch(slideoutNotebook()),
-  slideoutTags: () => dispatch(slideoutTags()),
+  slideoutTag: () => dispatch(slideoutTag()),
   removeSlideout: () => dispatch(removeSlideout()),
   logout: () => dispatch(logout()),
 });

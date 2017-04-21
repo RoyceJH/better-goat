@@ -6,6 +6,7 @@ class HomeSideBar extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.slideNotebooks = this.slideNotebooks.bind(this);
+    this.slideTags = this.slideTags.bind(this);
   }
 
   handleLogout(e){
@@ -19,6 +20,14 @@ class HomeSideBar extends React.Component {
       this.props.removeSlideout();
     } else {
       this.props.slideoutNotebook();
+    }
+  }
+
+  slideTags(e) {
+    if(this.props.slideout === 'tag') {
+      this.props.removeSlideout();
+    } else {
+      this.props.slideoutTag();
     }
   }
 
@@ -41,7 +50,7 @@ class HomeSideBar extends React.Component {
           <Link>Shortcuts</Link>
           <Link>Notes</Link>
           <Link onClick={this.slideNotebooks}>Notebooks</Link>
-          <Link>Tags</Link>
+          <Link onClick={this.slideTags}>Tags</Link>
 
         </div>
 
