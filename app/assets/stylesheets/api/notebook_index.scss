@@ -4,13 +4,15 @@
   font-weight: lighter;
   height: 100%;
   color: #878787;
+  height: 100vh;
   border-right: 3px solid #efefef;
   border-left: 1px solid #efefef;
-  z-index: 10;
+  z-index: 200;
   position: absolute;
   left: -460px;
   // left: 200px;
   transition: left 0.7s ease;
+  background: white;
 }
 
 .notebook-index.selected {

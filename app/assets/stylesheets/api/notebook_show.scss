@@ -1,0 +1,31 @@
+.notebook-show {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  z-index: 100;
+
+}
+
+.notebook-show-header {
+  background: #393D41;
+  color: #bfbfbf;
+  height: 152px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.notebook-show span {
+  width: 350px;
+  text-align: right;
+  padding: 10px;
+}
+
+.notebook-show h3 {
+  height: 60%;
+  font-size: 19px;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-weight: lighter;
+}
