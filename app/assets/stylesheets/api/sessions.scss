@@ -63,6 +63,13 @@ input::-webkit-input-placeholder {
   font-size: 10px;
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.alt-link a {
+  cursor: pointer;
 }
 
 .alt-link * {

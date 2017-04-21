@@ -34,6 +34,8 @@ const Root = ({store}) => {
           <Route path='/signup' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
 
           <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}/>
+
+
         </Route>
       </Router>
 

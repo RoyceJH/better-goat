@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { login, logout, signup, clearErrors } from '../../actions/session_actions';
 //Do I need logout? maybe not
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
     loggedIn: Boolean(state.currentUser),
-    errors: state.errors
+    errors: state.errors,
   });
 };
 

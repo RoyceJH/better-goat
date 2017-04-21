@@ -1,12 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+//Make a container for this
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.state =({username: "", password: ""});
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectGuestLogin = this.redirectGuestLogin.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -18,6 +20,10 @@ class Greeting extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state).then(() => this.props.router.push('/home'));
+  }
+
+  redirectGuestLogin() {
+    this.props.login({username:'guestuser', password:'password'}).then(() => this.props.router.push('/home'));
   }
 
   handleChange(field) {
@@ -69,6 +75,8 @@ class Greeting extends React.Component {
         </form>
 
         <div className='underline'></div>
+
+        <input onClick={this.redirectGuestLogin} className='greeting-guest-login' type='submit' value='GUESET LOGIN'/>
       </div>
     );
   }

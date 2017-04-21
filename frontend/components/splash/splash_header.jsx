@@ -20,7 +20,6 @@ class SplashHeader extends React.Component {
         <div className='splash-nav-links'>
           <a href='https://github.com/RoyceJH' >GitHub</a>
           <Link to='/login' >Sign In</Link>
-          <Link>Guest User</Link>
         </div>
 
       </div>

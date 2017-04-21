@@ -11,3 +11,5 @@ Notebook.destroy_all
 100.times do
   Notebook.create({title:Faker::Superhero.power, author_id: 1})
 end
+
+User.create({username:'guestuser', password:'password'});

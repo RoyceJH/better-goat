@@ -7,6 +7,8 @@ class SessionForm extends React.Component {
     this.state = {username:"", password: ""};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
+    this.navLink = this.navLink.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -19,6 +21,30 @@ class SessionForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  guestLogin(e) {
+    const username = ['g', 'u', 'e', 's', 't', 'u', 's', 'e', 'r'];
+    const password = ['p', 'a', 's', 's', 'w', 'o', 'r' ,'d'];
+
+    let usernameEnter = setInterval( () => {
+      let nextInput = this.state.username.length;
+      if(nextInput >= username.length) {
+        clearInterval(usernameEnter);
+        let passwordEnter = setInterval( () => {
+          nextInput = this.state.password.length;
+          if(nextInput >= password.length) {
+            clearInterval(passwordEnter);
+            this.handleSubmit(e);
+          } else {
+            this.setState({password: this.state.password + password[nextInput]});
+          }
+        }, 100);
+      } else {
+        this.setState({username: this.state.username + username[nextInput]});
+      }
+    }, 100);
+
   }
 
   handleSubmit(e) {
@@ -43,6 +69,7 @@ class SessionForm extends React.Component {
         <div className='alt-link'>
           <span>Don't have an account?</span>
           <Link to="/signup">Create Account</Link>
+          <Link onClick={this.guestLogin}>Demo User</Link>
         </div>
       );
     } else {
