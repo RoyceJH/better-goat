@@ -24,7 +24,9 @@ class NotebookShow extends React.Component {
       <div className='notebook-show'>
         <div className='notebook-show-header'>
           <span>EDIT NOTEBOOK</span>
-          {this.props.notebook.title}
+          <h3>
+            {this.props.notebook.title}
+          </h3>
         </div>
 
         <NotesIndexContainer notes={this.props.notes} />
