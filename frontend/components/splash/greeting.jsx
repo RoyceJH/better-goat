@@ -76,7 +76,7 @@ class Greeting extends React.Component {
 
         <div className='underline'></div>
 
-        <input onClick={this.redirectGuestLogin} className='greeting-guest-login' type='submit' value='GUESET LOGIN'/>
+        <input onClick={this.redirectGuestLogin} className='greeting-guest-login' type='submit' value='GUEST LOGIN'/>
       </div>
     );
   }
