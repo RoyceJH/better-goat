@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import NotebookShow from './notebook_show';
 import { fetchNotebook } from '../../actions/notebook_actions';
-import { arrayNotebookIds } from '../../reducers/selectors';
+import { arrayNotebookIds, notebookNotes } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let notebook = state.notebooks[ownProps.params.notebookId] || {title: ""};
@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     notebookId: ownProps.params.notebookId,
     notebook,
     notebooksArray: arrayNotebookIds(state),
+    notes: notebookNotes(state, ownProps.params.notebookId),
   });
 };
 

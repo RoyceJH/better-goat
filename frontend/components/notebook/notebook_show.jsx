@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import NotesIndexContainer from '../notes/notes_index_container';
 
 class NotebookShow extends React.Component {
   constructor(props) {
@@ -21,7 +22,13 @@ class NotebookShow extends React.Component {
   render() {
     return(
       <div className='notebook-show'>
-        {this.props.notebook.title}
+        <div className='notebook-show-header'>
+          <span>EDIT NOTEBOOK</span>
+          {this.props.notebook.title}
+        </div>
+
+        <NotesIndexContainer notes={this.props.notes} />
+
       </div>
     );
   }
