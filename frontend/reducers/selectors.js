@@ -5,3 +5,8 @@ export const selectNotebooks = ({notebooks}) => {
 export const arrayNotebookIds = ({notebooks}) => {
   return Object.keys(notebooks);
 };
+
+export const notebookNotes = ({notes}, notebookId) => {
+  //select notes here array please
+  return [];
+};
