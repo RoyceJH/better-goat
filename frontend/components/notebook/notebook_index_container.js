@@ -10,8 +10,10 @@ import {
 } from '../../actions/notebook_actions';
 
 const mapStateToProps = state => {
+  const slideout = state.slideout === 'notebook' ? true : false;
   return({
-    notebooks: selectNotebooks(state)
+    notebooks: selectNotebooks(state),
+    slideout
   });
 };
 

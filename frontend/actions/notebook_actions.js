@@ -19,6 +19,7 @@ const removeNotebook = (notebook) => ({
   notebook
 });
 
+
 export const fetchNotebooks = () => dispatch => {
   return NotebookAPIUtil.fetchNotebooks()
     .then( (notebooks) => dispatch(receiveNotebooks(notebooks)) );

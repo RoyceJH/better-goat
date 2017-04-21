@@ -9,6 +9,13 @@
   z-index: 10;
   position: absolute;
   left: -460px;
+  // left: 200px;
+  transition: left 0.7s ease;
+}
+
+.notebook-index.selected {
+  left: 70px;
+  transition: 0.7s ease;
 }
 
 .notebook-index-header {

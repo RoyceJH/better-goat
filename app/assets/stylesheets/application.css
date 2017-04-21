@@ -31,12 +31,12 @@ a {
   text-decoration: none;
 }
 
-body {
-  background: rgb(243, 243, 243);
-}
-
 ul {
   list-style: none;
+}
+
+body {
+  background: rgb(243, 243, 243);
 }
 
 html, body, #root {

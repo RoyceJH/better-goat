@@ -15,7 +15,11 @@ class HomeSideBar extends React.Component {
   }
 
   slideNotebooks(e) {
-    debugger
+    if(this.props.slideout === 'notebook') {
+      this.props.removeSlideout();
+    } else {
+      this.props.slideoutNotebook();
+    }
   }
 
   render() {

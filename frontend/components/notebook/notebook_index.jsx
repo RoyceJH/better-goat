@@ -19,6 +19,8 @@ class NotebookIndex extends React.Component {
 
 
   render() {
+    const slidden = this.props.slideout ? "selected" : "";
+
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
       return <div key={idx} className='notebook-index-item container'>
         <div className='notebook-index-item title'>
@@ -34,7 +36,7 @@ class NotebookIndex extends React.Component {
       </div>;
     });
     return(
-      <div className='notebook-index'>
+      <div className={`notebook-index ${slidden}`}>
 
         <div className='notebook-index-header'>
 
