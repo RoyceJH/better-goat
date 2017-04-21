@@ -60,6 +60,10 @@
     }
   },
 
+  slideout: {
+    notebook || tag
+  },
+
   modal: {
     content: <SignUpForm />,
     active: false
