@@ -1,19 +1,9 @@
-import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from '../actions/notebook_actions';
-import merge from 'lodash/merge';
+import { RECEIVE_NOTEBOOK } from '../actions/notebook_actions';
 
-const _nullNotebook = ({});
-
-const NotebookReducer = (oldState = _nullNotebook, action) => {
-  Object.freeze(oldState);
+const NotebookReducer = (oldState = {}, action) => {
   switch(action.type) {
-    case RECEIVE_NOTEBOOKS:
-      return action.notebooks;
     case RECEIVE_NOTEBOOK:
-      return merge({}, oldState, action.notebook);
-    case REMOVE_NOTEBOOK:
-      const newState = merge({}, oldState);
-      delete newState[action.notebook.id];
-      return newState;
+      return action.notebook;
     default:
       return oldState;
   }

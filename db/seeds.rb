@@ -12,4 +12,12 @@ Notebook.destroy_all
   Notebook.create({title:Faker::Superhero.power, author_id: 1})
 end
 
+
+User.destroy_all
+
 User.create({username:'guestuser', password:'password'});
+user = User.find_by(username:'guestuser')
+
+10.times do
+  Notebook.create({title:Faker::Superhero.power, author_id: user.id})
+end

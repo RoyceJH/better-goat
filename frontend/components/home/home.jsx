@@ -13,6 +13,7 @@ class Home extends React.Component {
       <div className='home-main'>
         <HomeSideBarContainer />
         <NotebookIndexContainer />
+        {this.props.children}
         <NewNoteContainer />
       </div>
     );

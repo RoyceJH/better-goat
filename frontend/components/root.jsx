@@ -6,9 +6,10 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session_form/session_form_container';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
+import NotebookShowContainer from './notebook/notebook_show_container';
 
 
-const Root = ({store}) => {
+const Root = ({store, getState}) => {
 
   const _ensuredLoggedIn = (nextState, replace) => {
     const session = store.getState().session.username;
@@ -33,8 +34,12 @@ const Root = ({store}) => {
           <Route path='/login' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path='/signup' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
 
-          <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}/>
-
+          <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}>
+            <Route
+              path='/home/notebook/:notebookId'
+              component={ NotebookShowContainer}
+              />
+          </Route>
 
         </Route>
       </Router>

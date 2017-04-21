@@ -25,6 +25,11 @@ class Api::NotebooksController < ApplicationController
     end
   end
 
+  def show
+    @notebook = Notebook.find(params[:id])
+    render 'api/notebooks/show'
+  end
+
   def destroy
     @notebook = Notebook.find(params[:id])
     @notebook.destroy
