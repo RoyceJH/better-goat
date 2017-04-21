@@ -58,6 +58,7 @@ class SessionForm extends React.Component {
   render() {
     const action = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
     const passwordPlaceholder = this.props.formType === 'login' ? 'Password' : 'Create a password';
+    const usernamePlaceholder = this.props.formType === 'login' ? 'Username' : 'Create a username';
     return(
       <div className='auth-main'>
 
@@ -71,7 +72,7 @@ class SessionForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
 
             <input
-              placeholder='Email address or username'
+              placeholder={usernamePlaceholder}
               onChange={this.handleChange('username')}
               type='text'
               value={this.state.username}
