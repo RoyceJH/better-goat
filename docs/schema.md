@@ -16,7 +16,7 @@ id              | integer   | not null, primary key
 author_id       | integer   | not null, foreign key (references users), indexed
 notebook_id     | integer   | not null, foreign key (references notebooks) ,indexed
 title           | string    | not null
-body            | text      | not null, indexed, unique
+body            | text      | 
 
 ## notebooks
 column name     | data type | details
