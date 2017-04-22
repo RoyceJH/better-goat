@@ -1,5 +1,5 @@
 @notes.each do |note|
   json.set! note.id do
-    json.merge! note.attributes
+    json.partial! 'api/notes/note', note: note
   end
 end

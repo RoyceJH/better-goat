@@ -18,7 +18,7 @@ User.destroy_all
 User.create({username:'guestuser', password:'password'});
 user = User.find_by(username:'guestuser')
 
-10.times do
+20.times do
   nb = Notebook.create({title:Faker::Superhero.power, author_id: user.id})
-  nb.notes.create({title: Faker::Superhero, body: Faker::Superhero.power, author_id: user.id})
+  nb.notes.create({title: Faker::Superhero.name, body: Faker::Superhero.power, author_id: user.id})
 end

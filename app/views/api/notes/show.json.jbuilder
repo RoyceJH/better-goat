@@ -1,1 +1,1 @@
-json.merge! @note.attributes
+json.partial! 'api/notes/note', note: @note
