@@ -6,6 +6,10 @@ export const arrayNotebookIds = ({notebooks}) => {
   return Object.keys(notebooks);
 };
 
+export const arrayNotes = ({notes}) => {
+  return Object.keys(notes).map(key => notes[key]);
+};
+
 export const getNotesByNotebookId = ({notes}, notebookId) => {
   const notesByNotebook = [];
   // if(notes) { debugger }

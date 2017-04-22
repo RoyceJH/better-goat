@@ -35,8 +35,7 @@ class NotebookIndex extends React.Component {
       const notesCount = this.props.notes(notebook.id).length;
       return <div key={idx} className='notebook-index-item container' onClick={this.goToShowPage(notebook.id)}>
         <div className='notebook-index-item title'>
-          <h3>{`${notebook.title}`}</h3>
-          <h4>{notesCount} notes</h4>
+          <h3>{notebook.title}</h3>
         </div>
 
         <div className='notebook-index-item utility'>

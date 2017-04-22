@@ -5,7 +5,6 @@ import NotesIndexContainer from '../notes/notes_index_container';
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = (this.props.notebooks);
   }
 
   //TODO change handling of unaccessible notebooks (props.notebooksArray)

@@ -11,10 +11,15 @@ class NotesShow extends React.Component {
   }
 
   render() {
+    let notesCount = this.props.notes.length;
+    notesCount += (notesCount === 1) ? ' note' : ' notes';
+
     return(
       <div className='notes-show'>
         <div className='notes-show-header'>
-          IM A HEADER FOR NOTES
+          <h3>
+            NOTES
+          </h3>
         </div>
 
         <NotesIndexContainer notes={this.props.notes} />

@@ -2,9 +2,10 @@ import NotesShow from './notes_show';
 import { connect } from 'react-redux';
 
 import { fetchNotes } from '../../actions/note_actions';
+import { arrayNotes } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  notes: state.notes
+  notes: arrayNotes(state)
 });
 
 const mapDispatchToProps = dispatch => ({
