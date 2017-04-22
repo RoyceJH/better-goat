@@ -32,10 +32,11 @@ class NotebookIndex extends React.Component {
     const slidden = this.props.slideout ? "selected" : "";
 
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
+      const notesCount = this.props.notes(notebook.id).length;
       return <div key={idx} className='notebook-index-item container' onClick={this.goToShowPage(notebook.id)}>
         <div className='notebook-index-item title'>
           <h3>{`${notebook.title}`}</h3>
-          <h4>0 notes</h4>
+          <h4>{notesCount} notes</h4>
         </div>
 
         <div className='notebook-index-item utility'>
@@ -58,8 +59,10 @@ class NotebookIndex extends React.Component {
           <input type='text' placeholder='Find a notebook'/>
         </div>
 
-        <div className='notebook-index-list'>
-          {notebooks}
+        <div className='notebook-index-list-wrapper'>
+          <div className='notebook-index-list'>
+            {notebooks}
+          </div>
         </div>
 
       </div>

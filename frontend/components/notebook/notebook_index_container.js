@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NotebookIndex from './notebook_index';
-import { selectNotebooks } from '../../reducers/selectors';
+import { selectNotebooks, getNotesByNotebookId } from '../../reducers/selectors';
 import { removeSlideout } from '../../actions/slideout_actions';
 import {
   fetchNotebooks,
@@ -15,6 +15,7 @@ const mapStateToProps = state => {
   return({
     notebooks: selectNotebooks(state),
     slideout,
+    notes: (notebookId) => getNotesByNotebookId(state, notebookId),
   });
 };
 
