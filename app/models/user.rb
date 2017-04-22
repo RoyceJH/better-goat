@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
            foreign_key: :author_id,
            class_name: :Notebook
 
+  has_many :notes,
+           primary_key: :id,
+           foreign_key: :author_id,
+           class_name: :Note
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     if user && BCrypt::Password.new(user.password_digest).is_password?(password)
