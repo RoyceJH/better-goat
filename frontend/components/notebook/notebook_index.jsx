@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 //This class is hidden by defualt, to implement
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.goToShowPage = this.goToShowPage.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +16,14 @@ class NotebookIndex extends React.Component {
   handleDelete(notebookId) {
     return (e) => {
       this.props.deleteNotebook(notebookId);
+      e.stopPropagation();
+    };
+  }
+
+  goToShowPage(notebookId) {
+    return (e) => {
+      this.props.router.push(`/home/notebook/${notebookId}`);
+      this.props.removeSlideout();
     };
   }
 
@@ -22,7 +32,7 @@ class NotebookIndex extends React.Component {
     const slidden = this.props.slideout ? "selected" : "";
 
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
-      return <div key={idx} className='notebook-index-item container'>
+      return <div key={idx} className='notebook-index-item container' onClick={this.goToShowPage(notebook.id)}>
         <div className='notebook-index-item title'>
           <h3>{`${notebook.title}`}</h3>
           <h4>0 notes</h4>
@@ -57,4 +67,4 @@ class NotebookIndex extends React.Component {
   }
 }
 
-export default NotebookIndex;
+export default withRouter(NotebookIndex);

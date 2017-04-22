@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import NotebookIndex from './notebook_index';
 import { selectNotebooks } from '../../reducers/selectors';
+import { removeSlideout } from '../../actions/slideout_actions';
 import {
   fetchNotebooks,
   fetchNotebook,
@@ -13,7 +14,7 @@ const mapStateToProps = state => {
   const slideout = state.slideout === 'notebook' ? true : false;
   return({
     notebooks: selectNotebooks(state),
-    slideout
+    slideout,
   });
 };
 
@@ -23,7 +24,8 @@ const mapDispatchToProps = dispatch => {
     fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
     createNotebook: (notebook) => dispatch(createNotebook(notebook)),
     updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
-    deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
+    deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
+    removeSlideout: () => dispatch(removeSlideout()),
   });
 };
 

@@ -18,7 +18,6 @@ class NotebookShow extends React.Component {
       });
   }
 
-
   render() {
     return(
       <div className='notebook-show'>
