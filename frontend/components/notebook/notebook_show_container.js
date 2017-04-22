@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     notebookId: ownProps.params.notebookId,
     notebook,
     notebooksArray: arrayNotebookIds(state),
-    notes: getNotesByNotebookId(state, ownProps.params.notebookId),
+    getNotes: (notebookId) => getNotesByNotebookId(state, notebookId),
   });
 };
 

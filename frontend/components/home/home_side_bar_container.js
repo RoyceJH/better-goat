@@ -3,6 +3,7 @@ import HomeSideBar from './home_side_bar';
 
 import { slideoutNotebook, slideoutTag, removeSlideout } from '../../actions/slideout_actions';
 import { logout } from '../../actions/session_actions';
+import { fetchNotes } from '../../actions/note_actions';
 
 const mapStateToProps = state => ({
   slideout: state.slideout
@@ -13,6 +14,7 @@ const mapDispatchToProps = dispatch => ({
   slideoutTag: () => dispatch(slideoutTag()),
   removeSlideout: () => dispatch(removeSlideout()),
   logout: () => dispatch(logout()),
+  fetchNotes: () => dispatch(fetchNotes()),
 });
 
 export default connect(

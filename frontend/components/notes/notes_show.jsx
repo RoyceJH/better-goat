@@ -5,10 +5,10 @@ class NotesShow extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  componentDidMount() {
-    this.props.fetchNotes();
-  }
+  // 
+  // componentDidMount() {
+  //   this.props.fetchNotes();
+  // }
 
   render() {
     let notesCount = this.props.notes.length;

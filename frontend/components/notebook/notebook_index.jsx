@@ -32,10 +32,17 @@ class NotebookIndex extends React.Component {
     const slidden = this.props.slideout ? "selected" : "";
 
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
-      const notesCount = this.props.notes(notebook.id).length;
+      let notesCount = this.props.notes(notebook.id).length;
+      if(notesCount === 1) {
+        notesCount += ' note';
+      } else {
+        notesCount += ' notes';
+      }
+
       return <div key={idx} className='notebook-index-item container' onClick={this.goToShowPage(notebook.id)}>
         <div className='notebook-index-item title'>
           <h3>{notebook.title}</h3>
+          <span className='notebook-index-item count'>{notesCount}</span>
         </div>
 
         <div className='notebook-index-item utility'>

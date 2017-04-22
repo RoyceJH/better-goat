@@ -9,6 +9,10 @@ class HomeSideBar extends React.Component {
     this.slideTags = this.slideTags.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchNotes();
+  }
+
   handleLogout(e){
     e.preventDefault();
     this.props.logout();

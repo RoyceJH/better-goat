@@ -18,6 +18,7 @@ class NotebookShow extends React.Component {
   }
 
   render() {
+    const notes = this.props.getNotes(parseInt(this.props.notebookId));
     return(
       <div className='notebook-show'>
         <div className='notebook-show-header'>
@@ -27,7 +28,7 @@ class NotebookShow extends React.Component {
           </h3>
         </div>
 
-        <NotesIndexContainer notes={this.props.notes} />
+        <NotesIndexContainer notes={notes} />
 
       </div>
     );
