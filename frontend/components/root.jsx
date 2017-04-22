@@ -7,6 +7,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import NotebookShowContainer from './notebook/notebook_show_container';
+import NotesShowContainer from './notes/notes_show_container';
 
 
 const Root = ({store, getState}) => {
@@ -35,6 +36,7 @@ const Root = ({store, getState}) => {
           <Route path='/signup' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
 
           <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}>
+            <IndexRoute component={ NotesShowContainer }/>
             <Route
               path='/home/notebook/:notebookId'
               component={ NotebookShowContainer}

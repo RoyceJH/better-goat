@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import NotesIndex from './notes_index';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
 
 });
 

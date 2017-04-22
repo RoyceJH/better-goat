@@ -8,10 +8,10 @@ export const arrayNotebookIds = ({notebooks}) => {
 
 export const getNotesByNotebookId = ({notes}, notebookId) => {
   const notesByNotebook = [];
-  if(notes) { debugger }
+  // if(notes) { debugger }
   for (var key in notes) {
     if(notes[key]['notebook_id'] === notebookId) {
-      notes.push(notes[key]);
+      notesByNotebook.push(notes[key]);
     }
   }
   return notesByNotebook;
