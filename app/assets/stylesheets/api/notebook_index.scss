@@ -2,7 +2,7 @@
   width: 456px;
   font-family: sans-serif;
   font-weight: lighter;
-  height: 100%;
+  // height: 100%;
   color: #878787;
   height: 100vh;
   border-right: 3px solid #efefef;
@@ -13,6 +13,19 @@
   // left: 200px;
   transition: left 0.7s ease;
   background: white;
+
+}
+
+.notebook-index-list-wrapper {
+  /* Firefox */
+  height: -moz-calc(100% - 122px);
+  /* WebKit */
+  height: -webkit-calc(100% - 122px);
+  /* Opera */
+  height: -o-calc(100% - 122px);
+  /* Standard */
+  height: calc(100% - 122px);
+  overflow: auto;
 }
 
 .notebook-index.selected {
@@ -51,9 +64,8 @@
 
 .notebook-index-list {
   display: block;
-  height: 100%;
+  height: 98%;
   border-top: 1px solid #efefef;
-  overflow-y: auto;
 }
 
 .notebook-index-item {
