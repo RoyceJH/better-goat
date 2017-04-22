@@ -6,7 +6,12 @@ export const arrayNotebookIds = ({notebooks}) => {
   return Object.keys(notebooks);
 };
 
-export const notebookNotes = ({notes}, notebookId) => {
-  //select notes here array please
-  return [];
+export const getNotesByNotebookId = ({notes}, notebookId) => {
+  const notesByNotebook = [];
+  for (var key in notes) {
+    if(notes[key]['notebook_id'] === notebookId) {
+      notes.push(notes[key]);
+    }
+  }
+  return notesByNotebook;
 };
