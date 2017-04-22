@@ -1,11 +1,12 @@
 class Api::NotesController < ApplicationController
   def index
-    @notes = Note.all
+    @notes = Note.all.where(author_id: current_user.id)
     render :index
   end
 
   def create
     @note = Note.new(note_params)
+    @note.author_id = current_user.id
 
     if @note.save
       render 'api/json/show'
@@ -14,20 +15,28 @@ class Api::NotesController < ApplicationController
     end
   end
 
-
   def show
     @note = Note.find(params[:id])
   end
 
   def update
     @note = Note.find(params[:id])
-    @note.update(note_params)
-    render 'api/json/show'
+    if @note.update(note_params)
+      render 'api/json/show'
+    else
+      render json: @note.errors.full_messages, status: 422
+    end
   end
 
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
     render 'api/json/show'
+  end
+
+  private
+
+  def note_params
+    params.require(:note).permit(:title, :body, :author_id, :notebook_id)
   end
 end
