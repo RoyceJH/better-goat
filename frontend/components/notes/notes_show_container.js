@@ -7,7 +7,6 @@ import { arrayNotes } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
   return{
     notes: arrayNotes(state),
-    path: ownProps.location.pathname
   };
 };
 

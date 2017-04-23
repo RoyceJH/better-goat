@@ -9,8 +9,8 @@ class NoteIndexItem extends React.Component {
 
   goToNotes(noteId) {
     return (e) => {
-      hashHistory.push(`${this.props.path}/notes/${noteId}`);
-      // this.props.router.push(`notes/${noteId}`);
+      let currentPath = this.props.router.location.pathname;
+      this.props.router.push(`${currentPath}/notes/${noteId}`);
     };
   }
 

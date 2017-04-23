@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => {
     notebook,
     notebooksArray: arrayNotebookIds(state),
     getNotes: (notebookId) => getNotesByNotebookId(state, notebookId),
-    path: ownProps.location.pathname
   });
 };
 

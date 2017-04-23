@@ -21,7 +21,7 @@ class NotesShow extends React.Component {
           </h3>
         </div>
 
-        <NotesIndexContainer notes={this.props.notes} path={this.props.path}/>
+        <NotesIndexContainer notes={this.props.notes} />
       </div>
     );
   }
