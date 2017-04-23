@@ -5,7 +5,7 @@ class NotesShow extends React.Component {
   constructor(props) {
     super(props);
   }
-  // 
+  //
   // componentDidMount() {
   //   this.props.fetchNotes();
   // }
@@ -13,7 +13,6 @@ class NotesShow extends React.Component {
   render() {
     let notesCount = this.props.notes.length;
     notesCount += (notesCount === 1) ? ' note' : ' notes';
-
     return(
       <div className='notes-show'>
         <div className='notes-show-header'>
@@ -22,7 +21,7 @@ class NotesShow extends React.Component {
           </h3>
         </div>
 
-        <NotesIndexContainer notes={this.props.notes} />
+        <NotesIndexContainer notes={this.props.notes} path={this.props.path}/>
       </div>
     );
   }

@@ -9,7 +9,8 @@ class NoteIndexItem extends React.Component {
 
   goToNotes(noteId) {
     return (e) => {
-      hashHistory.push(`notes/${noteId}`);
+      hashHistory.push(`${this.props.path}/notes/${noteId}`);
+      // this.props.router.push(`notes/${noteId}`);
     };
   }
 
@@ -41,7 +42,6 @@ class NoteIndexItem extends React.Component {
 
         </div>
 
-        <div className='bottom-line'></div>
       </li>
     );
   }

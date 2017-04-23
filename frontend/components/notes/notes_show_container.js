@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { fetchNotes } from '../../actions/note_actions';
 import { arrayNotes } from '../../reducers/selectors';
 
-const mapStateToProps = state => ({
-  notes: arrayNotes(state)
-});
+const mapStateToProps = (state, ownProps) => {
+  return{
+    notes: arrayNotes(state),
+    path: ownProps.location.pathname
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   // fetchNotes: () => dispatch(fetchNotes()),

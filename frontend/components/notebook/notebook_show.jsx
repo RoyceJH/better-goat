@@ -28,7 +28,7 @@ class NotebookShow extends React.Component {
           </h3>
         </div>
 
-        <NotesIndexContainer notes={notes} />
+        <NotesIndexContainer notes={notes} path={this.props.path}/>
 
       </div>
     );

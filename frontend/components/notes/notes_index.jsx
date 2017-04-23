@@ -3,9 +3,8 @@ import NoteIndexItemContainer from './note_index_item_container';
 
 class NotesIndex extends React.Component {
   render() {
-    // debugger
     const notes = this.props.notes.map((note, idx) => {
-      return <NoteIndexItemContainer key={idx} note={note} />;
+      return <NoteIndexItemContainer key={idx} note={note} path={this.props.path}/>;
     });
 
     let notesCount = notes.length;
@@ -22,10 +21,12 @@ class NotesIndex extends React.Component {
           </div>
         </div>
 
-        <ul className='notes-index-list'>
-          {notes}
+        <div className='notes-index-list-wrapper'>
+          <ul className='notes-index-list'>
+            {notes}
 
-        </ul>
+          </ul>
+        </div>
       </div>
     );
   }
