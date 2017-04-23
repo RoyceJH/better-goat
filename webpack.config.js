@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   context: __dirname,
   entry: './frontend/better_goat.jsx',
@@ -5,7 +7,7 @@ module.exports = {
     filename: './app/assets/javascripts/bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '.jsx', '.ts', '.svg', '*']
   },
   module: {
     loaders: [
@@ -16,8 +18,14 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }
+      },
+
     ]
   },
+
   devtool: 'source-maps'
 };
+
+
+
+//////

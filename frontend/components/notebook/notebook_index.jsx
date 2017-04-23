@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import SlideOut from '../slideout';
 
 class NotebookIndex extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class NotebookIndex extends React.Component {
 
   render() {
     const slidden = this.props.slideout ? "selected" : "";
+    const slideModal = this.props.slideout ? <SlideOut/> : "";
 
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
       let notesCount = this.props.notes(notebook.id).length;
@@ -51,25 +53,28 @@ class NotebookIndex extends React.Component {
       </div>;
     });
     return(
-      <div className={`notebook-index ${slidden}`}>
+        <div className={`notebook-index ${slidden}`}>
+          <div className='notebook-wrapper' >
+            <div className='notebook-index-header'>
 
-        <div className='notebook-index-header'>
+              <div className='top-line'>
+                <h2>NOTEBOOKS</h2>
+                <label>ADDNBMODAL</label>
+              </div>
 
-          <div className='top-line'>
-            <h2>NOTEBOOKS</h2>
-            <label>ADDNBMODAL</label>
+              <input type='text' placeholder='Find a notebook'/>
+            </div>
+
+            <div className='notebook-index-list-wrapper'>
+              <div className='notebook-index-list'>
+                {notebooks}
+              </div>
+            </div>
           </div>
 
-          <input type='text' placeholder='Find a notebook'/>
+          {slideModal}
         </div>
 
-        <div className='notebook-index-list-wrapper'>
-          <div className='notebook-index-list'>
-            {notebooks}
-          </div>
-        </div>
-
-      </div>
     );
   }
 }
