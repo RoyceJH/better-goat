@@ -13,7 +13,7 @@ class SplashHeader extends React.Component {
       <div className='splash-header'>
 
         <div className='splash-title'>
-          <h1>GOAT</h1>
+          <label className='logo splash' />
           <h1>BETTERGOAT</h1>
         </div>
 

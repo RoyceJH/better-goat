@@ -2,7 +2,7 @@ import { CHANGE_SLIDEOUT, REMOVE_SLIDEOUT } from '../actions/slideout_actions';
 
 const _nullSlideout = {};
 
-const SlideoutReducer = (oldState=_nullSlideout, action) => {
+const SlideoutReducer = (oldState = _nullSlideout, action) => {
   switch(action.type) {
     case CHANGE_SLIDEOUT:
       return action.slideout;

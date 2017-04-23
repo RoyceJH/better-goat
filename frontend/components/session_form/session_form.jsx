@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
       <div className='auth-main'>
 
         <div className='auth-header'>
-          <label>LOGOHERE</label>
+          <label className='logo auth' />
           <label>{action}</label>
         </div>
 
