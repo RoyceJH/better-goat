@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 
-//This class is hidden by defualt, to implement
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +26,6 @@ class NotebookIndex extends React.Component {
     };
   }
 
-
   render() {
     const slidden = this.props.slideout ? "selected" : "";
 
@@ -42,7 +40,7 @@ class NotebookIndex extends React.Component {
       return <div key={idx} className='notebook-index-item container' onClick={this.goToShowPage(notebook.id)}>
         <div className='notebook-index-item title'>
           <h3>{notebook.title}</h3>
-          <span className='notebook-index-item count'>{notesCount}</span>
+          <label className='notebook-index-item count'>{notesCount}</label>
         </div>
 
         <div className='notebook-index-item utility'>

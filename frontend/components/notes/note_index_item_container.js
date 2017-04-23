@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import NotesIndex from './notes_index';
+
+import NoteIndexItem from './note_index_item';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
-  return {
+  return{
 
   };
 };
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NotesIndex);
+)(NoteIndexItem);
