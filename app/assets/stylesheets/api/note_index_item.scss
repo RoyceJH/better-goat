@@ -5,8 +5,13 @@
   box-sizing: border-box;
   border: 3px solid transparent;
   cursor: pointer;
+    overflow: hidden;
 }
 
+.notes-index {
+  height: 93%;
+
+}
 //Potentially for focus note item checkbox
 // .note-index-item-wrapper:checked {
 //   border: 3px solid #ababab;
@@ -32,7 +37,15 @@
     justify-content: space-between;
     font-size: 20px;
   }
+
+  .bottom-line {
+    display: none;
+  }
   transition: .2s ease;
+}
+
+.options:hover {
+  color: yellow;
 }
 
 .note-index-item {
@@ -46,7 +59,6 @@
 }
 
 .note-index-list-item {
-  border: 1px solid purple;
   height: 100%;
   box-sizing: border-box;
 
@@ -55,14 +67,22 @@
 }
 
 .notes-index-list {
+  height: 100%;
+  display: block;
+  overflow: auto;
+  overflow-x: hidden;
+
+}
+
+.notes-index-list-wrapper {
   /* Firefox */
-  height: -moz-calc(100% - 98px);
+  height: -moz-calc(100% - 43px);
   /* WebKit */
-  height: -webkit-calc(100% - 98px);
+  height: -webkit-calc(100% - 43px);
   /* Opera */
-  height: -o-calc(100% - 98px);
+  height: -o-calc(100% - 43px);
   /* Standard */
-  height: calc(100% - 98px);
+  height: calc(100% - 43px);
   overflow: auto;
 }
 
@@ -86,7 +106,7 @@
   padding-bottom: 7px;
 }
 
-.bottom-line {
-  padding-top: 12px;
+
+.note-index-item-wrapper {
   border-bottom: 1px solid #e3e3e3;
 }
