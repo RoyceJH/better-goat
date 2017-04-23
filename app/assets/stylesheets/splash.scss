@@ -10,13 +10,20 @@
 .splash-title {
   margin-left: 20px;
   display: flex;
+  align-content: center;
 }
 
 .splash-title h1 {
-  // font-family: Georgia, serif;
+  font-family: sans-serif;
   color: #28A956;
   font-size: 26px;
-  font-weight: 700;
+  padding-top: 15px;
+  margin-left: 20px;
+}
+
+.logo.splash {
+  width: 60px;
+  height: 60px;
 }
 
 .splash-nav-links {

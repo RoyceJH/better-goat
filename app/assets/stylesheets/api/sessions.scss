@@ -8,7 +8,18 @@
   font-size: 28px;
   color: #6D6D6D;
   text-align: center;
+}
 
+.logo {
+  background-image: asset_url('evergoat-logo');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.logo.auth {
+  padding-bottom: 0;
+  width: 150px;
+  height: 150px;
 }
 
 .auth-form span, .auth-form input {
@@ -92,7 +103,8 @@ input::-webkit-input-placeholder {
 }
 
 .auth-header {
-  height: 200px;
+  padding-top: 20px;
+  height: 250px;
   align-items: center;
   display: flex;
   flex-direction: column;
