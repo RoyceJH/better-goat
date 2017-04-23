@@ -28,7 +28,7 @@ class HomeSideBar extends React.Component {
   }
 
   slideTags(e) {
-    if(this.props.slideout === 'tag') {
+    if(this.props.slideout === 'tags') {
       this.props.removeSlideout();
     } else {
       this.props.slideoutTag();

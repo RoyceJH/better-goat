@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeSideBarContainer from './home_side_bar_container';
 import NotebookIndexContainer from '../notebook/notebook_index_container';
-import NewNoteContainer from '../notes/new_note_container';
+import NoteEditorContainer from '../notes/note_editor_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class Home extends React.Component {
         <HomeSideBarContainer />
         <NotebookIndexContainer />
         {this.props.children}
-        <NewNoteContainer />
+        <NoteEditorContainer />
       </div>
     );
   }
