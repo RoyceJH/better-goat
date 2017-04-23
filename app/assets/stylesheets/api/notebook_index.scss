@@ -2,7 +2,6 @@
   width: 456px;
   font-family: sans-serif;
   font-weight: lighter;
-  // height: 100%;
   color: #878787;
   height: 100vh;
   border-right: 3px solid #efefef;
@@ -10,7 +9,6 @@
   z-index: 200;
   position: absolute;
   left: -460px;
-  // left: 200px;
   transition: left 0.7s ease;
   background: white;
 
@@ -99,7 +97,7 @@
 .notebook-index-item.container:hover {
   background: #40BC6C;
   color: white;
-  h4 {
+  label {
     color :#c9f2d0;
   }
   h3 {
@@ -119,7 +117,7 @@
 }
 
 .notebook-index-item > .title {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -127,7 +125,7 @@
 }
 
 .notebook-index-item h3 {
-  font-size: 16px;
+  font-size: 14px;
   color: #4a4a4a;
 }
 
@@ -144,4 +142,10 @@
 
 .utility i:hover {
   color: yellow;
+}
+
+.notebook-index-item label {
+  font-size: 12px;
+  padding: 0;
+  font-family: sans-serif;
 }

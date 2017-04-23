@@ -1,0 +1,92 @@
+.note-index-item-wrapper {
+  padding: 10px 18px;
+  width: 350px;
+  height: 114px;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+//Potentially for focus note item checkbox
+// .note-index-item-wrapper:checked {
+//   border: 3px solid #ababab;
+// }
+
+// #btnControl {
+//   display: none;
+// }
+
+
+.note-index-item-wrapper:hover {
+  background: #40BC6C;
+
+  .note-index-list-item {
+    .title, .body, .time, .options {
+      color: white;
+    }
+  }
+
+  .options {
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  transition: .2s ease;
+}
+
+.note-index-item {
+  .options {
+    display: none;
+  }
+}
+
+.note-index-list-wrapper.selected {
+  border: 2px solid #b4b1b1;
+}
+
+.note-index-list-item {
+  border: 1px solid purple;
+  height: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-index-list {
+  /* Firefox */
+  height: -moz-calc(100% - 98px);
+  /* WebKit */
+  height: -webkit-calc(100% - 98px);
+  /* Opera */
+  height: -o-calc(100% - 98px);
+  /* Standard */
+  height: calc(100% - 98px);
+  overflow: auto;
+}
+
+.note-index-item.title {
+  color: #797878;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-index-item.body, .note-index-item.time {
+  color: #b4b0b0;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.note-index-item.time {
+  letter-spacing: 1.5px;
+  font-size: 11px;
+  padding-bottom: 7px;
+}
+
+.bottom-line {
+  padding-top: 12px;
+  border-bottom: 1px solid #e3e3e3;
+}

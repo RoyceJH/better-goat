@@ -3,14 +3,14 @@
   flex-direction: column;
   border: 1px solid red;
   z-index: 100;
-
+  width: 350px;
 }
 
 .notebook-show-header {
   background: #393D41;
   color: #D3D4D5;
   height: 152px;
-  width: 350px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
