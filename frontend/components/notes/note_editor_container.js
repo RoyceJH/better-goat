@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import NewNote from './new_note';
+import NoteEditor from './note_editor';
 
 const mapStateToProps = (state) => {
   return ({
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewNote);
+)(NoteEditor);
