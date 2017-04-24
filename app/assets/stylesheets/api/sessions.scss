@@ -97,6 +97,10 @@ input::-webkit-input-placeholder {
   cursor: pointer;
 }
 
+.auth-form .submit:focus {
+  outline: 0;
+}
+
 .submit:hover,  {
     background: #28A956;
     transition: background-color 0.3s ease;

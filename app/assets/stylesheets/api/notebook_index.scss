@@ -1,14 +1,18 @@
 .slider-modal {
   background: gray;
   position: absolute;
-  width: 219%;
+  width: 400vh;
   height: 100vh;
   z-index: -1;
   top:0;
   left: 458px;
   opacity: .1;
-  transition: 0s;
 }
+
+// @-webkit-keyframes fadein {
+//   from { opacity: 0;}
+//   to { opacity: .1;}
+// }
 
 .notebook-wrapper {
   height: 100%;
@@ -49,9 +53,6 @@
 .notebook-index.selected {
   left: 70px;
   transition: 0.7s ease;
-  .slider-modal {
-    transition: 0s;
-  }
 }
 
 .notebook-index-header {

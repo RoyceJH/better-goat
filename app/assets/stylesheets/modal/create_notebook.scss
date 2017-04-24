@@ -1,0 +1,103 @@
+.modal-create-notebook {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 311px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+
+.modal-create-notebook-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 30%;
+  color: #939090;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+}
+
+.modal-create-notebook-header label {
+  padding-bottom: 5px;
+}
+
+.modal-create-notebook i {
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.modal-create-notebook.bottom-line {
+  height: 1px;
+  border-top: 1px solid #ddd9d9;
+}
+
+.create-notebook-title {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 33px;
+  width: 300px;
+  padding-bottom: 20px;
+}
+
+.modal-create-notebook input::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.create-notebook-title:focus {
+  outline: 0;
+}
+
+.create-notebook-buttons {
+  height: 40px;
+  width: 388px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.create-notebook-buttons input {
+  font-size: 13px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  width: 190px;
+  height: 35px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.create-notebook-buttons input:focus {
+  outline: none;
+}
+
+.create-notebook-buttons .cancel {
+  background: #edecec;
+  color: #716e6e;
+}
+
+.create-notebook-buttons .cancel:hover {
+  background: #d9d9d9;
+}
+
+.create-notebook-buttons .create {
+  background: #2DBE60;
+  color: #f2f2f2;
+}
+
+.create-notebook-buttons .create:hover {
+  background: #28a955;
+}
+
+.create-notebook-buttons .inactive {
+  background: #96DFB0;
+  cursor: default;
+}
+
+.create-notebook-buttons .inactive:hover {
+  background: #96DFB0;
+}

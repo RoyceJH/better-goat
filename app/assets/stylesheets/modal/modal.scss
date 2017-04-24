@@ -4,19 +4,19 @@
 }
 
 .active-modal {
-  width: 98vw;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
   background: white;
   z-index: 400;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  -webkit-animation: fadein .6s;
 }
 
-//Create notebook
-.modal-create-notebook {
-  border: 1px solid red;
-  display: flex;
-  flex-direction: column;
+@-webkit-keyframes fadein {
+  from { opacity: 0 }
+  to { opacity:1 }
 }

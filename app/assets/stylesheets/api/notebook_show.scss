@@ -20,7 +20,13 @@
 .notebook-show span {
   width: 350px;
   text-align: right;
-  padding: 10px;
+}
+
+.notebook-show i {
+  padding-right: 16px;
+  padding-top: 4px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .notebook-show h3 {

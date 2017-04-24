@@ -79,13 +79,13 @@
 
 .notes-index-list-wrapper {
   /* Firefox */
-  height: -moz-calc(100% - 35px);
+  height: -moz-calc(100%);
   /* WebKit */
-  height: -webkit-calc(100% - 35px);
+  height: -webkit-calc(100%);
   /* Opera */
-  height: -o-calc(100% - 35px);
+  height: -o-calc(100%);
   /* Standard */
-  height: calc(100% - 35px);
+  height: calc(100%);
   overflow: auto;
 }
 

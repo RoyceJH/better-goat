@@ -37,6 +37,7 @@ ul {
 
 body {
   background: rgb(243, 243, 243);
+  overflow: hidden;
 }
 
 html, body, #root {
