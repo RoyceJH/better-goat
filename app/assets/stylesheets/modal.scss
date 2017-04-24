@@ -1,0 +1,22 @@
+.inactive-modal {
+  width: 0;
+  height: 0;
+}
+
+.active-modal {
+  width: 98vw;
+  height: 98vh;
+  position: absolute;
+  background: white;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Create notebook
+.modal-create-notebook {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
