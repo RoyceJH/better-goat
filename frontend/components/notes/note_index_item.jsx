@@ -33,7 +33,7 @@ class NoteIndexItem extends React.Component {
           </div>
 
           <div className='note-index-item time'>
-            <label>6 MINUTES AGO</label>
+            <label>{this.props.timeAgo}</label>
           </div>
 
           <div className='note-index-item body'>
