@@ -1,10 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import NotesIndexContainer from '../notes/notes_index_container';
+import UpdateNotebook from '../modal/update_notebook';
 
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
+    this.addModal = this.addModal.bind(this);
   }
 
   //TODO change handling of unaccessible notebooks (props.notebooksArray)
@@ -17,12 +19,23 @@ class NotebookShow extends React.Component {
       });
   }
 
+  addModal(e) {
+    this.props.receiveModal(
+      <UpdateNotebook notebookId={this.props.notebookId} />
+    );
+  }
+
+
+
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
     return(
       <div className='notebook-show'>
         <div className='notebook-show-header'>
-          <span>EDIT NOTEBOOK</span>
+          <span>
+            <i onClick={this.addModal} className="fa fa-info-circle" aria-hidden="true"></i>
+          </span>
+
           <h3>
             {this.props.notebook.title}
           </h3>

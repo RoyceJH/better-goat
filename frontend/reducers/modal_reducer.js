@@ -11,7 +11,7 @@ const ModalReducer = (oldState = _defaultModal, action) => {
     case RECEIVE_MODAL:
       return merge({}, oldState, {component:action.component, active: true});
     case REMOVE_MODAL:
-      return merge({}, oldState, {active: true});
+      return merge({}, oldState, {active: false});
     default:
       return oldState;
   }

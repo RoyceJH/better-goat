@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import NotebookShow from './notebook_show';
 import { fetchNotebook } from '../../actions/notebook_actions';
 import { arrayNotebookIds, getNotesByNotebookId } from '../../reducers/selectors';
+import { receiveModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let notebook = state.notebooks[ownProps.params.notebookId] || {title: ""};
@@ -15,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
+  receiveModal: (component) => dispatch(receiveModal(component)),
 });
 
 export default connect(

@@ -19,6 +19,7 @@ class CreateNotebook extends React.Component {
     this.state = {title: ""};
     this.handleChange = this.handleChange.bind(this);
     this.submitNotebook = this.submitNotebook.bind(this);
+    this.cancelCreate = this.cancelCreate.bind(this);
   }
 
   submitNotebook(e) {
@@ -27,16 +28,26 @@ class CreateNotebook extends React.Component {
     this.props.createNotebook(newNotebook);
   }
 
+  cancelCreate(e) {
+    this.props.removeModal();
+  }
+
   handleChange(e) {
     let title = e.target.value;
     this.setState({title});
   }
 
   render() {
+    const submitClass = this.state.title === '' ? 'inactive' : '';
+    const submitAction = this.state.title === '' ? '' : this.submitNotebook;
     return(
       <div className='modal-create-notebook'>
-        <i className="fa fa-file-text-o" aria-hidden="true"></i>
-        <label>CREATE NOTEBOOK</label>
+        <div className='modal-create-notebook-header'>
+          <i className="fa fa-file-text-o" aria-hidden="true"></i>
+          <label>CREATE NOTEBOOK</label>
+          <div className='modal-create-notebook bottom-line'/>
+        </div>
+
         <input
           type='text'
           className='create-notebook-title'
@@ -46,11 +57,17 @@ class CreateNotebook extends React.Component {
           />
 
         <div className='create-notebook-buttons'>
-          <input type='submit' name='Cancel'/>
           <input
-            onClick={this.submitNotebook}
+            className='cancel'
+            onClick={this.cancelCreate}
             type='submit'
-            name='Create notebook'
+            value='Cancel'
+            />
+          <input
+            className={`create ${submitClass}`}
+            onClick={submitAction}
+            type='submit'
+            value='Create notebook'
             />
         </div>
       </div>

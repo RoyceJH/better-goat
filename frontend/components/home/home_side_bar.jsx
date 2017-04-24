@@ -52,7 +52,7 @@ class HomeSideBar extends React.Component {
 
         <div className='side-bar-3' >
           <Link>Shortcuts</Link>
-          <Link>Notes</Link>
+          <Link to={'/home'}>Notes</Link>
           <Link onClick={this.slideNotebooks}>Notebooks</Link>
           <Link onClick={this.slideTags}>Tags</Link>
 
