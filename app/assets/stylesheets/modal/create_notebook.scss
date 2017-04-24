@@ -52,7 +52,7 @@
   outline: 0;
 }
 
-.create-notebook-buttons {
+.notebook-modal {
   height: 40px;
   width: 388px;
   display: flex;
@@ -60,7 +60,7 @@
 }
 
 
-.create-notebook-buttons input {
+.notebook-modal input {
   font-size: 13px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
@@ -71,33 +71,33 @@
   cursor: pointer;
 }
 
-.create-notebook-buttons input:focus {
+.notebook-modal input:focus {
   outline: none;
 }
 
-.create-notebook-buttons .cancel {
+.notebook-modal .cancel {
   background: #edecec;
   color: #716e6e;
 }
 
-.create-notebook-buttons .cancel:hover {
+.notebook-modal .cancel:hover {
   background: #d9d9d9;
 }
 
-.create-notebook-buttons .create {
+.notebook-modal .submit {
   background: #2DBE60;
   color: #f2f2f2;
 }
 
-.create-notebook-buttons .create:hover {
+.notebook-modal .submit:hover {
   background: #28a955;
 }
 
-.create-notebook-buttons .inactive {
+.notebook-modal .inactive {
   background: #96DFB0;
   cursor: default;
 }
 
-.create-notebook-buttons .inactive:hover {
+.notebook-modal .inactive:hover {
   background: #96DFB0;
 }
