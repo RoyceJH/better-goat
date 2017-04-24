@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import SlideOut from '../slideout';
+import CreateNotebook from '../modal/create_notebook';
 
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
     this.goToShowPage = this.goToShowPage.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.addModal = this.addModal.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +27,10 @@ class NotebookIndex extends React.Component {
       this.props.router.push(`/home/notebook/${notebookId}`);
       this.props.removeSlideout();
     };
+  }
+
+  addModal(e) {
+    this.props.receiveModal(<CreateNotebook />);
   }
 
   render() {
@@ -59,7 +65,7 @@ class NotebookIndex extends React.Component {
 
               <div className='top-line'>
                 <h2>NOTEBOOKS</h2>
-                <label>ADDNBMODAL</label>
+                <label onClick={this.addModal}>ADDNBMODAL</label>
               </div>
 
               <input type='text' placeholder='Find a notebook'/>

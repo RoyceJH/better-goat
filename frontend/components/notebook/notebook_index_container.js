@@ -9,6 +9,8 @@ import {
   updateNotebook,
   deleteNotebook
 } from '../../actions/notebook_actions';
+import { receiveModal } from '../../actions/modal_actions';
+
 
 const mapStateToProps = state => {
   const slideout = state.slideout === 'notebook' ? true : false;
@@ -27,6 +29,7 @@ const mapDispatchToProps = dispatch => {
     updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
     deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
     removeSlideout: () => dispatch(removeSlideout()),
+    receiveModal: (component) => dispatch(receiveModal(component)),
   });
 };
 
