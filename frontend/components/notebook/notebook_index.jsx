@@ -65,7 +65,10 @@ class NotebookIndex extends React.Component {
 
               <div className='top-line'>
                 <h2>NOTEBOOKS</h2>
-                <label onClick={this.addModal}>ADDNBMODAL</label>
+                <label onClick={this.addModal}>
+                  <i className="fa fa-file-text-o" aria-hidden="true"></i>
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  </label>
               </div>
 
               <input type='text' placeholder='Find a notebook'/>
