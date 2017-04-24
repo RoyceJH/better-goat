@@ -57,7 +57,7 @@ class UpdateNotebook extends React.Component {
           </div>
         </div>
 
-        <div className='update-buttons' >
+        <div className='notebook-modal' >
           <input
             className='cancel'
             onClick={this.cancelUpdate}
@@ -66,13 +66,15 @@ class UpdateNotebook extends React.Component {
             />
 
           <input
-            className='update'
+            className='submit'
             onClick={this.updateNotebook}
             type='submit'
             value='Save'
             />
 
         </div>
+
+        <div className='add-spacing'></div>
       </div>
     );
   }

@@ -56,7 +56,7 @@ class CreateNotebook extends React.Component {
           value={this.state.title}
           />
 
-        <div className='create-notebook-buttons'>
+        <div className='notebook-modal'>
           <input
             className='cancel'
             onClick={this.cancelCreate}
@@ -64,7 +64,7 @@ class CreateNotebook extends React.Component {
             value='Cancel'
             />
           <input
-            className={`create ${submitClass}`}
+            className={`submit ${submitClass}`}
             onClick={submitAction}
             type='submit'
             value='Create notebook'
