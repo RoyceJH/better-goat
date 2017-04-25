@@ -9,13 +9,12 @@ class NoteIndexItem extends React.Component {
 
   goToNotes(noteId) {
     return (e) => {
-      let currentPath = this.props.router.location.pathname;
-      this.props.router.push(`${currentPath}/notes/${noteId}`);
+      this.props.fetchNote(noteId);
     };
   }
 
   render() {
-    const {title, body, id} = this.props.note;
+    const {title, body, id, preview} = this.props.note;
     return(
       <li
         className='note-index-item-wrapper'
@@ -37,7 +36,7 @@ class NoteIndexItem extends React.Component {
           </div>
 
           <div className='note-index-item body'>
-            {body.slice(0, 130)}
+            {preview}
           </div>
 
         </div>

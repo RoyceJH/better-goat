@@ -7,6 +7,7 @@ class HomeSideBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.slideNotebooks = this.slideNotebooks.bind(this);
     this.slideTags = this.slideTags.bind(this);
+    this.removeSlideout = this.removeSlideout.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +18,10 @@ class HomeSideBar extends React.Component {
     e.preventDefault();
     this.props.logout();
     this.props.router.push('/');
+  }
+
+  removeSlideout() {
+    this.props.removeSlideout();
   }
 
   slideNotebooks(e) {
@@ -52,14 +57,14 @@ class HomeSideBar extends React.Component {
 
         <div className='side-bar-3' >
           <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
-          <Link to={'/home'}><i className="fa fa-file-text-o" aria-hidden="true"></i></Link>
+          <Link onClick={this.removeSlideout} to={'/home'}><i className="fa fa-file-text-o" aria-hidden="true"></i></Link>
           <Link onClick={this.slideNotebooks}><i className="fa fa-book" aria-hidden="true"></i></Link>
           <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
 
         </div>
 
         <div className='side-bar-4'>
-          <button onClick={this.handleLogout}>logout</button>
+          <button onClick={this.handleLogout}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
         </div>
 
       </div>

@@ -1,7 +1,7 @@
 import { RECEIVE_NOTES, RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_actions';
 import merge from 'lodash/merge';
 
-const NoteReducer = (oldState = {}, action) => {
+const NotesReducer = (oldState = {}, action) => {
   switch(action.type) {
     case RECEIVE_NOTES:
       return action.notes;
@@ -16,4 +16,4 @@ const NoteReducer = (oldState = {}, action) => {
   }
 };
 
-export default NoteReducer;
+export default NotesReducer;
