@@ -69,3 +69,42 @@ export const getTimeAgoOfNotes = ({note}) => {
 
   return new Date(note.updated_at).toDateString().toUpperCase();
 };
+
+export const roughSizeOfObject = ( object ) => {
+
+    const objectList = [];
+    const stack = [ object ];
+    let bytes = 0;
+
+    while ( stack.length ) {
+        let value = stack.pop();
+
+        if ( typeof value === 'boolean' ) {
+            bytes += 4;
+        }
+        else if ( typeof value === 'string' ) {
+            bytes += value.length * 2;
+        }
+        else if ( typeof value === 'number' ) {
+            bytes += 8;
+        }
+        else if
+        (
+            typeof value === 'object'
+            && objectList.indexOf( value ) === -1
+        )
+        {
+            objectList.push( value );
+
+            for( var i in value ) {
+                stack.push( value[ i ] );
+            }
+        }
+    }
+
+    if(bytes > 1000) {
+      return Math.floor(bytes / 1000) + ' KB';
+    } else {
+      return bytes + ' bytes';
+    }
+};
