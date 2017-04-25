@@ -1,7 +1,7 @@
 import * as NoteAPIUtil from '../util/note_api_util';
 
 export const RECEIVE_NOTES = 'RECEIVE_NOTES';
-export const RECEIVE_NOTE = 'RECEIVE_NOTES';
+export const RECEIVE_NOTE = 'RECEIVE_NOTE';
 export const REMOVE_NOTE = 'REMOVE_NOTE';
 
 const receiveNotes = (notes) => ({
