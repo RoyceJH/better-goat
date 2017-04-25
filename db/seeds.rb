@@ -16,5 +16,7 @@ user = User.find_by(username:'guestuser')
 
 20.times do
   nb = Notebook.create({title:Faker::Superhero.power, author_id: user.id})
-  nb.notes.create({title: Faker::Superhero.name, body: Faker::Superhero.power, author_id: user.id})
+  body = Faker::Superhero.power
+  preview = body.slice(0, 130)
+  nb.notes.create({title: Faker::Superhero.name, body: body, preview: preview, author_id: user.id})
 end
