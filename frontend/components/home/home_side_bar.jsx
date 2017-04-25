@@ -40,21 +40,21 @@ class HomeSideBar extends React.Component {
       <div className='home-side-bar' >
 
         <div className='side-bar-1'>
-          <h1>LOGO</h1>
+          <label className='home logo'/>
         </div>
 
         <div className='side-bar-2'>
-          <Link>Add Note</Link>
-          <Link>Search</Link>
-          <Link>Work Chat</Link>
+          <Link className='add-logo'><i className="fa fa-plus-square-o" aria-hidden="true"></i></Link>
+          <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
+          <Link><i className="fa fa-commenting-o" aria-hidden="true"></i></Link>
 
         </div>
 
         <div className='side-bar-3' >
-          <Link>Shortcuts</Link>
-          <Link to={'/home'}>Notes</Link>
-          <Link onClick={this.slideNotebooks}>Notebooks</Link>
-          <Link onClick={this.slideTags}>Tags</Link>
+          <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
+          <Link to={'/home'}><i className="fa fa-file-text-o" aria-hidden="true"></i></Link>
+          <Link onClick={this.slideNotebooks}><i className="fa fa-book" aria-hidden="true"></i></Link>
+          <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
 
         </div>
 

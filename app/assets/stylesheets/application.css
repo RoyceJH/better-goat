@@ -29,6 +29,7 @@ ul, li, main{
 
 a {
   text-decoration: none;
+  color: inherit; 
 }
 
 ul {
@@ -46,4 +47,8 @@ html, body, #root {
 
 #root {
   max-height: 100%;
+}
+
+input:focus {
+  outline: none;
 }

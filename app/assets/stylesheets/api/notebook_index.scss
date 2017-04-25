@@ -38,6 +38,17 @@
   letter-spacing: 3px;
 }
 
+.top-line label {
+  display: flex;
+  justify-content:  space-between;
+  width: 30px;
+  cursor: pointer;
+}
+
+.top-line .fa-plus {
+  font-size: 14px;
+}
+
 .notebook-index-list-wrapper {
   /* Firefox */
   height: -moz-calc(100% - 122px);

@@ -17,10 +17,32 @@
   box-sizing: border-box;
   align-items: stretch;
   background: rgb(243, 243, 243);
+
+  color: #40BC6C;
+}
+
+.home-side-bar {
+  a {
+    font-size: 27px;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #31A759;
+  }
 }
 
 .side-bar-1 {
-  height: 70px;
+  height: 90px;
+  display: flex;
+}
+
+.home.logo {
+  width: 50px;
+  height: 50px;
+  background-image: asset_url('evergoat-logo');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .side-bar-2, .side-bar-3 {
@@ -28,15 +50,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-content: center;
-  height: 182px;
+  align-items: center;
+
 }
 
 .side-bar-2 {
-  margin-bottom: 65px;
+  height: 140px;
+  margin-bottom: 75px;
 }
 
 .side-bar-3 {
   margin-bottom: 150px;
+  height: 185px;
 }
 
 .side-bar-4 {

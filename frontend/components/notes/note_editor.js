@@ -1,14 +1,18 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 class NoteEditor extends React.Component {
   constructor(props) {
     super(props);
+    
   }
 
   render() {
     return(
-      <div id='editor' />
 
+        <ReactQuill value='randomstring'
+                    onChange={() => {}}
+                    theme='snow'/>
 
     );
   }

@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  let note = {title:"", body:""};
+  if(ownProps.params) {
+    note = state.notes[ownProps.params.noteId];
+  }
   return ({
-    notes: state.notes
+    note: note
   });
 };
 
