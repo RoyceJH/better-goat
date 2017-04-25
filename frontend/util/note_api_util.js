@@ -20,7 +20,7 @@ export const createNote = (note) => {
   });
 };
 
-export const updateNotes = (note) => {
+export const updateNote = (note) => {
   return $.ajax({
     method: 'PATCH',
     url: `api/notes/${note.id}`,
@@ -28,7 +28,7 @@ export const updateNotes = (note) => {
   });
 };
 
-export const deleteNotes = (noteId) => {
+export const deleteNote = (noteId) => {
   return $.ajax({
     method: 'DELETE',
     url: `api/notes/${noteId}`
