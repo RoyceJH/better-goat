@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
 
 import { createNote, updateNote, deleteNote, fetchNote } from '../../actions/note_actions';
+import { receiveModal } from '../../actions/modal_actions';
+import { selectNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   let note = {title:"", body:"", preview: ""};
@@ -9,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
     note = state.note;
   }
   return ({
-    note
+    note,
+    notebooks: selectNotebooks(state),
   });
 };
 
@@ -19,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     createNote: (note) => dispatch(createNote(note)),
     updateNote: (note) => dispatch(updateNote(note)),
     deleteNote: (noteId) => dispatch(deleteNote(noteId)),
+    receiveModal: (component) => dispatch(receiveModal(component)),
   });
 };
 
