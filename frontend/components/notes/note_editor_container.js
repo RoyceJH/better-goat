@@ -1,15 +1,18 @@
 import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
+import { withRouter } from 'react-router';
 
-import { createNote, updateNote, deleteNote, fetchNote } from '../../actions/note_actions';
+import { createNote, updateNote, deleteNote, fetchNote, receiveNote } from '../../actions/note_actions';
 import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  let note = {title:"", body:"", preview: ""};
-  if(state.note) {
-    note = state.note;
-  }
+  let note = state.note || {title:"", body:"", preview: ""};
+
+  //janky code start(does not work)
+    //tag Id here once tags implemented
+// let
+  //janky code end
   return ({
     note,
     notebooks: selectNotebooks(state),
@@ -23,10 +26,11 @@ const mapDispatchToProps = (dispatch) => {
     updateNote: (note) => dispatch(updateNote(note)),
     deleteNote: (noteId) => dispatch(deleteNote(noteId)),
     receiveModal: (component) => dispatch(receiveModal(component)),
+    receiveNote: (note) => dispatch(receiveNote(note)),
   });
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NoteEditor);
+)(withRouter(NoteEditor));

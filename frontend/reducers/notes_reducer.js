@@ -6,6 +6,7 @@ const NotesReducer = (oldState = {}, action) => {
     case RECEIVE_NOTES:
       return action.notes;
     case RECEIVE_NOTE:
+      debugger
       return merge({}, oldState, {[action.note.id]: action.note});
     case REMOVE_NOTE:
       const newState = merge({}, oldState);

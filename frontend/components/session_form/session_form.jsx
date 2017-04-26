@@ -26,7 +26,6 @@ class SessionForm extends React.Component {
   guestLogin(e) {
     const username = ['g', 'u', 'e', 's', 't', 'u', 's', 'e', 'r'];
     const password = ['p', 'a', 's', 's', 'w', 'o', 'r' ,'d'];
-
     let usernameEnter = setInterval( () => {
       let nextInput = this.state.username.length;
       if(nextInput >= username.length) {
@@ -37,14 +36,14 @@ class SessionForm extends React.Component {
             clearInterval(passwordEnter);
             this.handleSubmit(e);
           } else {
-            this.setState({password: this.state.password + password[nextInput]});
+            this.setState({password: password.join("")});
           }
         }, 100);
       } else {
-        this.setState({username: this.state.username + username[nextInput]});
+        this.setState({username: username.join("")});
       }
     }, 100);
-
+    // this.setState({username: 'guestuser', password: 'password'}, this.handleSubmit(e));
   }
 
   handleSubmit(e) {
