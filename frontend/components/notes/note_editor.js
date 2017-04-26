@@ -32,7 +32,7 @@ class NoteEditor extends React.Component {
   }
 
   changeTitle(e) {
-    const title = e.target.title;
+    const title = e.target.value;
     this.setState({title});
   }
 
@@ -41,32 +41,44 @@ class NoteEditor extends React.Component {
   }
 
   render() {
+    const nbs = <input>HELO</input>
     return(
       <div className='editor-main'>
         <div className='editor-actions'>
+          <div className='editor-icons'>
+            <label className='star-note'>
+              <i className="fa fa-star-o" aria-hidden="true"></i>
+            </label>
 
-          <label className='star-note'>
-            <i className="fa fa-star-o" aria-hidden="true"></i>
-          </label>
+            <label className='info-note' onClick={this.addModal}>
+              <i className="fa fa-info" aria-hidden="true"></i>
+            </label>
 
-          <label className='info-note' onClick={this.addModal}>
-            <i className="fa fa-info" aria-hidden="true"></i>
-          </label>
+            <label className='delete-note' onClick={this.deleteNote}>
+              <i className="fa fa-trash-o" aria-hidden="true"></i>
+            </label>
+          </div>
 
-          <label className='delete-note' onClick={this.deleteNote}>
-            <i className="fa fa-trash-o" aria-hidden="true"></i>
-          </label>
+          <div className='editor-buttons'>
+            <i className="fa fa-arrows-alt" aria-hidden="true"></i>
+            <input className='note-save' type='submit' value='Save Note'/>
+          </div>
 
         </div>
 
-        <input onChange={this.changeTitle} value={this.state.title} />
-        <ReactQuill
-          value={this.state.body}
-          onChange={this.handleBody}
-          theme='snow'>
-          <div className='editing-area'>
-          </div>
-        </ReactQuill>
+        <div className='note-edit-wrapper' >
+          <input
+            placeholder='Title your note'
+            onChange={this.changeTitle}
+            value={this.state.title} />
+          <ReactQuill
+            value={this.state.body}
+            onChange={this.handleBody}
+            theme='snow'>
+            <div className='editing-area'>
+            </div>
+          </ReactQuill>
+        </div>
       </div>
 
 
