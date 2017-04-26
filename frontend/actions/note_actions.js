@@ -9,7 +9,7 @@ const receiveNotes = (notes) => ({
   notes
 });
 
-const receiveNote = (note) => ({
+export const receiveNote = (note) => ({
   type: RECEIVE_NOTE,
   note
 });

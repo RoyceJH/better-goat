@@ -33,30 +33,27 @@ class NoteEditor extends React.Component {
 
   changeTitle(e) {
     const title = e.target.value;
-    this.setState({title});
+    this.setState({title}, this.handleSave);
   }
 
   addModal() {
     this.props.receiveModal(<NoteInfo />);
   }
 
+  handleSave() {
+    this.props.updateNote(this.state);
+  }
+
   render() {
     var toolbarOptions = [
       [{ 'font': [] }],
       [{ 'align': [] }],
-
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
       ['blockquote', 'code-block'],
-
-      [{ 'header': 1 }, { 'header': 2 }],               // custom button values
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-      [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-
+      // [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
       [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-
       [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-
       ['clean']                                         // remove formatting button
     ];
 
@@ -79,7 +76,11 @@ class NoteEditor extends React.Component {
 
           <div className='editor-buttons'>
             <i className="fa fa-arrows-alt" aria-hidden="true"></i>
-            <input className='note-save' type='submit' value='Save Note'/>
+            <input
+              onClick={this.handleSave}
+              className='note-save'
+              type='submit'
+              value='Save Note'/>
           </div>
 
         </div>
@@ -99,10 +100,6 @@ class NoteEditor extends React.Component {
           </ReactQuill>
         </div>
       </div>
-
-
-
-
     );
   }
 }

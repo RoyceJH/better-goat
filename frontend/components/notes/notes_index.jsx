@@ -3,12 +3,21 @@ import NoteIndexItemContainer from './note_index_item_container';
 
 class NotesIndex extends React.Component {
   render() {
-    const notes = this.props.notes.map((note, idx) => {
-      return <NoteIndexItemContainer key={idx} note={note} path={this.props.path}/>;
+
+    let notes = this.props.notes.map((note, idx) => {
+      return <NoteIndexItemContainer key={idx} note={note} />;
     });
 
     let notesCount = notes.length;
     notesCount += notesCount === 1 ? ' note' : ' notes';
+
+    if (notes.length === 0 ) {
+      notes = <div className='add-note-prompt-wrapper'>
+                <div className='add-note-prompt'>
+                  Click <i className="fa fa-plus-square-o" aria-hidden="true"/> to add a note.
+                </div>
+             </div>;
+    }
 
     return(
       <div className='notes-index'>

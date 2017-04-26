@@ -7,7 +7,11 @@ const NoteReducer = (oldState = _defaultState, action) => {
     case RECEIVE_NOTE:
       return action.note;
     case REMOVE_NOTE:
-      return {};
+      if(action.note.id === oldState.id) {
+        return {};
+      } else {
+        return oldState;
+      }
     default:
       return oldState;
   }

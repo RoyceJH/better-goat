@@ -19,6 +19,14 @@ class NotebookShow extends React.Component {
       });
   }
 
+  // componentWillReceiveProps(newProps) {
+  //   debugger
+  //   if(this.props.notebookId) {
+  //     debugger
+  //     this.props.receiveNote(this.props.getNotes(parseInt(this.props.notebookId)[0]));
+  //   }
+  // }
+
   addModal(e) {
     this.props.receiveModal(
       <UpdateNotebook notebookId={this.props.notebookId} />
@@ -29,6 +37,10 @@ class NotebookShow extends React.Component {
 
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
+    // if(notes[0]) {
+    //   this.props.receiveNote(notes[0]);
+    // }
+
     return(
       <div className='notebook-show'>
         <div className='notebook-show-header'>

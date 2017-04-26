@@ -1,5 +1,16 @@
+const compare = (a, b) => {
+  let comparison = (new Date(a.updated_at).getTime() > new Date(b.updated_at).getTime());
+  if (comparison) {
+    return -1;
+  }
+  if(!comparison) {
+    return 1;
+  }
+  return 0;
+};
+
 export const selectNotebooks = ({notebooks}) => {
-  return Object.keys(notebooks).map(key => notebooks[key]);
+  return Object.keys(notebooks).map(key => notebooks[key]).sort(compare);
 };
 
 export const arrayNotebookIds = ({notebooks}) => {
@@ -7,7 +18,7 @@ export const arrayNotebookIds = ({notebooks}) => {
 };
 
 export const arrayNotes = ({notes}) => {
-  return Object.keys(notes).map(key => notes[key]);
+  return Object.keys(notes).map(key => notes[key]).sort(compare);
 };
 
 export const getNotesByNotebookId = ({notes}, notebookId) => {
@@ -17,7 +28,7 @@ export const getNotesByNotebookId = ({notes}, notebookId) => {
       notesByNotebook.push(notes[key]);
     }
   }
-  return notesByNotebook;
+  return notesByNotebook.sort(compare);
 };
 
 export const getTimeAgoOfNotes = ({note}) => {
