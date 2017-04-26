@@ -64,8 +64,8 @@
 
     input, input::placeholder {
       position: absolute;
-      padding-left: 10px;
-      top: 40px;
+      padding-left: 15px;
+      top: 30px;
       width: 80%;
       color: #23BB59;
       height: 50px;
@@ -75,10 +75,14 @@
       font-family: 'Rokkitt', serif;
     }
 
-
-
     .ql-editor {
       margin-top: 45px;
+      .ql-syntax {
+        border: 1px solid #999999;
+        border-radius: 5px;
+        background: #FBFAF8;
+        color: #6c6c6c;
+      }
     }
 
     .editing-area.ql-container.ql-snow {
@@ -92,6 +96,13 @@
     .ql-toolbar.ql-snow {
       border: 1px solid transparent;
       min-width: 900px;
+      max-height: 24px;
+      .ql-formats .ql-picker span {
+        font-size: 12px;
+      }
+      svg {
+        size: 12px;
+      }
     }
   }
 
