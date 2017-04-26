@@ -15,7 +15,11 @@ class Home extends React.Component {
         <HomeSideBarContainer />
         <NotebookIndexContainer />
         {this.props.children}
-        <NoteEditorContainer />
+
+        <div className='home-note-editor-wrapper'>
+          <NoteEditorContainer />
+        </div>
+        
         <RootModalContainer />
       </div>
     );

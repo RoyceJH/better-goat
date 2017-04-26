@@ -41,7 +41,25 @@ class NoteEditor extends React.Component {
   }
 
   render() {
-    const nbs = <input>HELO</input>
+    var toolbarOptions = [
+      [{ 'font': [] }],
+      [{ 'align': [] }],
+
+      ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+      ['blockquote', 'code-block'],
+
+      [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+      [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+
+      [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+
+      [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+
+      ['clean']                                         // remove formatting button
+    ];
+
     return(
       <div className='editor-main'>
         <div className='editor-actions'>
@@ -72,6 +90,7 @@ class NoteEditor extends React.Component {
             onChange={this.changeTitle}
             value={this.state.title} />
           <ReactQuill
+            modules={{toolbar: toolbarOptions}}
             value={this.state.body}
             onChange={this.handleBody}
             theme='snow'>
