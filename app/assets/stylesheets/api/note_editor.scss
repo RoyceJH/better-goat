@@ -83,6 +83,8 @@
 
     .ql-editor {
       margin-top: 45px;
+      color: #6a6a6a;
+
       .ql-syntax {
         border: 1px solid #999999;
         border-radius: 5px;
@@ -104,13 +106,16 @@
       min-width: 900px;
       max-height: 24px;
 
+
       .ql-formats .ql-picker span {
         font-size: 12px;
+        color: #6a6a6a;
       }
 
       button {
         width: 17px;
         height: 21px;
+        color: #6a6a6a;
       }
 
       .ql-active {
