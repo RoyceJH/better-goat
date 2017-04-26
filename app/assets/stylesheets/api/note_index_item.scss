@@ -6,6 +6,8 @@
   border: 3px solid transparent;
   cursor: pointer;
   overflow: hidden;
+
+
 }
 
 .notes-index {
@@ -95,6 +97,7 @@
   font-size: 13.5px;
   display: flex;
   justify-content: space-between;
+  max-height: 18px;
 }
 
 .note-index-item.body {

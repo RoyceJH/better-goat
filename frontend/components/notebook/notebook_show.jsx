@@ -37,6 +37,9 @@ class NotebookShow extends React.Component {
 
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
+
+    // jankeness breaks everything why?
+    // debugger
     // if(notes[0]) {
     //   this.props.receiveNote(notes[0]);
     // }
