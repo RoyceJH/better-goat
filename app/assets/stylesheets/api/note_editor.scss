@@ -27,6 +27,7 @@
   }
 
   .editor-buttons i, .editor-buttons input {
+    cursor: pointer;
     font-size: 14px;
     padding: 8px 10px;
     border: 1px solid #23BB59;
@@ -43,6 +44,7 @@
   .editor-buttons *:hover {
     background: #23BB59;
     color: #f9f9f9;
+    transition: 0.3s ease;
   }
 
   @media screen and (max-width: 750px) {
@@ -62,17 +64,21 @@
     max-width: 100%;
     margin-right: 0;
 
-    input, input::placeholder {
+    input {
       position: absolute;
-      padding-left: 15px;
+      padding-left: 13px;
       top: 30px;
       width: 80%;
       color: #23BB59;
       height: 50px;
-      font-size: 30px;
-      font-weight: 500;
+      font-size: 26px;
+      font-weight: 100;
       letter-spacing: 2px;
-      font-family: 'Rokkitt', serif;
+      font-family: 'Roboto Slab', serif;
+    }
+
+    input::placeholder {
+      color: rgba(#23bb59, 0.44);
     }
 
     .ql-editor {
@@ -97,11 +103,18 @@
       border: 1px solid transparent;
       min-width: 900px;
       max-height: 24px;
+
       .ql-formats .ql-picker span {
         font-size: 12px;
       }
-      svg {
-        size: 12px;
+
+      button {
+        width: 17px;
+        height: 21px;
+      }
+
+      .ql-active {
+        color: #23BB59;
       }
     }
   }

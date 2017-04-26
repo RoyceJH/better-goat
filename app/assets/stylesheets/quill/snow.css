@@ -315,7 +315,7 @@
   background-color: #008a00;
 }
 .ql-editor .ql-bg-blue {
-  background-color: #06c;
+  background-color: #23BB59;
 }
 .ql-editor .ql-bg-purple {
   background-color: #93f;
@@ -336,7 +336,7 @@
   color: #008a00;
 }
 .ql-editor .ql-color-blue {
-  color: #06c;
+  color: #23BB59;
 }
 .ql-editor .ql-color-purple {
   color: #93f;
@@ -418,7 +418,7 @@
 .ql-snow .ql-toolbar .ql-picker-item:hover,
 .ql-snow.ql-toolbar .ql-picker-item.ql-selected,
 .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
-  color: #06c;
+  color: #23BB59;
 }
 .ql-snow.ql-toolbar button:hover .ql-fill,
 .ql-snow .ql-toolbar button:hover .ql-fill,
@@ -444,7 +444,7 @@
 .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
 .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
 .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
-  fill: #06c;
+  fill: #23BB59;
 }
 .ql-snow.ql-toolbar button:hover .ql-stroke,
 .ql-snow .ql-toolbar button:hover .ql-stroke,
@@ -470,7 +470,7 @@
 .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
 .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
 .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
-  stroke: #06c;
+  stroke: #23BB59;
 }
 .ql-snow {
   box-sizing: border-box;
@@ -897,7 +897,7 @@
   content: "Enter video:";
 }
 .ql-snow a {
-  color: #06c;
+  color: #23BB59;
 }
 .ql-container.ql-snow {
   border: 1px solid #ccc;

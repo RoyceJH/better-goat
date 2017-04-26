@@ -22,6 +22,10 @@
 }
 
 .home-side-bar{
+  button:focus {
+    outline: 0;
+  }
+  
   a, i {
     color: #40BC6C;
     font-size: 27px;

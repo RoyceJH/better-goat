@@ -9,7 +9,7 @@
 }
 
 .notes-index {
-  height: 88%;
+  height: 92%;
 }
 
 //Potentially for focus note item checkbox
@@ -74,7 +74,8 @@
   display: block;
   overflow: auto;
   overflow-x: hidden;
-
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
 }
 
 .notes-index-list-wrapper {
@@ -91,7 +92,7 @@
 
 .note-index-item.title {
   color: #797878;
-  font-size: 17px;
+  font-size: 13.5px;
   display: flex;
   justify-content: space-between;
 }

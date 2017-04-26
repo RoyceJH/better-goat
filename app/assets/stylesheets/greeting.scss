@@ -24,8 +24,8 @@
 //Fontshadow to change with background
 .greeting h1, .greeting p {
   font-weight: lighter;
-  font-family: serif;
-  text-shadow: -1px 0 #989898, 0 1px #989898, 1px 0 #989898, 0 -1px #989898;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: -1px 0 #525252, 0 1px #525252, 1px 0 #525252, 0 -1px #525252;
 
 }
 
@@ -73,7 +73,7 @@
   cursor: pointer;
 }
 
-.greeting-submit:hover {
+.greeting-submit:hover, .greeting-guest-login:hover {
   background: #28A956;
   transition: 0.3s ease;
 }
