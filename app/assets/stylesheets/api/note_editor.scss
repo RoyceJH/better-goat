@@ -52,9 +52,13 @@
   }
 }
 
-.editor-main {
+.home-note-editor-wrapper {
   width: calc(100vw - 425px);
   height: 100vh;
+
+}
+
+.editor-main {
 
   .note-edit-wrapper {
     padding: 0 7%;
@@ -84,6 +88,7 @@
     .ql-editor {
       margin-top: 45px;
       color: #6a6a6a;
+      height: 100%;
 
       .ql-syntax {
         border: 1px solid #999999;
@@ -91,6 +96,10 @@
         background: #FBFAF8;
         color: #6c6c6c;
       }
+    }
+
+    .editing-area {
+      height: 80vh;
     }
 
     .editing-area.ql-container.ql-snow {
