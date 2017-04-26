@@ -1,0 +1,103 @@
+.editor-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+
+  .editor-icons {
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+    font-size: 21px;
+    color: #C4C4C4;
+  }
+
+  .editor-icons *:hover {
+    color: #23BB59;
+    cursor: pointer;
+  }
+
+  .editor-buttons {
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    color: #23BB59
+  }
+
+  .editor-buttons i, .editor-buttons input {
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 1px solid #23BB59;
+    border-radius: 3px;
+  }
+
+  .editor-buttons input {
+    padding: 7px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #23BB59;
+  }
+
+  .editor-buttons *:hover {
+    background: #23BB59;
+    color: #f9f9f9;
+  }
+
+  @media screen and (max-width: 750px) {
+    width: 267px;
+  }
+}
+
+.editor-main {
+  width: calc(100vw - 425px);
+  height: 100vh;
+
+  .note-edit-wrapper {
+    padding: 0 7%;
+    padding-left-min: 50px;
+    position: relative;
+    height: 100%;
+    max-width: 100%;
+    margin-right: 0;
+
+    input, input::placeholder {
+      position: absolute;
+      padding-left: 10px;
+      top: 40px;
+      width: 80%;
+      color: #23BB59;
+      height: 50px;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-family: 'Rokkitt', serif;
+    }
+
+
+
+    .ql-editor {
+      margin-top: 45px;
+    }
+
+    .editing-area.ql-container.ql-snow {
+      border: 0 none;
+    }
+
+    .quill {
+      height: 100%;
+    }
+
+    .ql-toolbar.ql-snow {
+      border: 1px solid transparent;
+      min-width: 900px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .note-edit-wrapper {
+      padding-left: 40px;
+    }
+  }
+}

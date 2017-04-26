@@ -96,9 +96,16 @@
   justify-content: space-between;
 }
 
+.note-index-item.body {
+  max-width: 308px;
+  max-height: 45px;
+  overflow: hidden;
+}
+
 .note-index-item.body, .note-index-item.time {
-  color: #b4b0b0;
-  font-family: sans-serif;
+  color: #818181;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
   font-weight: lighter;
   font-size: 13px;
 }

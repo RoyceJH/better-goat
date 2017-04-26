@@ -25,11 +25,13 @@ ul, li, main{
   font-family: sans-serif;
   font: inherit;
   background: transparent;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.5px;
 }
 
 a {
   text-decoration: none;
-  color: inherit; 
+  color: inherit;
 }
 
 ul {
