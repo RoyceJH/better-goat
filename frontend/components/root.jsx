@@ -8,7 +8,7 @@ import SplashContainer from './splash/splash_container';
 import HomeContainer from './home/home_container';
 import NotebookShowContainer from './notebook/notebook_show_container';
 import NotesShowContainer from './notes/notes_show_container';
-import NoteEditorContainer from './notes/note_editor_container';
+import NewNoteWrapper from './notes/new_note_wrapper';
 
 
 const Root = ({store, getState}) => {
@@ -36,7 +36,7 @@ const Root = ({store, getState}) => {
           <Route path='/login' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path='/signup' component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
 
-          <Route path='/notes/new' component={ NoteEditorContainer } />
+          <Route path='/notes/new' component={ NewNoteWrapper } />
 
           <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}>
             <IndexRoute component={ NotesShowContainer } />

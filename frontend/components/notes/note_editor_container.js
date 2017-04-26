@@ -7,7 +7,7 @@ import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  let note = state.note || {title:"", body:"", preview: ""};
+  let note = ownProps.note || state.note ;
 
   //janky code start(does not work)
     //tag Id here once tags implemented

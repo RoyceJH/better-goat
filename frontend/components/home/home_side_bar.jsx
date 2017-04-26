@@ -49,7 +49,10 @@ class HomeSideBar extends React.Component {
         </div>
 
         <div className='side-bar-2'>
-          <Link className='add-logo'><i className="fa fa-plus-square-o" aria-hidden="true"></i></Link>
+          <Link
+            className='add-logo'
+            to='/notes/new'
+            ><i className="fa fa-plus-square-o" aria-hidden="true"></i></Link>
           <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
           <Link><i className="fa fa-commenting-o" aria-hidden="true"></i></Link>
 
