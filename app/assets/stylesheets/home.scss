@@ -25,7 +25,7 @@
   button:focus {
     outline: 0;
   }
-  
+
   a, i {
     color: #40BC6C;
     font-size: 27px;
@@ -79,4 +79,10 @@
 
 .side-bar-4 {
   background: #F3F3F3;
+
+  .profile-tab {
+    position: absolute;
+    left: 50px;
+    border: 1px solid red;
+  }
 }

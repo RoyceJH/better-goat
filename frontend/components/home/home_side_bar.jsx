@@ -42,7 +42,7 @@ class HomeSideBar extends React.Component {
   }
 
   render() {
-    const profileBox = <input className='profile-tab' />;
+    const profileBox = <input className='profile-tab' ></input>;
 
     return (
       <div className='home-side-bar' >
