@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import { withRouter } from 'react-router';
+
 import NoteInfo from '../modal/note_info';
 import CreateNotebookModal from '../modal/create_notebook';
 
@@ -13,8 +15,16 @@ class NoteEditor extends React.Component {
     this.addModal = this.addModal.bind(this);
     this.setNotebook = this.setNotebook.bind(this);
     this.toggleNotebookList = this.toggleNotebookList.bind(this);
-    this.addModal = this.addModal.bind(this);
+    this.addCreateModal = this.addCreateModal.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.cancelNewNote = this.cancelNewNote.bind(this);
     // this.timeout = null;
+  }
+
+  componentDidMount() {
+    if(!this.props.formType) {
+      this.props.receiveNote({ title: "", preview: "", body: "" });
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -33,16 +43,23 @@ class NoteEditor extends React.Component {
     note.preview = preview;
     note.body = content;
     this.setState({note});
-    this.props.updateNote(this.state.note);
+
+    if(this.props.formType === 'edit') {
+      this.props.processForm(this.state.note);
+    }
     // clearTimeout(this.timeout);
-    // this.timeout = setTimeout(this.props.updateNote(this.state.note), 5000);
+    // this.timeout = setTimeout(this.props.processForm(this.state.note), 5000);
   }
 
   changeTitle(e) {
     let note = this.state.note;
     note.title = e.target.value;
 
-    this.setState({note}, this.handleSave);
+    this.setState({note}, () => {
+      if(this.props.formType === 'edit') {
+        this.handleSave();
+      }
+    });
   }
 
   addModal() {
@@ -50,7 +67,13 @@ class NoteEditor extends React.Component {
   }
 
   handleSave() {
-    this.props.updateNote(this.state.note);
+    if(!this.props.formType) {
+      this.props.processForm(this.state.note).then(
+        this.cancelNewNote
+      );
+    } else {
+      this.props.processForm(this.state.note);
+    }
   }
 
   setNotebook(e) {
@@ -59,8 +82,16 @@ class NoteEditor extends React.Component {
 
     if (note.notebook_id != notebookId) {
       note.notebook_id = notebookId;
-      this.setState({note}, () => this.props.updateNote(this.state.note));
+      this.setState({note}, () => {
+        if(this.props.formType === 'edit') {
+          this.handleSave();
+        }
+      });
     }
+  }
+
+  cancelNewNote() {
+    this.props.router.push('/home');
   }
 
   toggleNotebookList(e) {
@@ -71,7 +102,7 @@ class NoteEditor extends React.Component {
     }
   }
 
-  addModal() {
+  addCreateModal() {
     this.setState({hidden: true});
     this.props.receiveModal(<CreateNotebookModal />);
   }
@@ -88,6 +119,14 @@ class NoteEditor extends React.Component {
       ['clean']                                         // remove formatting button
     ];
 
+    const cancelButton = !this.props.formType ?
+      <input
+        onClick={this.cancelNewNote}
+        className='note-save'
+        type='submit'
+        value='Cancel'/> :
+        "";
+
     let selected = "";
     let selectedNotebookName;
     let hidden = this.state.hidden ? 'hidden' : '';
@@ -97,7 +136,6 @@ class NoteEditor extends React.Component {
 
       if(this.state.note.notebook_id) {
         if(notebook.id === this.state.note.notebook_id) {
-
           selected = 'selected';
           selectedCheck =
           <i className="fa fa-check-circle-o" aria-hidden="true"></i>;
@@ -143,7 +181,7 @@ class NoteEditor extends React.Component {
           </div>
 
           <div className='editor-buttons'>
-            <i className="fa fa-arrows-alt" aria-hidden="true"></i>
+            { cancelButton }
             <input
               onClick={this.handleSave}
               className='note-save'
@@ -160,7 +198,7 @@ class NoteEditor extends React.Component {
             <span >{selectedNotebookName}</span>
             <i className="fa fa-angle-down notebook-down" aria-hidden="true"></i>
             <ul className={`notebook-dropdown ${hidden}`}>
-              <li className='create-notebook' onClick={this.addModal}>
+              <li className='create-notebook' onClick={this.addCreateModal}>
                 <div className='create-notebook-icon'>
                   <i className="fa fa-file-text-o" aria-hidden="true"></i>
                   <i className="fa fa-plus" aria-hidden="true"></i>
@@ -193,4 +231,4 @@ class NoteEditor extends React.Component {
   }
 }
 
-export default NoteEditor;
+export default withRouter(NoteEditor);

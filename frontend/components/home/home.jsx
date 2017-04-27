@@ -17,9 +17,9 @@ class Home extends React.Component {
         {this.props.children}
 
         <div className='home-note-editor-wrapper'>
-          <NoteEditorContainer />
+          <NoteEditorContainer formType='edit'/>
         </div>
-        
+
         <RootModalContainer />
       </div>
     );

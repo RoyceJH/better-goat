@@ -42,11 +42,11 @@ class Greeting extends React.Component {
     });
 
     let uErrors = u.map( (error) => {
-      return <li>{error}</li>;
+      return <li key='1'>{error}</li>;
     });
 
     let pErrors = p.map( (error) => {
-      return <li>{error}</li>;
+      return <li key='2' >{error}</li>;
     });
 
 
@@ -56,8 +56,9 @@ class Greeting extends React.Component {
 
         <p>
           Inspiration strikes anywhere. Bettergoat lets you capture,
-          nurture, and share your ideas across any device.
+          nurture, and share your ideas across this device.
         </p>
+        <br/>
 
         <form className='greeting-form' onSubmit={this.handleSubmit}>
 

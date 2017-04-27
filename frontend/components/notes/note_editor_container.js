@@ -7,7 +7,11 @@ import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  let note = ownProps.note || state.note ;
+  let note = { title: "", preview: "", body: "" };
+
+  if (ownProps.formType === 'edit') {
+    note = state.note;
+  }
 
   //janky code start(does not work)
     //tag Id here once tags implemented
@@ -16,15 +20,15 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     note,
     notebooks: selectNotebooks(state),
-    hidden: true,
+    formType: ownProps.formType
   });
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const processForm = ownProps.formType === 'edit' ? updateNote : createNote;
   return ({
     fetchNote: (noteId) => dispatch(fetchNote(noteId)),
-    createNote: (note) => dispatch(createNote(note)),
-    updateNote: (note) => dispatch(updateNote(note)),
+    processForm: (note) => dispatch(processForm(note)),
     deleteNote: (noteId) => dispatch(deleteNote(noteId)),
     receiveModal: (component) => dispatch(receiveModal(component)),
     receiveNote: (note) => dispatch(receiveNote(note)),

@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router';
 class HomeSideBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = ({hidden: true});
     this.handleLogout = this.handleLogout.bind(this);
     this.slideNotebooks = this.slideNotebooks.bind(this);
     this.slideTags = this.slideTags.bind(this);
@@ -41,6 +42,8 @@ class HomeSideBar extends React.Component {
   }
 
   render() {
+    const profileBox = <input className='profile-tab' />;
+
     return (
       <div className='home-side-bar' >
 
@@ -68,6 +71,7 @@ class HomeSideBar extends React.Component {
 
         <div className='side-bar-4'>
           <button onClick={this.handleLogout}><i className="fa fa-sign-out" aria-hidden="true"></i></button>
+          { profileBox }
         </div>
 
       </div>
