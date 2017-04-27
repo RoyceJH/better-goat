@@ -41,20 +41,6 @@ class HomeSideBar extends React.Component {
     }
   }
 
-  updateFile(e) {
-    var reader = new FileReader();
-    var file = e.currentTarget.files[0];
-    reader.onloadend = function() {
-      this.setState({ imageUrl: reader.result, imageFile: file});
-    }.bind(this);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      this.setState({ imageUrl: "", imageFile: null });
-    }
-  }
-
   render() {
     const profileBox = <div className='profile-tab' ></div>;
 

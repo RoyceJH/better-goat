@@ -48,8 +48,35 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state).then(() => this.props.router.push('/home'));
+
+    // if(this.props.formType === 'signup') {
+    //   const file = this.state.imageFile;
+    //   const formData = new FormData();
+    //   formData.append('user[image]', file);
+    //   formData.append('user[username]', this.state.username);
+    //   formData.append('user[password]', this.state.password);
+    // } else {
+    //  const formData = this.state;
+    // }
+
+    let formData = this.state;
+
+    this.props.processForm(formData).then(() => this.props.router.push('/home'));
     this.setState({username:"", password:""});
+  }
+
+  updateFile(e) {
+    var reader = new FileReader();
+    var file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ imageUrl: reader.result, imageFile: file});
+    }.bind(this);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
   renderErrors() {
@@ -121,5 +148,7 @@ class SessionForm extends React.Component {
     );
   }
 }
+// <img src={this.state.imageUrl} />
+// <input type='file' onChange={this.updateFile} />
 
 export default SessionForm;

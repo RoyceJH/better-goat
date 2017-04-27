@@ -21,6 +21,15 @@ module BetterGoat
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV["s3_bucket"],
+        :access_key_id => ENV["s3_access_key_id"],
+        :secret_access_key => ENV["s3_secret_access_key"],
+        :s3_region => ENV["s3_region"]
+      }
+    }
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
