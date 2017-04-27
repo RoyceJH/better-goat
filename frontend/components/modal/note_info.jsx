@@ -25,6 +25,10 @@ class NoteInfo extends React.Component {
   }
 
   render() {
+    const createdAt = this.state.created_at ? new Date(this.state.created_at) : new Date(Date.now());
+    debugger
+    const updatedAt = this.state.updated_at ? new Date(this.state.created_at) : new Date(Date.now());
+
     return(
       <div className='modal-info-note'>
 
@@ -39,7 +43,7 @@ class NoteInfo extends React.Component {
           <label>Overview</label>
           <div className='created-at'>
             <label>CREATED:</label>
-            <span>{new Date(this.state.created_at).toLocaleString('en-US', {
+            <span>{createdAt.toLocaleString('en-US', {
                 hour12: true,
                 weekday: 'long',
                 month: 'long',
@@ -52,7 +56,7 @@ class NoteInfo extends React.Component {
 
           <div className='updated-at'>
             <label>UPDATED:</label>
-            <span>{new Date(this.state.updated_at).toLocaleString('en-US', {
+            <span>{updatedAt.toLocaleString('en-US', {
                 hour12: true,
                 weekday: 'long',
                 month: 'long',

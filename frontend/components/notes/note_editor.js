@@ -24,7 +24,7 @@ class NoteEditor extends React.Component {
   componentDidMount() {
     if(!this.props.formType) {
       this.props.receiveNote({ title: "", preview: "", body: "" });
-    }
+    } 
   }
 
   componentWillReceiveProps(newProps) {

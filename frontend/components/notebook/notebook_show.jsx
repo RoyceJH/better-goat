@@ -17,6 +17,8 @@ class NotebookShow extends React.Component {
       }, (err) => {
         this.props.router.push('/home');
       });
+
+    // this.props.receiveNote(this.props.getNotes(parseInt(this.props.notebookId))[0]);
   }
 
   // componentWillReceiveProps(newProps) {
@@ -37,7 +39,6 @@ class NotebookShow extends React.Component {
 
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
-
     // jankeness breaks everything why?
     // debugger
     // if(notes[0]) {

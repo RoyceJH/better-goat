@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.formType === 'edit') {
     note = state.note;
   }
-
   //janky code start(does not work)
     //tag Id here once tags implemented
 // let
@@ -20,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     note,
     notebooks: selectNotebooks(state),
-    formType: ownProps.formType
+    formType: ownProps.formType,
   });
 };
 

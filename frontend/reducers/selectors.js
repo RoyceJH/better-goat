@@ -35,7 +35,6 @@ export const getTimeAgoOfNotes = ({note}) => {
   const timeElapsed = Date.now() - new Date(note.updated_at);
 
   const inSecs = timeElapsed / 1000;
-
   if(inSecs < 30) {
     return 'MOMENTS AGO';
   } else if (inSecs / 60 < 1) {

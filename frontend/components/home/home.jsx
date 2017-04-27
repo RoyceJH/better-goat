@@ -3,6 +3,7 @@ import HomeSideBarContainer from './home_side_bar_container';
 import NotebookIndexContainer from '../notebook/notebook_index_container';
 import NoteEditorContainer from '../notes/note_editor_container';
 import RootModalContainer from '../modal/root_modal_container';
+import { withRouter } from 'react-router';
 
 class Home extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Home extends React.Component {
         {this.props.children}
 
         <div className='home-note-editor-wrapper'>
-          <NoteEditorContainer formType='edit'/>
+          <NoteEditorContainer formType='edit' params={this.props.router.params}/>
         </div>
 
         <RootModalContainer />
@@ -26,4 +27,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);
