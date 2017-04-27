@@ -56,9 +56,11 @@ class NoteEditor extends React.Component {
   setNotebook(e) {
     let notebookId = e.currentTarget.value;
     let note = this.state.note;
-    note.notebook_id = notebookId;
-    this.setState({note}, () => this.props.updateNote(this.state.note));
 
+    if (note.notebook_id != notebookId) {
+      note.notebook_id = notebookId;
+      this.setState({note}, () => this.props.updateNote(this.state.note));
+    }
   }
 
   toggleNotebookList(e) {
@@ -90,6 +92,7 @@ class NoteEditor extends React.Component {
     let selectedNotebookName;
     let hidden = this.state.hidden ? 'hidden' : '';
     const notebooks = this.props.notebooks.map( (notebook, idx) => {
+      selected = "";
       let selectedCheck = "";
 
       if(this.state.note.notebook_id) {
@@ -152,13 +155,16 @@ class NoteEditor extends React.Component {
 
         <div className='note-edit-wrapper' >
 
-          <div className='notebook-dropdown-wrapper'>
+          <div onClick={this.toggleNotebookList} className='notebook-dropdown-wrapper'>
             <i className="fa fa-book notebook-main" aria-hidden="true"></i>
-            <span onClick={this.toggleNotebookList}>{selectedNotebookName}</span>
+            <span >{selectedNotebookName}</span>
+            <i className="fa fa-angle-down notebook-down" aria-hidden="true"></i>
             <ul className={`notebook-dropdown ${hidden}`}>
               <li className='create-notebook' onClick={this.addModal}>
-                <i className="fa fa-file-text-o" aria-hidden="true"></i>
-                <i className="fa fa-plus" aria-hidden="true"></i>
+                <div className='create-notebook-icon'>
+                  <i className="fa fa-file-text-o" aria-hidden="true"></i>
+                  <i className="fa fa-plus" aria-hidden="true"></i>
+                </div>
                 <span>Create new notebook</span>
 
               </li>
@@ -166,9 +172,8 @@ class NoteEditor extends React.Component {
             </ul>
           </div>
 
-
-
           <input
+            spellCheck="false"
             placeholder='Title your note'
             onChange={this.changeTitle}
             value={this.state.note.title} />
