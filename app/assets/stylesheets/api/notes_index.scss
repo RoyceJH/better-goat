@@ -42,9 +42,14 @@
 
   .add-note-prompt {
     padding-bottom: 200px;
+    color: #595959;
 
     i {
       padding: 0 4px;
+    }
+
+    i:hover {
+      color: #40BC6C;
     }
   }
 

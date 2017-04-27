@@ -103,8 +103,8 @@ class NoteEditor extends React.Component {
   }
 
   addCreateModal() {
-    this.setState({hidden: true});
     this.props.receiveModal(<CreateNotebookModal />);
+    this.setState({hidden: true});
   }
 
   render() {
