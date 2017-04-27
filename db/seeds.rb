@@ -20,3 +20,5 @@ user = User.find_by(username:'guestuser')
   preview = body.slice(0, 130)
   nb.notes.create({title: Faker::Superhero.name, body: body, preview: preview, author_id: user.id})
 end
+
+Notebook.create({title: user.username.capitalize + "'s notebook", author_id: user.id, default: true})

@@ -16,5 +16,5 @@ class Notebook < ActiveRecord::Base
              primary_key: :id,
              foreign_key: :author_id,
              class_name: :User
-  has_many :notes
+  has_many :notes, dependent: :destroy
 end

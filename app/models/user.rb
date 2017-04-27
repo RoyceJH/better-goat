@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
-  has_many :notebooks,
+  has_many :notebooks, dependent: :destroy,
            primary_key: :id,
            foreign_key: :author_id,
            class_name: :Notebook
