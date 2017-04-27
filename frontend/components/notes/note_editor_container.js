@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     note,
     notebooks: selectNotebooks(state),
+    hidden: true,
   });
 };
 

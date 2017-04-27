@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteIndexItemContainer from './note_index_item_container';
+import { Link } from 'react-router';
 
 class NotesIndex extends React.Component {
   render() {
@@ -14,7 +15,11 @@ class NotesIndex extends React.Component {
     if (notes.length === 0 ) {
       notes = <div className='add-note-prompt-wrapper'>
                 <div className='add-note-prompt'>
-                  Click <i className="fa fa-plus-square-o" aria-hidden="true"/> to add a note.
+                  Click<Link
+                        to={'/notes/new'}>
+                        <i className="fa fa-plus-square-o" aria-hidden="true"/>
+                        </Link>
+                          to add a note.
                 </div>
              </div>;
     }
