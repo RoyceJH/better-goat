@@ -112,8 +112,10 @@
 
     .ql-toolbar.ql-snow {
       border: 1px solid transparent;
-      min-width: 900px;
-      max-height: 24px;
+      min-width: 750px;
+      max-height: 40px;
+      margin-left: 190px;
+      
 
 
       .ql-formats .ql-picker span {
@@ -130,6 +132,10 @@
       .ql-active {
         color: #23BB59;
       }
+    }
+
+    .ql-toolbar.ql-snow.active {
+      margin-left: 70px;
     }
   }
 

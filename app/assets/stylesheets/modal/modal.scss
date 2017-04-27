@@ -1,6 +1,13 @@
 .inactive-modal {
   width: 0;
   height: 0;
+  -webkit-animation: fadeout .6s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeout {
+  from { opacity: 1}
+  to {opacity: 0}
 }
 
 .active-modal {

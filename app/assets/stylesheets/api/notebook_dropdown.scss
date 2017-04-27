@@ -1,5 +1,73 @@
-.notebook-dropdown-wrapper {
+.ql-toolbar-bottom-line {
+  width: 90%;
+  border-top: 1px solid #c6c0c0;
   position: absolute;
+  top: 35px;
+  left: 67px;
+}
+
+.notebook-dropdown-wrapper {
+  border: 1px solid red;
+  top: 12px;
+  position: absolute;
+  padding-left: 15px;
+  z-index: 199;
+  font-size: 13px;
+  font-family: sans-serif;
+  width: 180px;
+  height-max: 17px;
+
+
+  .notebook-main {
+    padding-right: 7px;
+    color: #ababab;
+  }
+
+  span {
+    color: #5b5656;
+    text-overflow: ellipsis;
+    text-overflow: clip;
+
+  }
+
+  ul {
+    position: absolute;
+    top:15px;
+    margin-left: -10px;
+    padding-top: 10px;
+    height: 500px;
+    background: white;
+    overflow: scroll;
+  }
+
+  .notebook-dropdown-item {
+    width: 250px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    border: 1px solid blue;
+    height: 50px;
+  }
+
+  .nb-drop-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .nb-drop-checks {
+  }
+
+
+  .selected-image {
+    width: auto;
+  }
   .hidden {
     display: none;
   }
