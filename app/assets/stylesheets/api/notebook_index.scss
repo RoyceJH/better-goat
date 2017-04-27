@@ -6,7 +6,15 @@
   z-index: -1;
   top:0;
   left: 458px;
-  opacity: .1;
+  opacity: .2;
+  background-image: asset_url('blur');
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 // @-webkit-keyframes fadein {
@@ -163,6 +171,7 @@
 .notebook-index-item h3 {
   font-size: 14px;
   color: #4a4a4a;
+  text-overflow:clip;
 }
 
 .notebook-index-item h4 {

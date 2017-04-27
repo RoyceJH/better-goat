@@ -16,6 +16,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  overflow-y: hidden;
+
+  h3 {
+    text-align: center;
+    max-height: 85px;
+  }
 }
 
 .notebook-show span {
