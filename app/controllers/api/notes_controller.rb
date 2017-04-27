@@ -8,6 +8,11 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id
 
+    if @note.notebook_id.nil?
+      default_notebook = Notebook.find_by(default: true)
+      @note.notebook_id = default_notebook.id
+    end
+
     if @note.save
       render 'api/notes/show'
     else
