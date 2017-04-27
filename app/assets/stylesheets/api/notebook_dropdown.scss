@@ -1,9 +1,15 @@
 .ql-toolbar-bottom-line {
-  width: 90%;
+  width: 85%;
   border-top: 1px solid #c6c0c0;
   position: absolute;
   top: 35px;
-  left: 67px;
+  left: 8.2%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .ql-toolbar-bottom-line {
+        left: 48px;
+    }
 }
 
 .notebook-dropdown-wrapper {
