@@ -23,14 +23,17 @@
 
   .editor-buttons {
     display: flex;
-    width: 185px;
-    justify-content: space-between;
+    width: 230px;
+    justify-content: flex-end;
     align-items: center;
     font-size: 20px;
     color: #23BB59;
 
+
     input {
       width: 84px;
+      margin-left: 20px;
+      box-sizing: border-box;
     }
   }
 
