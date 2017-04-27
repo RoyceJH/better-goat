@@ -7,16 +7,22 @@
 }
 
 .notebook-dropdown-wrapper {
-  border: 1px solid red;
+  display: flex;
+  border-right: 1px solid #dbddde;
   top: 12px;
   position: absolute;
   padding-left: 15px;
   z-index: 199;
-  font-size: 13px;
+    font-size: 14px;
   font-family: sans-serif;
   width: 180px;
   height-max: 17px;
+  cursor: pointer;
 
+  .notebook-down {
+    padding-left: 3px;
+    padding-top: 2px;
+  }
 
   .notebook-main {
     padding-right: 7px;
@@ -27,43 +33,107 @@
     color: #5b5656;
     text-overflow: ellipsis;
     text-overflow: clip;
-
   }
 
   ul {
+    -webkit-box-shadow: 25px 25px 46px -12px rgba(217,217,217,1);
+    -moz-box-shadow: 25px 25px 46px -12px rgba(217,217,217,1);
+    box-shadow: 25px 25px 46px -12px rgba(217,217,217,1);
+    border: 1px solid #d2d1d1;
     position: absolute;
-    top:15px;
+    top:23px;
     margin-left: -10px;
-    padding-top: 10px;
     height: 500px;
     background: white;
-    overflow: scroll;
+    overflow-y: scroll;
+    width: 358px;
+    box-sizing: border-box;
   }
 
   .notebook-dropdown-item {
-    width: 250px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   li {
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     font-family: 'Roboto Slab', serif;
     font-weight: 400;
-    border: 1px solid blue;
-    height: 50px;
+    height: 52px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #dbddde;
+
+    .selected {
+      color: #23BB59;
+    }
+  }
+
+  .create-notebook {
+    color: #4d4c4c;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+
+    span {
+      font-size: 13px;
+    }
+
+
+    .create-notebook-icon {
+      display: flex;
+      padding-right: 8px;
+
+      :first-child {
+        font-size: 18px;
+      }
+
+      :last-child {
+        font-size: 10px;
+        padding-bottom: 6px;
+      }
+    }
   }
 
   .nb-drop-item-wrapper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
+    width: 85%;
+
+    font-weight: 100;
+    cursor: pointer;
+    color: #4d4c4c;
+
+    label {
+      cursor: pointer;
+    }
+
+    div {
+      font-size: 18px;
+    }
   }
 
-  .nb-drop-checks {
+  li:hover {
+    background: #40BC6C;
+
+    .nb-drop-item-wrapper {
+      color: #ffffff;
+    }
   }
 
+  .create-notebook:hover{
+    background: white;
+    color: #23BB59;
+    span {
+      color: inherit;
+    }
+  }
 
   .selected-image {
     width: auto;
