@@ -1,3 +1,7 @@
+.full-screen-note-editor {
+  background: white;
+}
+
 .editor-actions {
   display: flex;
   justify-content: space-between;
@@ -19,11 +23,15 @@
 
   .editor-buttons {
     display: flex;
-    width: 150px;
-    justify-content: space-around;
+    width: 185px;
+    justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    color: #23BB59
+    color: #23BB59;
+
+    input {
+      width: 84px;
+    }
   }
 
   .editor-buttons i, .editor-buttons input {
@@ -114,8 +122,8 @@
       border: 1px solid transparent;
       min-width: 750px;
       max-height: 40px;
-      margin-left: 190px;
-      
+      margin-left: 200px;
+
 
 
       .ql-formats .ql-picker span {

@@ -6,7 +6,7 @@
   color: white;
   justify-content: space-around;
   align-items: center;
-  height: 300px;
+  height: 347px;
   width: 532px;
   top: 30%;
 }
@@ -16,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   width: 600px;
-  height: 45%;
+  height: 50%;
   font-family: sans-serif;
   font-weight: lighter;
 }
@@ -25,7 +25,7 @@
 .greeting h1, .greeting p {
   font-weight: lighter;
   font-family: 'Roboto Slab', serif;
-  text-shadow: -1px 0 #525252, 0 1px #525252, 1px 0 #525252, 0 -1px #525252;
+  text-shadow: -1px 0 #3d3b3b, 0 1px #3d3b3b, 1px 0 #3d3b3b, 0 -1px #3d3b3b;
 
 }
 
@@ -82,6 +82,7 @@
   border: 0.5px solid #ccc9c9;
   content: "";
   width: 450px;
+  margin: 15px 0;
 }
 
 .greeting-form ul {
