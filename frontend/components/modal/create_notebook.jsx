@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import { createNotebook } from '../../actions/notebook_actions';
 import { removeModal } from '../../actions/modal_actions';
+import { removeSlideout } from '../../actions/slideout_actions';
 
 const mapStateToProps = (state, ownProps) => ({
 
@@ -11,6 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   createNotebook: (notebook) => dispatch(createNotebook(notebook)),
   removeModal: () => dispatch(removeModal()),
+  removeSlideout: () => dispatch(removeSlideout()),
 });
 
 class CreateNotebook extends React.Component {
@@ -25,7 +28,8 @@ class CreateNotebook extends React.Component {
   submitNotebook(e) {
     const newNotebook = {title: this.state.title};
     this.props.removeModal();
-    this.props.createNotebook(newNotebook);
+    this.props.removeSlideout();
+    this.props.createNotebook(newNotebook).then((action) => this.props.router.push(`/home/notebook/${action.notebook.id}`));
   }
 
   cancelCreate(e) {
@@ -75,4 +79,4 @@ class CreateNotebook extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateNotebook);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CreateNotebook));
