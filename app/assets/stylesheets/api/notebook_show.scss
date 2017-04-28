@@ -4,13 +4,13 @@
   border: 1px solid #cfcfcf;
   z-index: 100;
   width: 350px;
-
 }
 
 .notebook-show-header {
   background: #393D41;
   color: #D3D4D5;
   height: 152px;
+  min-height: 152px;
 
   display: flex;
   flex-direction: column;
@@ -22,6 +22,10 @@
     text-align: center;
     max-height: 85px;
   }
+}
+
+#root > div > div.notebook-show > div.notes-index {
+  height: 80vh;
 }
 
 .notebook-show span {

@@ -70,7 +70,6 @@ class HomeSideBar extends React.Component {
   updateFile(e) {
     var reader = new FileReader();
     var file = e.currentTarget.files[0];
-    debugger
     reader.onloadend = function() {
       this.setState({ imageUrl: reader.result, imageFile: file});
     }.bind(this);
