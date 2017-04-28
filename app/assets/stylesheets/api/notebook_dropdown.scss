@@ -21,9 +21,10 @@
   z-index: 199;
   font-size: 14px;
   font-family: sans-serif;
-  width: 180px;
+  width: 200px;
   height-max: 17px;
   cursor: pointer;
+  box-sizing: border-box;
 
   .notebook-down {
     padding-left: 3px;
