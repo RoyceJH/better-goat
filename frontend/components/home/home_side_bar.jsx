@@ -83,7 +83,6 @@ class HomeSideBar extends React.Component {
   }
   // <img src={this.state.imageUrl}></img>
   //<input type='file' value='Change Photo' onChange={this.updateFile}/>
-
   render() {
     const profileBox = this.state.hidden ? "" :
       <div onClick={this.removeProfile} value='yes' className='profile-tab-modal' >

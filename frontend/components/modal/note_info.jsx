@@ -26,7 +26,6 @@ class NoteInfo extends React.Component {
 
   render() {
     const createdAt = this.state.created_at ? new Date(this.state.created_at) : new Date(Date.now());
-    debugger
     const updatedAt = this.state.updated_at ? new Date(this.state.created_at) : new Date(Date.now());
 
     return(
