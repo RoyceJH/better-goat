@@ -44,9 +44,9 @@ class NoteEditor extends React.Component {
     note.body = content;
     this.setState({note});
 
-    if(this.props.formType === 'edit') {
-      this.props.processForm(this.state.note);
-    }
+    // if(this.props.formType === 'edit') {
+    //   this.props.processForm(this.state.note);
+    // }
     // clearTimeout(this.timeout);
     // this.timeout = setTimeout(this.props.processForm(this.state.note), 5000);
   }
@@ -55,11 +55,11 @@ class NoteEditor extends React.Component {
     let note = this.state.note;
     note.title = e.target.value;
 
-    this.setState({note}, () => {
-      if(this.props.formType === 'edit') {
-        this.handleSave();
-      }
-    });
+    // this.setState({note}, () => {
+    //   if(this.props.formType === 'edit') {
+    //     this.handleSave();
+    //   }
+    // });
   }
 
   addModal() {
