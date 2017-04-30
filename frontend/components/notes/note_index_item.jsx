@@ -10,6 +10,7 @@ class NoteIndexItem extends React.Component {
 
   goToNotes(noteId) {
     return (e) => {
+      // this.props.router.push()
       this.props.fetchNote(noteId);
     };
   }

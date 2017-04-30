@@ -2,10 +2,12 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import NotesIndexContainer from '../notes/notes_index_container';
 import UpdateNotebook from '../modal/update_notebook';
+import NoteEditorContainer from '../notes/note_editor_container';
 
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { notes: []};
     this.addModal = this.addModal.bind(this);
   }
 
@@ -21,13 +23,9 @@ class NotebookShow extends React.Component {
     // this.props.receiveNote(this.props.getNotes(parseInt(this.props.notebookId))[0]);
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   debugger
-  //   if(this.props.notebookId) {
-  //     debugger
-  //     this.props.receiveNote(this.props.getNotes(parseInt(this.props.notebookId)[0]));
-  //   }
-  // }
+  componentWillReceiveProps(newProps) {
+    
+  }
 
   addModal(e) {
     this.props.receiveModal(
@@ -39,25 +37,27 @@ class NotebookShow extends React.Component {
 
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
-    // jankeness breaks everything why?
-    // debugger
-    // if(notes[0]) {
-    //   this.props.receiveNote(notes[0]);
-    // }
 
     return(
-      <div className='notebook-show'>
-        <div className='notebook-show-header'>
-          <span>
-            <i onClick={this.addModal} className="fa fa-info-circle" aria-hidden="true"></i>
-          </span>
+      <div className='notebook-main'>
+        <div className='notebook-show'>
+          <div className='notebook-show-header'>
+            <span>
+              <i onClick={this.addModal} className="fa fa-info-circle" aria-hidden="true"></i>
+            </span>
 
-          <h3>
-            {this.props.notebook.title}
-          </h3>
+            <h3>
+              {this.props.notebook.title}
+            </h3>
+          </div>
+
+          <NotesIndexContainer notes={notes} />
+
         </div>
 
-        <NotesIndexContainer notes={notes} />
+        <div className='home-note-editor-wrapper'>
+          <NoteEditorContainer formType='edit' firstNote={notes[0]} />
+        </div>
 
       </div>
     );

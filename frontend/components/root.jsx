@@ -9,6 +9,7 @@ import HomeContainer from './home/home_container';
 import NotebookShowContainer from './notebook/notebook_show_container';
 import NotesShowContainer from './notes/notes_show_container';
 import NewNoteWrapper from './notes/new_note_wrapper';
+import NoteEditorContainer from './notes/note_editor_container';
 
 
 const Root = ({store, getState}) => {
@@ -27,6 +28,10 @@ const Root = ({store, getState}) => {
     }
   };
 
+  const _selectDefault = (nextState, replcace => {
+    debugger
+  };
+
   // add on enter hook down the line
   return(
     <Provider store={store}>
@@ -41,10 +46,14 @@ const Root = ({store, getState}) => {
           <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}>
             <IndexRoute component={ NotesShowContainer } />
 
-            <Route
+            <Route onEnter={_selectDefault}
               path='/home/notebook/:notebookId'
               component={ NotebookShowContainer }
-              />
+              >
+
+              <Route path='/home/notebook/:notebookId/notes/:noteId' component={ NoteEditorContainer } />
+
+            </Route>
           </Route>
 
         </Route>

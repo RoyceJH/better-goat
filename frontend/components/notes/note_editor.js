@@ -22,12 +22,14 @@ class NoteEditor extends React.Component {
   }
 
   componentDidMount() {
+    this.props.removeNote();
     if(!this.props.formType) {
       this.props.receiveNote({ title: "", preview: "", body: "" });
     }
   }
 
   componentWillReceiveProps(newProps) {
+
     if(this.state.note.id !== newProps.note.id) {
       this.setState({note: newProps.note});
     }
@@ -80,7 +82,7 @@ class NoteEditor extends React.Component {
     let notebookId = e.currentTarget.value;
     let note = this.state.note;
 
-    if (note.notebook_id != notebookId) {
+    if (note.notebook_id !== notebookId) {
       note.notebook_id = notebookId;
       this.setState({note}, () => {
         if(this.props.formType === 'edit') {

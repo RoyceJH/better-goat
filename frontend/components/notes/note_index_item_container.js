@@ -6,9 +6,9 @@ import { getTimeAgoOfNotes } from '../../reducers/selectors';
 import { fetchNote, deleteNote } from '../../actions/note_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  return{
+  return({
     timeAgo: getTimeAgoOfNotes(ownProps),
-  };
+  });
 };
 
 const mapDispatchToProps = dispatch => ({
