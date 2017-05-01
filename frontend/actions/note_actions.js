@@ -15,13 +15,9 @@ export const receiveNote = (note) => ({
   note
 });
 
-const removeNote = (note) => ({
+export const removeNote = (note) => ({
   type: REMOVE_NOTE,
   note
-});
-
-export const removeCurrentNote = () => ({
-  type: REMOVE_CURRENT_NOTE,
 });
 
 export const fetchNotes = () => dispatch => {

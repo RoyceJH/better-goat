@@ -8,10 +8,11 @@ class NotesShow extends React.Component {
   }
 
   render() {
-    let notesCount = this.props.notes.length;
+    const notes = this.props.notes;
+    let notesCount = notes.length;
     notesCount += (notesCount === 1) ? ' note' : ' notes';
 
-    const noteEditor = this.props.notes[0] ? <NoteEditorContainer key={this.props.notes[0].id} formType='edit' firstNote={this.props.notes[0]} /> : "";
+    const noteEditor = notes[0] ? <NoteEditorContainer key={notes[0].id} formType='edit' firstNote={notes[0]} /> : "";
 
     return(
       <div className='notes-main' >

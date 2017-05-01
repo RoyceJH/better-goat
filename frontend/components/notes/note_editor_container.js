@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import NoteEditor from './note_editor';
 import { withRouter } from 'react-router';
 
-import { createNote, updateNote, deleteNote, fetchNote, receiveNote, removeCurrentNote } from '../../actions/note_actions';
+import { createNote, updateNote, deleteNote, fetchNote, receiveNote, removeNote } from '../../actions/note_actions';
 import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks } from '../../reducers/selectors';
 
@@ -24,12 +24,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const processForm = ownProps.formType === 'edit' ? updateNote : createNote;
   return ({
-    fetchNote: (noteId) => dispatch(fetchNote(noteId)),
     processForm: (note) => dispatch(processForm(note)),
     deleteNote: (noteId) => dispatch(deleteNote(noteId)),
     receiveModal: (component) => dispatch(receiveModal(component)),
     receiveNote: (note) => dispatch(receiveNote(note)),
-    removeCurrentNote: () => dispatch(removeCurrentNote()),
+    removeNote: (note) => dispatch(removeNote(note)),
   });
 };
 

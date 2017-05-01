@@ -12,8 +12,6 @@ const NoteReducer = (oldState = _defaultState, action) => {
       } else {
         return oldState;
       }
-    case REMOVE_CURRENT_NOTE:
-      return {};
     default:
       return oldState;
   }
