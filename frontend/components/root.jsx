@@ -28,10 +28,6 @@ const Root = ({store, getState}) => {
     }
   };
 
-  const _selectDefault = (nextState, replcace => {
-    debugger
-  };
-
   // add on enter hook down the line
   return(
     <Provider store={store}>
@@ -46,7 +42,7 @@ const Root = ({store, getState}) => {
           <Route path='/home' component={ HomeContainer } onEnter={_ensuredLoggedIn}>
             <IndexRoute component={ NotesShowContainer } />
 
-            <Route onEnter={_selectDefault}
+            <Route
               path='/home/notebook/:notebookId'
               component={ NotebookShowContainer }
               >

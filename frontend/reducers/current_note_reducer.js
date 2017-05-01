@@ -1,4 +1,4 @@
-import { RECEIVE_NOTE, REMOVE_NOTE } from '../actions/note_actions';
+import { RECEIVE_NOTE, REMOVE_NOTE, REMOVE_CURRENT_NOTE } from '../actions/note_actions';
 
 const _defaultState = {};
 
@@ -12,6 +12,8 @@ const NoteReducer = (oldState = _defaultState, action) => {
       } else {
         return oldState;
       }
+    case REMOVE_CURRENT_NOTE:
+      return {};
     default:
       return oldState;
   }

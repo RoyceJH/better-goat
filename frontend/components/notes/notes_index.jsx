@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteIndexItemContainer from './note_index_item_container';
+import NoteEditorContainer from './note_editor_container';
 import { Link } from 'react-router';
 
 class NotesIndex extends React.Component {

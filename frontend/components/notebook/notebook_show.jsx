@@ -7,7 +7,6 @@ import NoteEditorContainer from '../notes/note_editor_container';
 class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { notes: []};
     this.addModal = this.addModal.bind(this);
   }
 
@@ -24,7 +23,7 @@ class NotebookShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    
+
   }
 
   addModal(e) {
@@ -37,6 +36,7 @@ class NotebookShow extends React.Component {
 
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
+    const noteEditor = notes[0] ? <NoteEditorContainer key={notes[0].id} formType='edit' firstNote={notes[0]} /> : "";
 
     return(
       <div className='notebook-main'>
@@ -56,7 +56,7 @@ class NotebookShow extends React.Component {
         </div>
 
         <div className='home-note-editor-wrapper'>
-          <NoteEditorContainer formType='edit' firstNote={notes[0]} />
+          { noteEditor }
         </div>
 
       </div>

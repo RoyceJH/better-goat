@@ -3,6 +3,7 @@ import * as NoteAPIUtil from '../util/note_api_util';
 export const RECEIVE_NOTES = 'RECEIVE_NOTES';
 export const RECEIVE_NOTE = 'RECEIVE_NOTE';
 export const REMOVE_NOTE = 'REMOVE_NOTE';
+export const REMOVE_CURRENT_NOTE = 'REMOVE_CURRENT_NOTE';
 
 const receiveNotes = (notes) => ({
   type: RECEIVE_NOTES,
@@ -17,6 +18,10 @@ export const receiveNote = (note) => ({
 const removeNote = (note) => ({
   type: REMOVE_NOTE,
   note
+});
+
+export const removeCurrentNote = () => ({
+  type: REMOVE_CURRENT_NOTE,
 });
 
 export const fetchNotes = () => dispatch => {

@@ -4,7 +4,7 @@ import { arrayNotebookIds, getNotesByNotebookId } from '../../reducers/selectors
 
 import { fetchNotebook } from '../../actions/notebook_actions';
 import { receiveModal } from '../../actions/modal_actions';
-import { receiveNote } from '../../actions/note_actions';
+import { receiveNote, removeCurrentNote } from '../../actions/note_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let notebook = state.notebooks[ownProps.params.notebookId] || {title: ""};
@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   receiveModal: (component) => dispatch(receiveModal(component)),
   receiveNote: (note) => dispatch(receiveNote(note)),
+  removeCurrentNote: () => dispatch(removeCurrentNote()),
 });
 
 export default connect(
