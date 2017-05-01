@@ -18,24 +18,19 @@ class NoteEditor extends React.Component {
     this.addCreateModal = this.addCreateModal.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.cancelNewNote = this.cancelNewNote.bind(this);
-    // this.timeout = null;
   }
 
   componentDidMount() {
-
     if(!this.props.formType) {
       this.setState({ title: "", preview: "", body: "" });
+    } else {
+      this.props.receiveNote(this.props.firstNote);
     }
-    this.props.receiveNote(this.props.firstNote);
   }
 
 
   componentWillReceiveProps(newProps) {
-    // if(this.state.note.id !== newProps.firstNote.id) {
-    //
-    // }
-    // this.props.receiveNote(this.props.firstNote);
-    if(!this.state.note.id) {
+    if(!this.state.note.id && newProps.formType) {
       this.props.receiveNote(this.props.firstNote);
     }
 
@@ -60,6 +55,7 @@ class NoteEditor extends React.Component {
   changeTitle(e) {
     let note = this.state.note;
     note.title = e.target.value;
+    this.setState({note});
   }
 
   addModal() {
