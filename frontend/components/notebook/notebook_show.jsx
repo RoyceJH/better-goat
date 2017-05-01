@@ -23,7 +23,7 @@ class NotebookShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-
+    
   }
 
   addModal(e) {

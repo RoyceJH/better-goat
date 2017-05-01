@@ -31,10 +31,10 @@ class NoteEditor extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    if(this.state.note.id !== newProps.firstNote.id) {
-
-    }
-    this.props.receiveNote(this.props.firstNote);
+    // if(this.state.note.id !== newProps.firstNote.id) {
+    //
+    // }
+    // this.props.receiveNote(this.props.firstNote);
 
     if(this.state.note.id !== newProps.note.id) {
       this.setState({note: newProps.note});
