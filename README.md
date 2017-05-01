@@ -26,7 +26,7 @@ By default, the most recently updated note is selected and held in the current n
 ### Notebooks
 Notebooks are stored in the database with the columns: `title`, `author_id`, and `default`. Each user is assigned a default notebook when signing up. Notes can change the Notebook they belong to through the use of a dropdown, which has selected the current notebook of the note. When creating a new note, the default Notebook for each user is selected.
 
-When rendering the `NotebookShow` component, the `NotesIndex` component is rendered only including the notes belonging to a specific notebook through the route `/home/notebook/:notebookId`. Again, the most recently updated note belonging to the notebook is updated to the current note slice of state. 
+When rendering the `NotebookShow` component, the `NotesIndex` component is rendered only including the notes belonging to a specific notebook through the route `/home/notebook/:notebookId`. Again, the most recently updated note belonging to the notebook is updated to the current note slice of state.
 
 
 
