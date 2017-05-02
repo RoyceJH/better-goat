@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427211214) do
+ActiveRecord::Schema.define(version: 20170501155509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,26 @@ ActiveRecord::Schema.define(version: 20170427211214) do
   add_index "notes", ["author_id"], name: "index_notes_on_author_id", using: :btree
   add_index "notes", ["notebook_id"], name: "index_notes_on_notebook_id", using: :btree
   add_index "notes", ["title"], name: "index_notes_on_title", using: :btree
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "note_id",    null: false
+    t.integer  "tag_id",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "taggings", ["note_id"], name: "index_taggings_on_note_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "author_id"
+  end
+
+  add_index "tags", ["author_id"], name: "index_tags_on_author_id", using: :btree
+  add_index "tags", ["title"], name: "index_tags_on_title", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",           null: false

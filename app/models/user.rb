@@ -2,12 +2,16 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -30,6 +34,11 @@ class User < ActiveRecord::Base
            primary_key: :id,
            foreign_key: :author_id,
            class_name: :Note
+
+  has_many :tags, dependent: :destroy,
+           primary_key: :id,
+           foreign_key: :author_id,
+           class_name: :Tag
 
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)

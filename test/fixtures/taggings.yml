@@ -1,13 +1,12 @@
 # == Schema Information
 #
-# Table name: notebooks
+# Table name: taggings
 #
 #  id         :integer          not null, primary key
-#  author_id  :integer          not null
-#  title      :text             not null
+#  note_id    :integer          not null
+#  tag_id     :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  default    :boolean          default("false")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

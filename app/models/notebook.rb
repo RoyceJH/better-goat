@@ -7,6 +7,7 @@
 #  title      :text             not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  default    :boolean          default("false")
 #
 
 class Notebook < ActiveRecord::Base
