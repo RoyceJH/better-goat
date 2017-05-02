@@ -23,7 +23,7 @@ export const arrayNotes = ({notes}) => {
 
 export const getNotesByNotebookId = ({notes}, notebookId) => {
   const notesByNotebook = [];
-  for (var key in notes) {
+  for (let key in notes) {
     if(notes[key]['notebook_id'] === notebookId) {
       notesByNotebook.push(notes[key]);
     }

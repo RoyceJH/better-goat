@@ -21,6 +21,9 @@ class NoteIndexItem extends React.Component {
   }
 
   render() {
+    // Star Reminder
+
+
     const {title, body, id, preview} = this.props.note;
     return(
       <li
@@ -32,8 +35,8 @@ class NoteIndexItem extends React.Component {
           <div className='note-index-item title'>
             <h4>{title}</h4>
             <div className='note-index-item options'>
-              <i className="fa fa-clock-o" aria-hidden="true"></i>
-              <i className="fa fa-star-o" aria-hidden="true"></i>
+              <i ></i>
+              <i ></i>
               <i onClick={this.deleteNote}
                 className="fa fa-trash-o" aria-hidden="true"></i>
             </div>
