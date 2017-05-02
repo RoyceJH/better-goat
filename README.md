@@ -21,12 +21,38 @@ Upon login, an AJAX API request is made to the database to receive all notes for
 
 Notes are rendered through two components, the `NotesIndexContainer` and the `NoteEditor`. The `NotesIndexContainer` shows an index of individual notes based on the current show page and their `previews`.
 
-By default, the most recently updated note is selected and held in the current note slice of state, `store.getState().note`. Upon selection of another note, an action is dispatched to replace the current note. This current note is available for editing and updating with various text manipulation tools through the use of Quill.js library within the `NoteEditor` component.
+![screenshot](http://i.imgur.com/xbJTvhm.png)
+
+By default, the most recently updated note is selected when the `componentDidMount` and held in the current note slice of state or a blank note is rendered depending on whether a note is shown for update or create. Upon selection of another note, an action is dispatched to replace the current note. This current note is available for editing and updating with various text manipulation tools through the use of Quill.js library within the `NoteEditor` component.
+
+```javascript
+componentDidMount() {
+  if(!this.props.formType) {
+    this.setState({ title: "", preview: "", body: "" });
+  } else {
+    this.props.receiveNote(this.props.firstNote);
+  }
+}
+```
 
 ### Notebooks
 Notebooks are stored in the database with the columns: `title`, `author_id`, and `default`. Each user is assigned a default notebook when signing up. Notes can change the Notebook they belong to through the use of a dropdown, which has selected the current notebook of the note. When creating a new note, the default Notebook for each user is selected.
 
+![screenshot](http://i.imgur.com/mDyCuWH.png)
+
 When rendering the `NotebookShow` component, the `NotesIndex` component is rendered only including the notes belonging to a specific notebook through the route `/home/notebook/:notebookId`. Again, the most recently updated note belonging to the notebook is updated to the current note slice of state.
+
+```javascript
+export const getNotesByNotebookId = ({notes}, notebookId) => {
+  const notesByNotebook = [];
+  for (let key in notes) {
+    if(notes[key]['notebook_id'] === notebookId) {
+      notesByNotebook.push(notes[key]);
+    }
+  }
+  return notesByNotebook.sort(compare);
+};
+```
 
 
 
