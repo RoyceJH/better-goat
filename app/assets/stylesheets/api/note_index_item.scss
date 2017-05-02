@@ -37,8 +37,11 @@
     width: 23%;
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
     padding-right: 10px;
+    padding-left: 25px;
+    font-size: 20px;
+    height: 18px;
+    box-sizing: border-box;
   }
 
   .bottom-line {
