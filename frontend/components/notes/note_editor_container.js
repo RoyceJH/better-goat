@@ -9,7 +9,6 @@ import { selectNotebooks } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
   let note = { title: "", preview: "", body: "" };
 
-
   if(ownProps.formType === 'edit') {
     note = state.note;
   }
