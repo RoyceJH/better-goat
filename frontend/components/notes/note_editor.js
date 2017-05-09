@@ -30,10 +30,6 @@ class NoteEditor extends React.Component {
 
 
   componentWillReceiveProps(newProps) {
-    if(!this.state.note.id && newProps.formType) {
-      this.props.receiveNote(this.props.firstNote);
-    }
-
     if(this.state.note.id !== newProps.note.id) {
       this.setState({note: newProps.note});
     }
@@ -159,12 +155,14 @@ class NoteEditor extends React.Component {
       );
     });
 
+    //Shortcut icon
+    // <i className="fa fa-star-o" aria-hidden="true"></i>
+
     return(
       <div className='editor-main'>
         <div className='editor-actions'>
           <div className='editor-icons'>
             <label className='star-note'>
-              <i className="fa fa-star-o" aria-hidden="true"></i>
             </label>
 
             <label className='info-note' onClick={this.addModal}>

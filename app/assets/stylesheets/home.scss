@@ -53,7 +53,7 @@
 .side-bar-2, .side-bar-3 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: center;
   align-items: center;
 
@@ -67,6 +67,10 @@
 .side-bar-3 {
   margin-bottom: 150px;
   height: 185px;
+
+  a {
+    padding-bottom: 20px;
+  }
 }
 
 .side-bar-4 {

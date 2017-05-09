@@ -80,15 +80,24 @@ class HomeSideBar extends React.Component {
       this.setState({ imageUrl: "", imageFile: null });
     }
   }
-  // <img src={this.state.imageUrl}></img>
-  //<input type='file' value='Change Photo' onChange={this.updateFile}/>
+
   render() {
+    // Search and live chat icons
+    // <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
+    // <Link><i className="fa fa-commenting-o" aria-hidden="true"></i></Link>
+
+    // Favorites / Shortcut icons
+    // <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
+
+    // Tags
+    // <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
+
     const profileBox = this.state.hidden ? "" :
       <div onClick={this.removeProfile} value='yes' className='profile-tab-modal' >
         <div value='no' className='profile-tab'>
           <div className='user-info'>
             <h3>Welcome,</h3>
-            <label>{window.currentUser.username}</label>
+            <label>{this.props.user.username}</label>
           </div>
 
           <div className='user-bottom'>
@@ -110,16 +119,14 @@ class HomeSideBar extends React.Component {
             className='add-logo'
             to='/notes/new'
             ><i className="fa fa-plus-square-o" aria-hidden="true"></i></Link>
-          <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
-          <Link><i className="fa fa-commenting-o" aria-hidden="true"></i></Link>
+
 
         </div>
 
         <div className='side-bar-3' >
-          <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
+
           <Link onClick={this.removeSlideout} to={'/home'}><i className="fa fa-file-text-o" aria-hidden="true"></i></Link>
           <Link onClick={this.slideNotebooks}><i className="fa fa-book" aria-hidden="true"></i></Link>
-          <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
 
         </div>
 

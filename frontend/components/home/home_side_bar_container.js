@@ -6,7 +6,8 @@ import { logout } from '../../actions/session_actions';
 import { fetchNotes } from '../../actions/note_actions';
 
 const mapStateToProps = state => ({
-  slideout: state.slideout
+  slideout: state.slideout,
+  user: state.session
 });
 
 const mapDispatchToProps = dispatch => ({
