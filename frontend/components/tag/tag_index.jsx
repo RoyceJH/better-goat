@@ -1,14 +1,36 @@
 import React from 'react';
 import SlideOut from '../slideout';
 import { withRouter } from 'react-router';
+import CreateTag from '../modal/create_tag';
 
 class TagIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.addModal = this.addModal.bind(this);
+    this.goToShowPage = this.goToShowPage.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchTags();
+  }
+
+  addModal(e) {
+    this.props.receiveModal(<CreateTag />);
+  }
+
+  handleDelete(tagId) {
+    return (e) => {
+      this.props.destroyTag(tagId);
+      e.stopPropagation();
+    };
+  }
+
+  goToShowPage(tagId) {
+    return (e) => {
+      this.props.router.push(`/home/tag/${tagId}`);
+      this.props.removeSlideout();
+    };
   }
 
   render() {
@@ -26,8 +48,8 @@ class TagIndex extends React.Component {
         </div>
 
         <div className='tag-index-item utility'>
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-          <i onClick={this.handleDelete(tag.id)} class="fa fa-trash-o" aria-hidden="true"></i>
+          <i className="fa fa-pencil" aria-hidden="true"></i>
+          <i onClick={this.handleDelete(tag.id)} className="fa fa-trash-o" aria-hidden="true"></i>
         </div>
       </div>;
     });
