@@ -25,5 +25,6 @@ class Note < ActiveRecord::Base
              foreign_key: :author_id,
              class_name: :User
 
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 end
