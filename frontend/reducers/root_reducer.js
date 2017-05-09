@@ -8,6 +8,7 @@ import SlideoutReducer from './slideout_reducer';
 import NotesReducer from './notes_reducer';
 import ModalReducer from './modal_reducer';
 import NoteReducer from './current_note_reducer';
+import TagReducer from './tag_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -18,6 +19,7 @@ const RootReducer = combineReducers({
   notes: NotesReducer,
   modal: ModalReducer,
   note: NoteReducer,
+  tags: TagReducer
 });
 
 export default RootReducer;
