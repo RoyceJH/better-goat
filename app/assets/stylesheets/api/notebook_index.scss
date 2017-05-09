@@ -7,15 +7,14 @@
   top:0;
   left: 458px;
   opacity: .2;
-
 }
 
-.notebook-wrapper {
+.notebook-wrapper, .tag-wrapper {
   height: 100%;
   z-index: 200;
 }
 
-.notebook-index {
+.notebook-index, .tag-index {
   width: 456px;
   font-family: sans-serif;
   font-weight: lighter;
@@ -45,7 +44,7 @@
   font-size: 14px;
 }
 
-.notebook-index-list-wrapper {
+.notebook-index-list-wrapper, .tag-index-list-wrapper {
   /* Firefox */
   height: -moz-calc(100% - 122px);
   /* WebKit */
@@ -57,7 +56,7 @@
   overflow: auto;
 }
 
-.notebook-index.selected {
+.notebook-index.selected, .tag-index.selected {
   left: 70px;
   transition: 0.7s ease;
 }
@@ -71,7 +70,7 @@
   z-index: 198;
 }
 
-.notebook-index-header input {
+.notebook-index-header input, .tag-index-header input {
   border: 1px solid #efefef;
   border-radius: 3px;
   padding: 8px;
@@ -79,7 +78,8 @@
   box-sizing: border-box;
 }
 
-.notebook-index-header input::placeholder {
+.notebook-index-header input::placeholder,
+.tag-index-header input::placeholder {
   text-align: center;
 }
 
@@ -113,18 +113,6 @@
   border-top: 1px solid #efefef;
   cursor: pointer;
 }
-
-// TRying to set short border?
-// .notebook-index-item:before {
-//   content:"";
-//   background: black;
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   height: 50%;
-//   width: 1px;
-//   border: 1px solid #efefef;
-// }
 
 .notebook-index-item.container:hover {
   background: #40BC6C;
