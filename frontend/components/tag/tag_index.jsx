@@ -2,6 +2,7 @@ import React from 'react';
 import SlideOut from '../slideout';
 import { withRouter } from 'react-router';
 import CreateTag from '../modal/create_tag';
+import TagIndexItem from './tag_index_item';
 
 class TagIndex extends React.Component {
   constructor(props) {
@@ -40,18 +41,7 @@ class TagIndex extends React.Component {
 
     const tags = this.props.tags.map((tag, idx) => {
       let notesCount = this.props.notes(tag.id).length;
-
-      return <div key={idx} className='tag-index-item container'>
-        <div className='tag-index-item title'>
-          <h3>{tag.title}</h3>
-          <label className='tag-index-item count'>{notesCount}</label>
-        </div>
-
-        <div className='tag-index-item utility'>
-          <i className="fa fa-pencil" aria-hidden="true"></i>
-          <i onClick={this.handleDelete(tag.id)} className="fa fa-trash-o" aria-hidden="true"></i>
-        </div>
-      </div>;
+      return <TagIndexItem key={tag.id} notesCount={notesCount} tag={tag}/>;
     });
 
     return(
@@ -62,7 +52,7 @@ class TagIndex extends React.Component {
             <div className='top-line'>
               <h2>TAGS</h2>
                 <label onClick={this.addModal}>
-                  <i className="fa fa-file-text-o" aria-hidden="true"></i>
+                  <i className="fa fa-bookmark-o" aria-hidden="true"></i>
                   <i className="fa fa-plus" aria-hidden="true"></i>
                 </label>
             </div>
