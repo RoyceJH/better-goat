@@ -31,6 +31,7 @@ class CreateForm extends React.Component {
     const newItem = {title: this.state.title};
     this.props.removeModal();
     this.props.removeSlideout();
+    this.setState({title:""});
     this.props.createAction(newItem).then(this.props.reroute);
   }
 
