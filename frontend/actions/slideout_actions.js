@@ -8,7 +8,7 @@ export const slideoutNotebook = () => ({
 
 export const slideoutTag = () => ({
   type: CHANGE_SLIDEOUT,
-  slideout: 'tags'
+  slideout: 'tag'
 });
 
 export const removeSlideout = () => ({
