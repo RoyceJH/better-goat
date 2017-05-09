@@ -14,7 +14,17 @@ class Api::TagsController < ApplicationController
     end
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+    render :show
+  end
+
   def destroy
+    @tag = Tag.find(params[:id])
+    if @tag.destroy
+      render :show
+    else
+      render json: @tag.errors.full_messages, status: 404
   end
 
   private
