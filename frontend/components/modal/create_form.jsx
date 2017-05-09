@@ -38,22 +38,22 @@ class CreateForm extends React.Component {
     const submitClass = this.state.title === '' ? 'inactive' : '';
     const submitAction = this.state.title === '' ? '' : this.submitItem;
     return(
-      <div className='modal-create-notebook'>
-        <div className='modal-create-notebook-header'>
+      <div className='modal-create'>
+        <div className='modal-create-header'>
           <i className="fa fa-file-text-o" aria-hidden="true"></i>
           <label>{`CREATE ${this.props.item.toUpperCase()}`}</label>
-          <div className='modal-create-notebook bottom-line'/>
+          <div className='modal-create bottom-line'/>
         </div>
 
         <input
           type='text'
-          className='create-notebook-title'
+          className='create-title'
           onChange={this.handleChange}
           placeholder={this.props.placeholder}
           value={this.state.title}
           />
 
-        <div className='notebook-modal'>
+        <div className='create-modal'>
           <input
             className='cancel'
             onClick={this.cancelCreate}
