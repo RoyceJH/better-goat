@@ -6,6 +6,7 @@ class Api::TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+    @tag.author = current_user
 
     if @tag.save
       render :show
@@ -41,6 +42,6 @@ class Api::TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:title)
+    params.require(:tag).permit(:title, :author)
   end
 end
