@@ -38,7 +38,7 @@ class HomeSideBar extends React.Component {
   }
 
   slideTags(e) {
-    if(this.props.slideout === 'tags') {
+    if(this.props.slideout === 'tag') {
       this.props.removeSlideout();
     } else {
       this.props.slideoutTag();
@@ -127,7 +127,7 @@ class HomeSideBar extends React.Component {
 
           <Link onClick={this.removeSlideout} to={'/home'}><i className="fa fa-file-text-o" aria-hidden="true"></i></Link>
           <Link onClick={this.slideNotebooks}><i className="fa fa-book" aria-hidden="true"></i></Link>
-
+          <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
         </div>
 
         <div className='side-bar-4'>
