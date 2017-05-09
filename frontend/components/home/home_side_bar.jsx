@@ -21,6 +21,7 @@ class HomeSideBar extends React.Component {
 
   handleLogout(e){
     e.preventDefault();
+    this.props.removeSlideout();
     this.props.logout();
     this.props.router.push('/');
   }
