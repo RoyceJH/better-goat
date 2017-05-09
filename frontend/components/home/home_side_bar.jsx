@@ -92,13 +92,12 @@ class HomeSideBar extends React.Component {
     // Tags
     // <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
 
-
     const profileBox = this.state.hidden ? "" :
       <div onClick={this.removeProfile} value='yes' className='profile-tab-modal' >
         <div value='no' className='profile-tab'>
           <div className='user-info'>
             <h3>Welcome,</h3>
-            <label>{window.currentUser.username}</label>
+            <label>{this.props.user.username}</label>
           </div>
 
           <div className='user-bottom'>
