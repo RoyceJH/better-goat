@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeSideBarContainer from './home_side_bar_container';
 import NotebookIndexContainer from '../notebook/notebook_index_container';
+import TagIndexContainer from '../tag/tag_index_container';
 import RootModalContainer from '../modal/root_modal_container';
 import { withRouter } from 'react-router';
 
@@ -14,6 +15,7 @@ class Home extends React.Component {
       <div className='home-main'>
         <HomeSideBarContainer />
         <NotebookIndexContainer />
+        <TagIndexContainer />
         {this.props.children}
 
 

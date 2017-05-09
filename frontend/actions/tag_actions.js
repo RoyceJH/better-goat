@@ -24,14 +24,19 @@ export const fetchTags = () => dispatch => {
     .then((tags) => dispatch(receiveTags(tags)));
 };
 
-export const fetchTag = () => dispatch => {
-  return TagAPIUtil.fetchTag()
+export const fetchTag = (tagId) => dispatch => {
+  return TagAPIUtil.fetchTag(tagId)
     .then((tag) => dispatch(receiveTag(tag)));
 };
 
 export const createTag = (tag) => dispatch => {
   return TagAPIUtil.createTag(tag)
     .then((tag) => dispatch(receiveTag(tag)));
+};
+
+export const updateTag = (tag) => dispatch => {
+  return TagAPIUtil.updateTag(tag)
+    .then((tag) => dispatch(updateTag(tag)));
 };
 
 export const destroyTag = (tagId) => dispatch => {

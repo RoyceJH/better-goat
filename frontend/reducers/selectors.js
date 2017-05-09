@@ -13,6 +13,10 @@ export const selectNotebooks = ({notebooks}) => {
   return Object.keys(notebooks).map(key => notebooks[key]).sort(compare);
 };
 
+export const selectTags = ({tags}) => {
+  return Object.keys(tags).map(key => tags[key]).sort(compare);
+};
+
 export const arrayNotebookIds = ({notebooks}) => {
   return Object.keys(notebooks);
 };
@@ -23,12 +27,23 @@ export const arrayNotes = ({notes}) => {
 
 export const getNotesByNotebookId = ({notes}, notebookId) => {
   const notesByNotebook = [];
-  for (var key in notes) {
+  for (let key in notes) {
     if(notes[key]['notebook_id'] === notebookId) {
       notesByNotebook.push(notes[key]);
     }
   }
   return notesByNotebook.sort(compare);
+};
+
+export const getNotesByTagId = ({tags}, tagId) => {
+  const notesByTag = [];
+  for(let key in tags) {
+    if(tags[key]['tag_id'] === tagId) {
+      notesByTag.push(tags[key]);
+    }
+  }
+
+  return notesByTag.sort(compare);
 };
 
 export const getTimeAgoOfNotes = ({note}) => {

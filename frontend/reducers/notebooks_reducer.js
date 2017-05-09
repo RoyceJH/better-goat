@@ -1,4 +1,6 @@
-import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from '../actions/notebook_actions';
+import {
+  RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK
+} from '../actions/notebook_actions';
 import merge from 'lodash/merge';
 
 const _nullNotebook = ({});

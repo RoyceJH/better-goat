@@ -58,6 +58,7 @@ class NotebookIndex extends React.Component {
 
       </div>;
     });
+
     return(
         <div className={`notebook-index ${slidden}`}>
           <div className='notebook-wrapper' >
