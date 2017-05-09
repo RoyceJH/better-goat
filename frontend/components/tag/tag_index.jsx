@@ -15,6 +15,7 @@ class TagIndex extends React.Component {
     const slidden = this.props.slideout ? "selected" : "";
     const slideModal = this.props.slideout ? <SlideOut /> : "";
 
+
     const tags = this.props.tags.map((tag, idx) => {
       let notesCount = this.props.notes(tag.id).length;
 

@@ -12,6 +12,7 @@ import { selectTags, getNotesByTagId } from '../../reducers/selectors';
 import TagIndex from './tag_index';
 
 const mapStateToProps = (state) => {
+   
   const slideout = state.slideout === 'tag' ? true : false;
   return {
     tags: selectTags(state),
