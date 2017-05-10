@@ -9,7 +9,6 @@ class TagIndex extends React.Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
     this.addModal = this.addModal.bind(this);
-    this.goToShowPage = this.goToShowPage.bind(this);
   }
 
   componentDidMount() {
@@ -24,13 +23,6 @@ class TagIndex extends React.Component {
     return (e) => {
       this.props.destroyTag(tagId);
       e.stopPropagation();
-    };
-  }
-
-  goToShowPage(tagId) {
-    return (e) => {
-      this.props.router.push(`/home/tag/${tagId}`);
-      this.props.removeSlideout();
     };
   }
 
