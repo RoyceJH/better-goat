@@ -18,12 +18,7 @@ class NotebookShow extends React.Component {
       }, (err) => {
         this.props.router.push('/home');
       });
-
     // this.props.receiveNote(this.props.getNotes(parseInt(this.props.notebookId))[0]);
-  }
-
-  componentWillReceiveProps(newProps) {
-    
   }
 
   addModal(e) {
@@ -32,11 +27,14 @@ class NotebookShow extends React.Component {
     );
   }
 
-
-
   render() {
     const notes = this.props.getNotes(parseInt(this.props.notebookId));
-    const noteEditor = notes[0] ? <NoteEditorContainer key={notes[0].id} formType='edit' firstNote={notes[0]} /> : "";
+    const noteEditor = notes[0] ?
+      <NoteEditorContainer
+        key={notes[0].id}
+        formType='edit'
+        firstNote={notes[0]} />
+      : "";
 
     return(
       <div className='notebook-main'>

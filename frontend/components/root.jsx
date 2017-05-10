@@ -10,6 +10,7 @@ import NotebookShowContainer from './notebook/notebook_show_container';
 import NotesShowContainer from './notes/notes_show_container';
 import NewNoteWrapper from './notes/new_note_wrapper';
 import NoteEditorContainer from './notes/note_editor_container';
+import TagShowContainer from './tag/tag_show_container';
 
 
 const Root = ({store, getState}) => {
@@ -46,10 +47,12 @@ const Root = ({store, getState}) => {
               path='/home/notebook/:notebookId'
               component={ NotebookShowContainer }
               >
-
-              <Route path='/home/notebook/:notebookId/notes/:noteId' component={ NoteEditorContainer } />
-
             </Route>
+
+            <Route
+              path='/home/tag/:tagId'
+              component={ TagShowContainer }
+            />
           </Route>
 
         </Route>
