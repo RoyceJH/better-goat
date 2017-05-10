@@ -8,6 +8,7 @@ class NotebookShow extends React.Component {
   constructor(props) {
     super(props);
     this.addModal = this.addModal.bind(this);
+    this.state = ({search: ""});
   }
 
   //TODO change handling of unaccessible notebooks (props.notebooksArray)
