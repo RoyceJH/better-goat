@@ -35,11 +35,12 @@ export const getNotesByNotebookId = ({notes}, notebookId) => {
   return notesByNotebook.sort(compare);
 };
 
-export const getNotesByTagId = ({tags}, tagId) => {
+export const getNotesByTagId = ({notes}, tagId) => {
   const notesByTag = [];
-  for(let key in tags) {
-    if(tags[key]['tag_id'] === tagId) {
-      notesByTag.push(tags[key]);
+  console.log(tagId);
+  for(let key in notes) {
+    if(notes[key]['tags'].includes(tagId)) {
+      notesByTag.push(notes[key]);
     }
   }
 
