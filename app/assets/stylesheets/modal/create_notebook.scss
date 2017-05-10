@@ -54,7 +54,7 @@
   outline: 0;
 }
 
-.create-modal {
+.create-modal, .notebook-modal {
   height: 40px;
   width: 388px;
   display: flex;
@@ -62,7 +62,7 @@
 }
 
 
-.create-modal input {
+.create-modal input, .notebook-modal input {
   font-size: 13px;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
@@ -73,25 +73,25 @@
   cursor: pointer;
 }
 
-.create-modal input:focus {
+.create-modal input:focus, .notebook-modal input:focus {
   outline: none;
 }
 
-.create-modal .cancel {
+.create-modal .cancel, .notebook-modal .cancel {
   background: #edecec;
   color: #716e6e;
 }
 
-.create-modal .cancel:hover {
+.create-modal .cancel:hover, .notebook-modal .cancel:hover {
   background: #d9d9d9;
 }
 
-.create-modal .submit {
+.create-modal .submit, .notebook-modal .submit {
   background: #2DBE60;
   color: #f2f2f2;
 }
 
-.create-modal .submit:hover {
+.create-modal .submit:hover, .notebook-modal .submit:hover {
   background: #28a955;
 }
 

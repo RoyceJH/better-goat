@@ -1,0 +1,46 @@
+.tag-blocks {
+  padding-left: 25px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+
+div > div.note-edit-wrapper >
+div.note-attributes > div.tag-blocks >
+ul > li.new-tag {
+  input {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height: 15px;
+    width: auto;
+    font-size: 14px;
+    color: #8a8888;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    align-items: center;
+    display: flex;
+  }
+
+  input::placeholder {
+    color: #c8c4c4;
+  }
+}
+
+.tag-blocks ul {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-family: sans-serif;
+
+  li {
+    color: #8a8888;
+    margin: 0 10px;
+    padding: 2px 7px;
+    border: 1px solid #e9e6e6;
+    background: #f7f7f7;
+    border-radius: 3px;
+  }
+}
