@@ -8,6 +8,20 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id
 
+    if(params[:note][:tagsToCreate])
+      params[:note][:tagsToCreate].each do |tag|
+        newTag = ({title: tag[1][:title], author_id: current_user.id})
+        tagToAdd = Tag.create(newTag);
+        tags.push(tagToAdd)
+      end
+    end
+
+    if(params[:note][:tagsToAdd])
+      params[:note][:tagsToAdd].each do |tag|
+        tags.push(tag[1])
+      end
+    end
+
     if @note.notebook_id.nil?
       default_notebook = Notebook.find_by(default: true)
       @note.notebook_id = default_notebook.id
@@ -26,6 +40,23 @@ class Api::NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
+    tags = @note.tags
+
+    if(params[:note][:tagsToCreate])
+      params[:note][:tagsToCreate].each do |tag|
+        newTag = ({title: tag[1][:title], author_id: current_user.id})
+        tagToAdd = Tag.create(newTag);
+        tags.push(tagToAdd)
+      end
+    end
+
+    if(params[:note][:tagsToAdd])
+      params[:note][:tagsToAdd].each do |tag|
+        tagToAdd = Tag.find(tag[1][:id])
+        tags.push(tagToAdd)
+      end
+    end
+
     if @note.update(note_params)
       render 'api/notes/show'
     else
