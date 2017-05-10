@@ -9,7 +9,7 @@ class Splash extends React.Component {
       <div className='splash'>
         <SplashHeader />
         <div className='splash-main' >
-          <img src='https://static.pexels.com/photos/220076/pexels-photo-220076.jpeg' />
+          <img src='https://static.pexels.com/photos/269810/pexels-photo-269810.jpeg' />
           <Greeting signup={this.props.signup} errors={this.props.errors} clearErrors={this.props.clearErrors} login={this.props.login}/>
         </div>
       </div>
