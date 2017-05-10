@@ -1,8 +1,8 @@
-.notes-main {
+.notes-main, .tag-main {
   display: flex;
 }
 
-.notes-show {
+.notes-show, .tag-show {
   display: flex;
   display: block;
   flex-direction: column;
@@ -16,7 +16,7 @@
   overflow-y: hidden;
 }
 
-.notes-show-header {
+.notes-show-header, .tag-show-header {
   background: white;
   color: #8f8d8d;
   height: 50px;
@@ -27,7 +27,7 @@
   box-sizing: border-box;
 }
 
-.notes-show-header h3 {
+.notes-show-header h3, .tag-show-header h3 {
   font-family: sans-serif;
   font-weight: lighter;
   letter-spacing: 1px;

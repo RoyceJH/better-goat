@@ -20,6 +20,8 @@
   }
 
   .tag-title-wrapper:hover {
+    cursor: pointer;
+
     .title {
       background: #40BC6C;
       color: #fbfbfb;
@@ -28,7 +30,6 @@
         color: #ededed;
       }
     }
-
   }
 
   .tag-title-wrapper:hover + .tag-index-item.utility,
@@ -46,7 +47,7 @@
     display: flex;
     align-items: center;
     font-size: 16px;
-    padding: 4px 14px;
+    padding: 2px 14px;
 
     h3 {
       font-family: Helvetica, Arial, sans-serif;
@@ -67,6 +68,26 @@
   }
 }
 
-.tag-index-item.utility i:hover {
+.tag-index-item.utility i:hover, .tag-title-wrapper i:hover {
   color: #40BC6C;
+  cursor: pointer;
+}
+
+.tag-title-wrapper.edit {
+  width: 100%;
+}
+
+.tag-title-wrapper input {
+  width: 80%;
+  background: rgba(#f9f9f9, 1);
+  border: 1px solid #e6e3e3;
+  border-radius: 4px;
+  align-items: center;
+  font-size: 16px;
+  padding: 2px 14px;
+  margin-right: 10px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  color: #878787;
 }
