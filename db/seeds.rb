@@ -8,9 +8,15 @@
 
 Notebook.destroy_all
 User.destroy_all
+Tag.destroy_all
 
 User.create({username:'guestuser', password:'password'});
 user = User.find_by(username:'guestuser')
+
+
+tag = Tag.create({author_id: user.id, title: 'news'})
+tag1 = Tag.create({author_id: user.id, title: 'wow'})
+tag2 = Tag.create({author_id: user.id, title: 'super'})
 
 nb = Notebook.create({title: Faker::Superhero.name, author_id: user.id})
 
