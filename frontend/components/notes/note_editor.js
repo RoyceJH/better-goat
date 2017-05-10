@@ -18,6 +18,7 @@ class NoteEditor extends React.Component {
     this.addCreateModal = this.addCreateModal.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.cancelNewNote = this.cancelNewNote.bind(this);
+    this.setTag = this.setTag.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +28,6 @@ class NoteEditor extends React.Component {
       this.props.receiveNote(this.props.firstNote);
     }
   }
-
 
   componentWillReceiveProps(newProps) {
     if(this.state.note.id !== newProps.note.id) {
@@ -62,9 +62,9 @@ class NoteEditor extends React.Component {
     if(!this.props.formType) {
       this.props.processForm(this.state.note).then(
         this.cancelNewNote
-      );
+      ).then(this.props.fetchTags);
     } else {
-      this.props.processForm(this.state.note);
+      this.props.processForm(this.state.note).then(this.props.fetchTags);
     }
   }
 
@@ -99,7 +99,33 @@ class NoteEditor extends React.Component {
     this.setState({hidden: true});
   }
 
+  setTag(e) {
+    if(e.key === 'Enter') {
+      let newTag = {id:null, title:e.target.value};
+      let note = this.state.note;
+      let exists = false;
+
+      if(this.props.tagsByTitle(newTag.title)[0]) {
+        note.tagsToAdd = note.tagsToAdd || [];
+        newTag = this.props.tagsByTitle(newTag.title)[0];
+        note.tagsToAdd.push(newTag);
+        exists = true;
+      }
+
+      note.tagsToCreate = note.tagsToCreate || [];
+      if(!exists) {
+        note.tagsToCreate.push(newTag);
+      }
+
+      note.tags.push(newTag);
+      this.setState({note});
+      e.target.value = '';
+    }
+  }
+
   render() {
+    let { tags } = this.state.note;
+
     const toolbarOptions = [
       [{ 'font': [] }],
       // [{ 'align': [] }],
@@ -118,6 +144,15 @@ class NoteEditor extends React.Component {
         type='submit'
         value='Cancel'/> :
         "";
+
+    let tagBlocks;
+    if(tags) {
+      tagBlocks = tags.map((tag) => {
+        return <li className='tags-list' key={tag.title}>
+          {tag.title}
+        </li>;
+      });
+    }
 
     let selected = "";
     let selectedNotebookName;
@@ -187,21 +222,31 @@ class NoteEditor extends React.Component {
 
         <div className='note-edit-wrapper' >
 
-          <div onClick={this.toggleNotebookList} className='notebook-dropdown-wrapper'>
-            <i className="fa fa-book notebook-main" aria-hidden="true"></i>
-            <span >{selectedNotebookName}</span>
-            <i className="fa fa-angle-down notebook-down" aria-hidden="true"></i>
-            <ul className={`notebook-dropdown ${hidden}`}>
-              <li className='create-notebook' onClick={this.addCreateModal}>
-                <div className='create-notebook-icon'>
-                  <i className="fa fa-file-text-o" aria-hidden="true"></i>
-                  <i className="fa fa-plus" aria-hidden="true"></i>
-                </div>
-                <span>Create new notebook</span>
+          <div className='note-attributes'>
+            <div onClick={this.toggleNotebookList} className='notebook-dropdown-wrapper'>
+              <i className="fa fa-book notebook-main" aria-hidden="true"></i>
+              <span >{selectedNotebookName}</span>
+              <i className="fa fa-angle-down notebook-down" aria-hidden="true"></i>
+              <ul className={`notebook-dropdown ${hidden}`}>
+                <li className='create-notebook' onClick={this.addCreateModal}>
+                  <div className='create-notebook-icon'>
+                    <i className="fa fa-file-text-o" aria-hidden="true"></i>
+                    <i className="fa fa-plus" aria-hidden="true"></i>
+                  </div>
+                  <span>Create new notebook</span>
 
-              </li>
-              { notebooks }
-            </ul>
+                </li>
+                { notebooks }
+              </ul>
+            </div>
+
+            <div className='tag-blocks'>
+              <i className="fa fa-bookmark-o" aria-hidden="true"></i>
+              <ul>
+                { tagBlocks }
+                <li onKeyPress={this.setTag} className='new-tag'><input placeholder='+'></input></li>
+              </ul>
+            </div>
           </div>
 
           <input

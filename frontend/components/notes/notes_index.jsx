@@ -25,14 +25,14 @@ class NotesIndex extends React.Component {
              </div>;
     }
 
+    // <label>Options&nbsp;</label>
+    // <i className="fa fa-angle-down" aria-hidden="true"></i>
     return(
       <div className='notes-index'>
         <div className='notes-index-header'>
           <span>{notesCount}</span>
 
           <div className='options-selector' >
-            <label>Options&nbsp;</label>
-            <i className="fa fa-angle-down" aria-hidden="true"></i>
           </div>
         </div>
 

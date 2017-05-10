@@ -17,6 +17,28 @@ export const selectTags = ({tags}) => {
   return Object.keys(tags).map(key => tags[key]).sort(compare);
 };
 
+export const selectTagsByNote = ({tags}, note) => {
+  const tagsByNote = [];
+  for(let key in tags) {
+    if(note.tags.includes(tags[key]['id'])) {
+      tagsByNote.push(tags);
+    }
+  }
+
+  return tagsByNote;
+};
+
+export const selectTagsByTitle = ({tags}, title) => {
+  const tagsByTitle = [];
+  for(let key in tags) {
+    if(tags[key]['title'] === title) {
+      tagsByTitle.push(tags[key]);
+    }
+  }
+
+  return tagsByTitle;
+};
+
 export const arrayNotebookIds = ({notebooks}) => {
   return Object.keys(notebooks);
 };
@@ -37,10 +59,13 @@ export const getNotesByNotebookId = ({notes}, notebookId) => {
 
 export const getNotesByTagId = ({notes}, tagId) => {
   const notesByTag = [];
-  console.log(tagId);
   for(let key in notes) {
-    if(notes[key]['tags'].includes(tagId)) {
-      notesByTag.push(notes[key]);
+    if(notes[key]['tags']) {
+      notes[key]['tags'].forEach((tag) => {
+        if(tag.id === tagId) {
+          notesByTag.push(notes[key]);
+        }
+      });
     }
   }
 
@@ -97,7 +122,6 @@ export const getTimeAgoOfNotes = ({note}) => {
 };
 
 export const roughSizeOfObject = ( object ) => {
-
     const objectList = [];
     const stack = [ object ];
     let bytes = 0;

@@ -36,6 +36,7 @@ class TagIndex extends React.Component {
       return <TagIndexItem key={tag.id} notesCount={notesCount} tag={tag}/>;
     });
 
+    // <input type='text' placeholder='Find a tag'/>
     return(
       <div className={`tag-index ${slidden}` }>
         <div className='tag-wrapper'>
@@ -49,7 +50,6 @@ class TagIndex extends React.Component {
                 </label>
             </div>
 
-            <input type='text' placeholder='Find a tag'/>
           </div>
 
           <div className='tag-index-list-wrapper'>
