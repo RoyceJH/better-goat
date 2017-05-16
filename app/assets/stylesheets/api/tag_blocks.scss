@@ -5,6 +5,19 @@
   align-items: center;
 }
 
+.tags-list {
+  display: flex;
+  align-items: center;
+
+  .fa {
+    padding-left: 5px;
+  }
+
+  .fa:hover {
+    cursor: pointer;
+    color: #2DBE60;
+  }
+}
 
 div > div.note-edit-wrapper >
 div.note-attributes > div.tag-blocks >
