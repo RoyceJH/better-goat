@@ -3,7 +3,7 @@ import NoteEditor from './note_editor';
 import { withRouter } from 'react-router';
 
 import { fetchTags } from '../../actions/tag_actions';
-import { createNote, updateNote, deleteNote, fetchNote, receiveNote, removeNote } from '../../actions/note_actions';
+import { createNote, updateNote, deleteNote, fetchNote, receiveNote, removeNote, fetchNotes } from '../../actions/note_actions';
 import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks, selectTagsByNote, selectTagsByTitle } from '../../reducers/selectors';
 
@@ -32,6 +32,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     receiveNote: (note) => dispatch(receiveNote(note)),
     removeNote: (note) => dispatch(removeNote(note)),
     fetchTags: () => dispatch(fetchTags()),
+    fetchNotes: () => dispatch(fetchNotes()),
+    fetchNote: (noteId) => dispatch(fetchNote(noteId)),
   });
 };
 

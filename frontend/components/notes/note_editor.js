@@ -19,6 +19,7 @@ class NoteEditor extends React.Component {
     this.handleSave = this.handleSave.bind(this);
     this.cancelNewNote = this.cancelNewNote.bind(this);
     this.setTag = this.setTag.bind(this);
+    this.deleteTag = this.deleteTag.bind(this);
   }
 
   componentDidMount() {
@@ -59,12 +60,14 @@ class NoteEditor extends React.Component {
   }
 
   handleSave() {
+    let { note } = this.state;
     if(!this.props.formType) {
-      this.props.processForm(this.state.note).then(
+      this.props.processForm(note).then(
         this.cancelNewNote
-      ).then(this.props.fetchTags);
+      ).then(this.props.fetchTags).then(this.props.fetchNotes(note.id));
     } else {
-      this.props.processForm(this.state.note).then(this.props.fetchTags);
+      this.props.processForm(note)
+        .then(this.props.fetchTags).then(this.props.fetchNote(note.id));
     }
   }
 
@@ -105,16 +108,9 @@ class NoteEditor extends React.Component {
       let note = this.state.note;
       let exists = false;
 
-      if(this.props.tagsByTitle(newTag.title)[0]) {
-        note.tagsToAdd = note.tagsToAdd || [];
-        newTag = this.props.tagsByTitle(newTag.title)[0];
-        note.tagsToAdd.push(newTag);
+      if(this.props.tagsByTitle(newTag.title)) {
+        newTag = this.props.tagsByTitle(newTag.title);
         exists = true;
-      }
-
-      note.tagsToCreate = note.tagsToCreate || [];
-      if(!exists) {
-        note.tagsToCreate.push(newTag);
       }
 
       note.tags.push(newTag);
@@ -123,12 +119,25 @@ class NoteEditor extends React.Component {
     }
   }
 
-  render() {
-    let { tags } = this.state.note;
+  deleteTag(tag) {
+    return (e) => {
+      let toDelete = tag;
+      let delIdx;
+      let note = this.state.note;
+      note.tags.forEach((currentTag, idx) => {
+        if(currentTag.title === toDelete.title){
+          delIdx = idx;
+        }
+      });
 
-    const toolbarOptions = [
+      delete note.tags[delIdx];
+      this.setState({note});
+    };
+  }
+
+  toolbarOptions() {
+    return [
       [{ 'font': [] }],
-      // [{ 'align': [] }],
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
       ['blockquote', 'code-block'],
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -136,6 +145,23 @@ class NoteEditor extends React.Component {
       [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
       ['clean']                                         // remove formatting button
     ];
+  }
+
+  // tagBlocks() {
+  //   let { tags } = this.state.note;
+  //   if(tags) {
+  //     tagBlocks = tags.map((tag => {
+  //       return <li className='tags-list' key={tag.title}>
+  //         {tag.title}
+  //         <i className="fa fa-minus-circle" aria-hidden="true"
+  //           onClick={this.deleteTag(tag).bind(this)}></i>
+  //       </li>;
+  //     }));
+  //   }
+  // }
+
+  render() {
+    let { tags } = this.state.note;
 
     const cancelButton = !this.props.formType ?
       <input
@@ -147,11 +173,13 @@ class NoteEditor extends React.Component {
 
     let tagBlocks;
     if(tags) {
-      tagBlocks = tags.map((tag) => {
+      tagBlocks = tags.map((tag => {
         return <li className='tags-list' key={tag.title}>
           {tag.title}
+          <i className="fa fa-minus-circle" aria-hidden="true"
+            onClick={this.deleteTag(tag).bind(this)}></i>
         </li>;
-      });
+      }));
     }
 
     let selected = "";
@@ -257,10 +285,11 @@ class NoteEditor extends React.Component {
           <div className='ql-toolbar-bottom-line'></div>
           <ReactQuill
             modules={{
-              toolbar: toolbarOptions}}
+              toolbar: this.toolbarOptions()}}
             value={this.state.note.body}
             onChange={this.handleBody}
-            theme='snow'>
+            theme='snow'
+            placeHolder='Start typing here...'>
             <div className='editing-area'>
             </div>
           </ReactQuill>

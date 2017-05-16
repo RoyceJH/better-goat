@@ -1,6 +1,6 @@
 class Api::NotesController < ApplicationController
   def index
-    @notes = Note.all.where(author_id: current_user.id)
+    @notes = Note.all.includes(:tags).where(author_id: current_user.id)
     render :index
   end
 
@@ -40,24 +40,22 @@ class Api::NotesController < ApplicationController
 
   def update
     @note = Note.find(params[:id])
-    tags = @note.tags
-
-    if(params[:note][:tagsToCreate])
-      params[:note][:tagsToCreate].each do |tag|
-        newTag = ({title: tag[1][:title], author_id: current_user.id})
-        tagToAdd = Tag.create(newTag);
-        tags.push(tagToAdd)
+    tag_ids = @note.tag_ids
+    new_tags = params[:note][:tags].map do |tag|
+      tag_id = tag[1][:id]
+      if tag_id.empty?
+        to_create = tag[1]
+        tag_id = Tag.create(
+          title: to_create[:title],
+          author_id: current_user.id
+        ).id
       end
-    end
 
-    if(params[:note][:tagsToAdd])
-      params[:note][:tagsToAdd].each do |tag|
-        tagToAdd = Tag.find(tag[1][:id])
-        tags.push(tagToAdd)
-      end
+      tag_id
     end
 
     if @note.update(note_params)
+      @note.tag_ids = new_tags
       render 'api/notes/show'
     else
       render json: @note.errors.full_messages, status: 422

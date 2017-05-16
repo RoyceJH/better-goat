@@ -36,7 +36,7 @@ export const selectTagsByTitle = ({tags}, title) => {
     }
   }
 
-  return tagsByTitle;
+  return tagsByTitle[0];
 };
 
 export const arrayNotebookIds = ({notebooks}) => {

@@ -9,6 +9,7 @@ class TagIndex extends React.Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
     this.addModal = this.addModal.bind(this);
+    this.getTags = this.getTags.bind(this);
   }
 
   componentDidMount() {
@@ -26,15 +27,22 @@ class TagIndex extends React.Component {
     };
   }
 
+  getTags() {
+    return this.props.tags.map((tag, idx) => {
+      let notesCount = this.props.notes(tag.id).length;
+      return <TagIndexItem key={tag.id * 100 + notesCount} notesCount={notesCount} tag={tag}/>;
+    });
+  }
+
   render() {
     const slidden = this.props.slideout ? "selected" : "";
     const slideModal = this.props.slideout ? <SlideOut /> : "";
 
 
-    const tags = this.props.tags.map((tag, idx) => {
-      let notesCount = this.props.notes(tag.id).length;
-      return <TagIndexItem key={tag.id} notesCount={notesCount} tag={tag}/>;
-    });
+    // const tags = this.props.tags.map((tag, idx) => {
+    //   let notesCount = this.props.notes(tag.id).length;
+    //   return <TagIndexItem key={tag.id} notesCount={notesCount} tag={tag}/>;
+    // });
 
     // <input type='text' placeholder='Find a tag'/>
     return(
@@ -54,7 +62,7 @@ class TagIndex extends React.Component {
 
           <div className='tag-index-list-wrapper'>
             <div className='tag-index-list'>
-              {tags}
+              {this.getTags()}
             </div>
           </div>
         </div>

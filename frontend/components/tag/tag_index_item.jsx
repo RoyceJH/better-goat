@@ -24,6 +24,12 @@ class TagIndexItem extends React.Component {
     this.handleEdit = this.handleEdit.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if(this.props.notesCount !== newProps.notesCount) {
+      this.props.updateTag(newProps.tag);
+    }
+  }
+
   handleDelete(tagId) {
     return (e) => {
       this.props.destroyTag(tagId);
