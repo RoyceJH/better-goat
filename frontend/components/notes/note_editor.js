@@ -24,7 +24,7 @@ class NoteEditor extends React.Component {
 
   componentDidMount() {
     if(!this.props.formType) {
-      this.setState({ title: "", preview: "", body: "" });
+      this.setState({ title: "", preview: "", body: "" , tags:[]});
     } else {
       this.props.receiveNote(this.props.firstNote);
     }

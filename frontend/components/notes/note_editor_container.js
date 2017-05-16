@@ -8,7 +8,7 @@ import { receiveModal } from '../../actions/modal_actions';
 import { selectNotebooks, selectTagsByNote, selectTagsByTitle } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  let note = { title: "", preview: "", body: "" };
+  let note = { title: "", preview: "", body: "", tags:[] };
 
   if(ownProps.formType === 'edit') {
     note = state.note;
