@@ -60,6 +60,7 @@ class NoteEditor extends React.Component {
   }
 
   handleSave() {
+    debugger
     let { note } = this.state;
     if(!this.props.formType) {
       this.props.processForm(note).then(
@@ -124,13 +125,10 @@ class NoteEditor extends React.Component {
       let toDelete = tag;
       let delIdx;
       let note = this.state.note;
-      note.tags.forEach((currentTag, idx) => {
-        if(currentTag.title === toDelete.title){
-          delIdx = idx;
-        }
+      note.tags = note.tags.filter((currentTag) => {
+        return currentTag.title !== toDelete.title;
       });
-
-      delete note.tags[delIdx];
+      
       this.setState({note});
     };
   }

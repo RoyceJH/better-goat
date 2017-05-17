@@ -7,7 +7,6 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.author_id = current_user.id
-
     tag_ids = @note.tag_ids
     new_tags = params[:note][:tags].map do |tag|
       tag_id = tag[1][:id]
@@ -42,7 +41,10 @@ class Api::NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
     tag_ids = @note.tag_ids
-    new_tags = params[:note][:tags].map do |tag|
+
+    new_tags = params[:note][:tags] || []
+
+    new_tags = new_tags.map do |tag|
       tag_id = tag[1][:id]
       if tag_id.empty?
         to_create = tag[1]
@@ -54,8 +56,8 @@ class Api::NotesController < ApplicationController
 
       tag_id
     end
-
     if @note.update(note_params)
+
       @note.tag_ids = new_tags
       render 'api/notes/show'
     else
