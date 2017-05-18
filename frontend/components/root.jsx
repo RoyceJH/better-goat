@@ -29,7 +29,6 @@ const Root = ({store, getState}) => {
     }
   };
 
-  // add on enter hook down the line
   return(
     <Provider store={store}>
       <Router history={hashHistory} >
