@@ -8,17 +8,22 @@ class Api::NotesController < ApplicationController
     @note = Note.new(note_params)
     @note.author_id = current_user.id
     tag_ids = @note.tag_ids
-    new_tags = params[:note][:tags].map do |tag|
-      tag_id = tag[1][:id]
-      if tag_id.empty?
-        to_create = tag[1]
-        tag_id = Tag.create(
-          title: to_create[:title],
-          author_id: current_user.id
-        ).id
-      end
 
-      tag_id
+    if params[:note][:tags]
+      new_tags = params[:note][:tags].map do |tag|
+        tag_id = tag[1][:id]
+        if tag_id.empty?
+          to_create = tag[1]
+          tag_id = Tag.create(
+            title: to_create[:title],
+            author_id: current_user.id
+          ).id
+        end
+
+        tag_id
+      end
+    else
+      new_tags = []
     end
 
     if @note.notebook_id.nil?
