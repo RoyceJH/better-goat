@@ -59,7 +59,6 @@ class NotebookIndex extends React.Component {
       </div>;
     });
 
-    // <input type='text' placeholder='Find a notebook'/>
     return(
         <div className={`notebook-index ${slidden}`}>
           <div className='notebook-wrapper' >
@@ -84,7 +83,6 @@ class NotebookIndex extends React.Component {
 
           {slideModal}
         </div>
-
     );
   }
 }
