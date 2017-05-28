@@ -13,6 +13,7 @@ class HomeSideBar extends React.Component {
     this.removeProfile = this.removeProfile.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.photoSubmit = this.photoSubmit.bind(this);
+    this.profileBox = this.profileBox.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +83,38 @@ class HomeSideBar extends React.Component {
     }
   }
 
+  savePicture() {
+    
+  }
+
+  profileBox() {
+    const saveProfile = this.state.imageFile ?
+      <input className='save-input' onClick={this.savePicture} type='submit' value="Save Profile"/> :
+      "";
+
+    if (this.state.hidden) {
+      return "";
+    } else {
+      return   <div onClick={this.removeProfile} value='yes' className='profile-tab-modal' >
+          <div value='no' className='profile-tab'>
+            <div className='user-info'>
+              <h3>Welcome,</h3>
+              <label>{this.props.user.username}</label>
+
+              <img className='profile-preview' src={this.state.imageUrl} />
+              <input className='profile-upload' type='file' onChange={this.updateFile}></input>
+              { saveProfile }
+            </div>
+
+            <div className='user-bottom'>
+
+              <i onClick={this.handleLogout} className="fa fa-sign-out" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div> ;
+    }
+  }
+
   render() {
     // Search and live chat icons
     // <Link><i className="fa fa-search" aria-hidden="true"></i></Link>
@@ -89,24 +122,6 @@ class HomeSideBar extends React.Component {
 
     // Favorites / Shortcut icons
     // <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
-
-    // Tags
-    // <Link onClick={this.slideTags}><i className="fa fa-bookmark-o" aria-hidden="true"></i></Link>
-
-    const profileBox = this.state.hidden ? "" :
-      <div onClick={this.removeProfile} value='yes' className='profile-tab-modal' >
-        <div value='no' className='profile-tab'>
-          <div className='user-info'>
-            <h3>Welcome,</h3>
-            <label>{this.props.user.username}</label>
-          </div>
-
-          <div className='user-bottom'>
-
-            <i onClick={this.handleLogout} className="fa fa-sign-out" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div> ;
 
     return (
       <div className='home-side-bar' >
@@ -134,7 +149,7 @@ class HomeSideBar extends React.Component {
         <div className='side-bar-4'>
           <button onClick={this.toggleProfile}><i className="fa fa-user-circle-o" aria-hidden="true"></i></button>
 
-          { profileBox }
+          { this.profileBox() }
         </div>
 
       </div>
