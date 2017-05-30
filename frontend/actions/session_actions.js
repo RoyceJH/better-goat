@@ -38,7 +38,6 @@ export const signup = (user) => dispatch => {
 export const updateUser = user => dispatch => {
   return SessionAPIUtil.updateProfile(user)
     .then((updatedUser) =>  {
-      debugger
       dispatch(receiveCurrentUser(updatedUser));
     });
 };

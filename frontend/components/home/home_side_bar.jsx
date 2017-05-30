@@ -90,7 +90,7 @@ class HomeSideBar extends React.Component {
     formData.user = { 'image': file };
     formData.append('user[image]', file);
     formData.append('id', this.props.user.id);
-    this.props.updateUser(formData);
+    this.props.updateUser(formData).then(() => this.setState({hidden: true}));
   }
 
   profileBox() {
