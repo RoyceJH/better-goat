@@ -11,7 +11,7 @@
 }
 
 .logo {
-  background-image: asset_url('evergoat-logo');
+  // background-image: asset_url('evergoat-logo');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -117,7 +117,7 @@ input::-webkit-input-placeholder {
 
 .auth-header label {
   margin: 0 auto;
-  font-family: 'Roboto Slab', serif; 
+  font-family: 'Roboto Slab', serif;
   display: block;
   font-size: 26px;
   padding-bottom: 15px;

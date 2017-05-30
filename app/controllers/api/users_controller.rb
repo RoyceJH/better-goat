@@ -5,7 +5,8 @@ class Api::UsersController < ApplicationController
       default_NB = Notebook.new({title: @user.username.capitalize + "'s Notebook", default: true})
       default_NB.author = @user
       default_NB.save
-
+      image = File.open(asset_path('evergoat-logo'))
+      @user.image = image
       login(@user)
       render 'api/users/show'
     else
@@ -14,9 +15,9 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(username: username)
+    @user = current_user
     @user.update(user_params)
-    @user.save
+    render 'api/users/show'
   end
 
   private

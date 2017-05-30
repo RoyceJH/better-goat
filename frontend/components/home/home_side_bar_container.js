@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import HomeSideBar from './home_side_bar';
 
 import { slideoutNotebook, slideoutTag, removeSlideout } from '../../actions/slideout_actions';
-import { logout } from '../../actions/session_actions';
+import { logout, updateUser } from '../../actions/session_actions';
 import { fetchNotes } from '../../actions/note_actions';
 
 const mapStateToProps = state => ({
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => ({
   removeSlideout: () => dispatch(removeSlideout()),
   logout: () => dispatch(logout()),
   fetchNotes: () => dispatch(fetchNotes()),
+  updateUser: (user) => dispatch(updateUser(user)),
 });
 
 export default connect(

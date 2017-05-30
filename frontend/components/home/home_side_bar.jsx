@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class HomeSideBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = ({hidden: true});
+    this.state = ({hidden: true, imageFile: this.props.user.image_url});
     this.handleLogout = this.handleLogout.bind(this);
     this.slideNotebooks = this.slideNotebooks.bind(this);
     this.slideTags = this.slideTags.bind(this);
@@ -14,6 +14,7 @@ class HomeSideBar extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.photoSubmit = this.photoSubmit.bind(this);
     this.profileBox = this.profileBox.bind(this);
+    this.savePicture = this.savePicture.bind(this);
   }
 
   componentDidMount() {
@@ -84,7 +85,12 @@ class HomeSideBar extends React.Component {
   }
 
   savePicture() {
-    
+    let file = this.state.imageFile;
+    let formData = new FormData();
+    formData.user = { 'image': file };
+    formData.append('user[image]', file);
+    formData.append('id', this.props.user.id);
+    this.props.updateUser(formData);
   }
 
   profileBox() {
@@ -122,12 +128,14 @@ class HomeSideBar extends React.Component {
 
     // Favorites / Shortcut icons
     // <Link><i className="fa fa-star-o" aria-hidden="true"></i></Link>
-
     return (
       <div className='home-side-bar' >
 
         <div className='side-bar-1'>
-          <label className='home logo'/>
+            <img
+              className='home logo'
+              src={this.props.user.image_url}>
+            </img>
         </div>
 
         <div className='side-bar-2'>

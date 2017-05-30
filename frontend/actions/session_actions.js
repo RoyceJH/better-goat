@@ -34,3 +34,11 @@ export const signup = (user) => dispatch => {
     .then( (user) => dispatch(receiveCurrentUser(user)),
            (errors) => dispatch(receiveErrors(errors.responseJSON)));
 };
+
+export const updateUser = user => dispatch => {
+  return SessionAPIUtil.updateProfile(user)
+    .then((updatedUser) =>  {
+      debugger
+      dispatch(receiveCurrentUser(updatedUser));
+    });
+};

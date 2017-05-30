@@ -20,3 +20,14 @@ export const signup = (user) => {
     data: { user }
   });
 };
+
+export const updateProfile = (formData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/user`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
+  });
+};
