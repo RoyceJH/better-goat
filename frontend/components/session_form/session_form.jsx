@@ -116,7 +116,7 @@ class SessionForm extends React.Component {
       <div className='auth-main'>
 
         <div className='auth-header'>
-          <label className='logo auth' />
+          <img className='logo auth' src='https://s3.amazonaws.com/bettergoat-pro/evergoat-logo.png'/>
           <label>{action}</label>
         </div>
 

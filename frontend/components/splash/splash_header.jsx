@@ -13,7 +13,7 @@ class SplashHeader extends React.Component {
       <div className='splash-header'>
 
         <div className='splash-title'>
-          <label className='logo splash' />
+          <img className='logo splash' src='https://s3.amazonaws.com/bettergoat-pro/evergoat-logo.png'/>
           <h1>BETTERGOAT</h1>
         </div>
 
