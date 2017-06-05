@@ -27,7 +27,8 @@ class Api::NotesController < ApplicationController
     end
 
     if @note.notebook_id.nil?
-      default_notebook = Notebook.find_by(default: true)
+      default_notebook = Notebook.find_by(default: true, author_id: current_user.id)
+      debugger
       @note.notebook_id = default_notebook.id
     end
 
