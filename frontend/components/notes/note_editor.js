@@ -111,13 +111,32 @@ class NoteEditor extends React.Component {
       if(this.props.tagsByTitle(newTag.title)) {
         newTag = this.props.tagsByTitle(newTag.title);
         exists = true;
+
       }
 
-      note.tags.push(newTag);
+      this.validateDupTags(note.tags, newTag);
       this.setState({note});
       e.target.value = '';
     }
   }
+
+  validateDupTags(tags, newTag) {
+    tags.forEach(tag => {
+      if(tag.title !== newTag.title) {
+        tags.push(newTag);
+      } else {
+        this.tagUniquenessErrors();
+      }
+    });
+  }
+
+  tagUniquenessErrors() {
+    this.setState({error: true},() => setTimeout(() => {
+      this.setState({error: false});
+    }, 2000));
+  }
+
+
 
   deleteTag(tag) {
     return (e) => {
@@ -144,18 +163,17 @@ class NoteEditor extends React.Component {
     ];
   }
 
-  // tagBlocks() {
-  //   let { tags } = this.state.note;
-  //   if(tags) {
-  //     tagBlocks = tags.map((tag => {
-  //       return <li className='tags-list' key={tag.title}>
-  //         {tag.title}
-  //         <i className="fa fa-minus-circle" aria-hidden="true"
-  //           onClick={this.deleteTag(tag).bind(this)}></i>
-  //       </li>;
-  //     }));
-  //   }
-  // }
+  renderTagErrors() {
+    if(this.state.error) {
+      return <div className='tag-errors'>
+        <h1 className='tag-error'>Tags must be unique</h1>
+      </div>;
+    } else {
+      return <div className='tag-errors'>
+        <h1 className='tag-error'></h1>
+      </div>;
+    }
+  }
 
   render() {
     let { tags } = this.state.note;
@@ -244,6 +262,7 @@ class NoteEditor extends React.Component {
           </div>
 
         </div>
+        {this.renderTagErrors()}
 
         <div className='note-edit-wrapper' >
 
@@ -270,6 +289,7 @@ class NoteEditor extends React.Component {
               <ul>
                 { tagBlocks }
                 <li onKeyPress={this.setTag} className='new-tag'><input placeholder='+'></input></li>
+
               </ul>
             </div>
           </div>
