@@ -111,7 +111,6 @@ class NoteEditor extends React.Component {
       if(this.props.tagsByTitle(newTag.title)) {
         newTag = this.props.tagsByTitle(newTag.title);
         exists = true;
-
       }
 
       this.validateDupTags(note.tags, newTag);
@@ -121,13 +120,21 @@ class NoteEditor extends React.Component {
   }
 
   validateDupTags(tags, newTag) {
-    tags.forEach(tag => {
-      if(tag.title !== newTag.title) {
-        tags.push(newTag);
-      } else {
-        this.tagUniquenessErrors();
-      }
-    });
+    let isUnique = true;
+
+    if(tags.length){
+      tags.forEach(tag => {
+        if(tag.title === newTag.title) {
+          isUnique = false;
+        } else {
+          this.tagUniquenessErrors();
+        }
+      });
+    }
+
+    if(isUnique) {
+      tags.push(newTag);
+    }
   }
 
   tagUniquenessErrors() {
