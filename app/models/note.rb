@@ -13,7 +13,7 @@
 #
 
 class Note < ActiveRecord::Base
-  validates :title, :author, :notebook, :preview, presence: true
+  validates :author, :notebook, presence: true
 
   belongs_to :notebook,
              primary_key: :id,
