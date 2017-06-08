@@ -126,7 +126,6 @@ class NoteEditor extends React.Component {
       tags.forEach(tag => {
         if(tag.title === newTag.title) {
           isUnique = false;
-        } else {
           this.tagUniquenessErrors();
         }
       });
