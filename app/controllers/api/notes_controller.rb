@@ -13,7 +13,6 @@ class Api::NotesController < ApplicationController
     tags_to_create = create_new_tags(new_tags)
     check_default_NB(@note)
     check_title(@note)
-    debugger
 
     if @note.save
       @note.tag_ids = tags_to_create
@@ -77,7 +76,6 @@ class Api::NotesController < ApplicationController
 
   def check_title(note)
     if note.title.empty?
-      debugger
       note.title = 'untitled'
     end
   end
