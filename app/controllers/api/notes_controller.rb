@@ -7,32 +7,16 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.author_id = current_user.id
-    tag_ids = @note.tag_ids
 
-    if params[:note][:tags]
-      new_tags = params[:note][:tags].map do |tag|
-        tag_id = tag[1][:id]
-        if tag_id.empty?
-          to_create = tag[1]
-          tag_id = Tag.create(
-            title: to_create[:title],
-            author_id: current_user.id
-          ).id
-        end
+    new_tags = params[:note][:tags] || []
 
-        tag_id
-      end
-    else
-      new_tags = []
-    end
-
-    if @note.notebook_id.nil?
-      default_notebook = Notebook.find_by(default: true, author_id: current_user.id)
-      @note.notebook_id = default_notebook.id
-    end
+    tags_to_create = create_new_tags(new_tags)
+    check_default_NB(@note)
+    check_title(@note)
+    debugger
 
     if @note.save
-      @note.tag_ids = new_tags
+      @note.tag_ids = tags_to_create
       render 'api/notes/show'
     else
       render json: ["Invalid note fields"], status: 422
@@ -48,22 +32,11 @@ class Api::NotesController < ApplicationController
     tag_ids = @note.tag_ids
 
     new_tags = params[:note][:tags] || []
+    tags_to_create = create_new_tags(new_tags)
+    check_title(@note)
 
-    new_tags = new_tags.map do |tag|
-      tag_id = tag[1][:id]
-      if tag_id.empty?
-        to_create = tag[1]
-        tag_id = Tag.create(
-          title: to_create[:title],
-          author_id: current_user.id
-        ).id
-      end
-
-      tag_id
-    end
     if @note.update(note_params)
-
-      @note.tag_ids = new_tags
+      @note.tag_ids = tags_to_create
       render 'api/notes/show'
     else
       render json: @note.errors.full_messages, status: 422
@@ -80,5 +53,32 @@ class Api::NotesController < ApplicationController
 
   def note_params
     params.require(:note).permit(:title, :body, :author_id, :notebook_id, :preview)
+  end
+
+  def check_default_NB(note)
+    default_notebook = Notebook.find_by(default: true, author_id: current_user.id)
+    note.notebook_id = default_notebook.id
+  end
+
+  def create_new_tags(tag_ids)
+    tag_ids.map do |tag|
+      tag_id = tag[1][:id]
+      if tag_id.empty?
+        to_create = tag[1]
+        tag_id = Tag.create(
+          title: to_create[:title],
+          author_id: current_user.id
+        ).id
+      end
+
+      tag_id
+    end
+  end
+
+  def check_title(note)
+    if note.title.empty?
+      debugger
+      note.title = 'untitled'
+    end
   end
 end
