@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_attached_file :image, default_url: "evergoat-logo.png"
-  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 
