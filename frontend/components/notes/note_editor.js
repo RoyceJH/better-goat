@@ -142,8 +142,6 @@ class NoteEditor extends React.Component {
     }, 2000));
   }
 
-
-
   deleteTag(tag) {
     return (e) => {
       let toDelete = tag;
