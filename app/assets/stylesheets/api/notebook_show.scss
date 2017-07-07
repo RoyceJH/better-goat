@@ -8,6 +8,10 @@
   border: 1px solid #cfcfcf;
   z-index: 100;
   width: 350px;
+  min-width: 350px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
 
 .notebook-show-header {
