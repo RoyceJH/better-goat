@@ -148,7 +148,5 @@ class SessionForm extends React.Component {
     );
   }
 }
-// <img src={this.state.imageUrl} />
-// <input type='file' onChange={this.updateFile} />
 
 export default SessionForm;
