@@ -1,6 +1,8 @@
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
-import { login, logout, signup, clearErrors } from '../../actions/session_actions';
+import {
+  login, logout, signup, clearErrors
+} from '../../actions/session_actions';
 //Do I need logout? maybe not
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +21,6 @@ const mapDispatchToProps = (dispatch, { location }) => {
     processForm: (user) => dispatch(processForm(user)),
     clearErrors: () => dispatch(clearErrors()),
     formType,
-
   };
 };
 
