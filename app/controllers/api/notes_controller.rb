@@ -11,7 +11,7 @@ class Api::NotesController < ApplicationController
     new_tags = params[:note][:tags] || []
 
     tags_to_create = create_new_tags(new_tags)
-    check_default_NB(@note)
+    check_default_NB(@note) unless @note.notebook_id
     check_title(@note)
 
     if @note.save
