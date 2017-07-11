@@ -25,7 +25,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :notebooks, dependent: :destroy,
+  has_many :notebooks,
+           dependent: :destroy,
            primary_key: :id,
            foreign_key: :author_id,
            class_name: :Notebook
@@ -35,7 +36,8 @@ class User < ActiveRecord::Base
            foreign_key: :author_id,
            class_name: :Note
 
-  has_many :tags, dependent: :destroy,
+  has_many :tags,
+           dependent: :destroy,
            primary_key: :id,
            foreign_key: :author_id,
            class_name: :Tag
