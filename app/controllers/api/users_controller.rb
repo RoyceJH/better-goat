@@ -2,7 +2,9 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      default_NB = Notebook.new(title: @user.username.capitalize + "'s Notebook", default: true)
+      default_NB = Notebook.new(
+        title: @user.username.capitalize + "'s Notebook", default: true
+      )
       default_NB.author = @user
       default_NB.save
       login(@user)
