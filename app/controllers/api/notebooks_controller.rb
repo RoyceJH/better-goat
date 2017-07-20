@@ -31,7 +31,11 @@ class Api::NotebooksController < ApplicationController
 
   def destroy
     @notebook = Notebook.find(params[:id])
-    @notebook.destroy
+    if @notebook.default
+      render json: ["Default notebook can't be deleted"], status: 422
+    else
+      @notebook.destroy
+    end
 
     render 'api/notebooks/show'
   end
