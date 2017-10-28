@@ -179,27 +179,47 @@ class NoteEditor extends React.Component {
     }
   }
 
-  render() {
-    let { tags } = this.state.note;
-
-    const cancelButton = !this.props.formType ?
+  renderCancelButton() {
+    return !this.props.formType ?
       <input
         onClick={this.cancelNewNote}
         className='note-save'
         type='submit'
         value='Cancel'/> :
         "";
+  }
 
-    let tagBlocks;
+  renderTagBlocks(tags) {
     if(tags) {
-      tagBlocks = tags.map((tag => {
+      return tags.map((tag => {
         return <li className='tags-list' key={tag.title}>
           {tag.title}
-          <i className="fa fa-minus-circle" aria-hidden="true"
+          <i className='fa fa-minus-circle' aria-hidden='true'
             onClick={this.deleteTag(tag).bind(this)}></i>
         </li>;
       }));
     }
+  }
+
+  renderReactQuill() {
+    return <ReactQuill
+      modules={{
+        toolbar: this.toolbarOptions()}}
+      value={this.state.note.body}
+      onChange={this.handleBody}
+      theme='snow'
+      placeHolder='Start typing here...'>
+      <div className='editing-area'>
+      </div>
+    </ReactQuill>;
+  }
+
+  render() {
+    let { tags } = this.state.note;
+
+    const cancelButton = this.renderCancelButton();
+    const tagBlocks = this.renderTagBlocks(tags);
+    const reactQuill = this.renderReactQuill();
 
     let selected = "";
     let selectedNotebookName;
@@ -304,16 +324,7 @@ class NoteEditor extends React.Component {
             onChange={this.changeTitle}
             value={this.state.note.title} />
           <div className='ql-toolbar-bottom-line'></div>
-          <ReactQuill
-            modules={{
-              toolbar: this.toolbarOptions()}}
-            value={this.state.note.body}
-            onChange={this.handleBody}
-            theme='snow'
-            placeHolder='Start typing here...'>
-            <div className='editing-area'>
-            </div>
-          </ReactQuill>
+          { reactQuill }
         </div>
       </div>
     );
