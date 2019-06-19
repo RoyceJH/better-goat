@@ -1,6 +1,6 @@
 # BetterGoat
 
-[BetterGoat live](http://bettergoat.me/)
+[BetterGoat live](http://bettergoat.herokuapp.com/)
 * Please note the live site is currently on Heroku Hobby Dynos, so please allow a couple seconds for BetterGoat to get up and running *
 
 BetterGoat is a full-stack web application inspired by Evernote. It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
