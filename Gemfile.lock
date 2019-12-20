@@ -146,7 +146,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    rack (1.6.5)
+    rack (1.6.12)
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
